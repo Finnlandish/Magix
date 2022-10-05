@@ -21,7 +21,7 @@
             else {
                 // Pour voir les informations retournées : var_dump($result);exit;
                 $key = $result->key;
-                $key = $_SESSION["key"];
+                $_SESSION["key"]=$key;
                 
 
                 header("location:lobby.php");

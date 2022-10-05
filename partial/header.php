@@ -13,6 +13,9 @@
             <div>
                 <a href="index.php">Login</a>
                 <a href="lobby.php">Lobby</a>
+                <a href="game.php">Game</a>
+                <a href="deck.php">Deck</a>
+
             </div>
         </div>
         <div class="main-container">

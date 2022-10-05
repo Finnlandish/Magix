@@ -7,7 +7,7 @@
 html,
 body {
     min-height: 100vh;
-    color: white;
+    color: rgb(48, 3, 3);
     font-size: 20px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
@@ -20,7 +20,7 @@ h3 {
 }
 
 a {
-    color: white;
+    color: rgb(34, 2, 2);
     text-decoration: underline;
 }
 
@@ -103,4 +103,9 @@ button {
     color: rgb(39, 2, 2);
     font-size: 20px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.deck {
+    width: 100vh;
+    height: 100vh;
 }
