@@ -11,11 +11,18 @@
     <body>
         <div class="main-container">
             <div>
-                <a href="index.php">Login</a>
-                <a href="lobby.php">Lobby</a>
-                <a href="game.php">Game</a>
-                <a href="deck.php">Deck</a>
-
+                <nav>
+                <ul>
+                    <li>
+                        <a href="index.php">Login</a>
+                    </li>
+                    <li>
+                        <a href="lobby.php">Lobby</a>
+                    </li>
+                    <li><a href="game.php">Game</a></li>
+                    <li><a href="deck.php">Deck</a></li>
+                </ul>
+                </nav>
             </div>
         </div>
         <div class="main-container">
