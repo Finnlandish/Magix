@@ -33,7 +33,7 @@
 		<div class="formSeparator"></div>
 		
 		<div class="formLabel">&nbsp;</div>
-		<div class="formInput"><button>Envoyer</button>
+		<div  class="formInput" type="submit" value="connexion"><button>Envoyer</button>
 		<div class="formSeparator"></div>
 	</form>
 </div>

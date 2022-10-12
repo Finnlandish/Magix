@@ -8,24 +8,27 @@
 
         protected function executeAction() {
             $hasConnectionError = false;
-
+            $message = "";
             $data = [];
-            $data["username"] = $_POST["username"];
-            $data["password"] = $_POST["password"];
-
-            $result = parent::callAPI("signin", $data);
-
-            if ($result == "INVALID_USERNAME_PASSWORD") {
-                // err
+            if (isset($_POST["connexion"])){
+                if (isset($_POST["username"])){
+                    if (isset($_POST["password"])){
+                        $result = parent::callAPI("signin", $data);
+                    
+                        if ($result == "INVALID_USERNAME_PASSWORD") {
+                            // err
+                            $message = "Error please try again";
+                        }
+                        else {
+                            // Pour voir les informations retournées : var_dump($result);exit;
+                            $key = $result->key;
+                            $_SESSION["key"]=$key;
+                            
+            
+                            header("location:lobby.php");
+                        }
+                    }
+                }
             }
-            else {
-                // Pour voir les informations retournées : var_dump($result);exit;
-                $key = $result->key;
-                $_SESSION["key"]=$key;
-                
-
-                header("location:lobby.php");
-            }
-           
         }
     }
