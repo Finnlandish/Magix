@@ -10,31 +10,32 @@
 	require_once("partial/header.php");
 ?>
 <div class="login">
- <div class="box">
-	<h1>
-		Bienvenue à Magix!
-	</h1>
-	<?php
+    <div class="box">
+        <h1>
+            Bienvenue à Magix!
+        </h1>
+        <?php
 		if (!empty($data["hasError"] )) {
 			?>
-			<div style="color:red;text-align:center">
-				!!! Erreur d'authentification !!!
-			</div>
-			<?php
+        <div style="color:red;text-align:center">
+            !!! Erreur d'authentification !!!
+        </div>
+        <?php
 		}
-	?>
-	<form action="" method="POST">
-            <div>
-                <input type="text" name="username" class = "field" placeholder = "Username">
-            </div>
+		?>
+        <div>
+            <form action="" method="POST">
+                <div>
+                    <input type="text" name="username" class="champ" placeholder="Username">
+                </div>
 
-            <div>
-                <input type="password" name="password" class = "field" placeholder = "Password">
-            </div>
-
-            <input type="submit" name="connexion" value="Connexion" class = "field">      
-        </form>
-
-</div>
-<?php
+                <div>
+                    <input type="password" name="password" class="champ" placeholder="Password">
+                </div>
+				<span class="center"><input type="submit" name="connexion" value="" class="button"></span>
+                
+            </form>
+        </div>
+    </div>
+    <?php
 	require_once("partial/footer.php");
