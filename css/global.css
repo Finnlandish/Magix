@@ -176,3 +176,18 @@ ul.nav > li > a {
     width: 100vh;
     height: 100vh;
 }
+
+/* lobby */
+.lobby{
+  width: 100%;
+  height: 100%;
+  background-image: url('..//img/pokemon/lobby.png');
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-size: 20px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

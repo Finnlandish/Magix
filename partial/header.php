@@ -14,6 +14,9 @@
     <div class="topNav">
         <div>
             <ul class="nav">
+            <li><form action="" method="$_POST">
+                <button type="submit" name="deconnect" class="Button">Quitter</button>
+                </form></li>
                 <li><a href="index.php">Login</a></li>
                 <li><a href="lobby.php">Lobby</a></li>
                 <li><a href="game.php">Game</a></li>
@@ -21,4 +24,3 @@
             </ul>
         </div>
     </div>
-    <div class="main-container">
