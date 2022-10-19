@@ -13,6 +13,22 @@ abstract class CommonAction {
     }
 
     public function execute() {
+        $message = "rien a signaler";
+        $key = [];
+
+        if(isset($_POST["disconnect"])){
+            $key["key"] = $_SESSION['gameKey'];
+            $result = CommonAction::callAPI("signout", $key);
+            $message = $result;
+                
+            if($result == "SIGNED_OUT"){
+                $_SESSION["visibility"] = 0;
+                header("location:index.php");
+                exit;
+            }
+        }
+        
+
         if (!empty($_GET["logout"])) {
             session_unset();
             session_destroy();
