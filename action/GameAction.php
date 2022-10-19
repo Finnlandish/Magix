@@ -4,12 +4,12 @@
     class GameAction extends CommonAction {
 
         public function __construct() {
-            parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
+            parent::__construct(CommonAction::$VISIBILITY_MEMBER);
         }
 
         protected function executeAction() {
             
-            if(isset($_POST["etat"])){
+            if(isset($_POST["action"])){
                 $key["key"] = $_SESSION["key"];
                 $result = CommonAction::callAPI("games/action", $key);
                     

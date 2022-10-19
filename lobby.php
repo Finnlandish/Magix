@@ -8,6 +8,7 @@
 
 ?>
 <body>
+    <script defer src="lobby.js"></script>
     <div class="lobby">
         <div>
             <h1>Welcome <?= $_SESSION["username"] ?></h1>
@@ -23,10 +24,9 @@
         </div>
         <div class="chat">
             
-            <iframe style="width:700px;height:562px;" 
+            <iframe style="width:700px;height:562px;"onload="applyStyles(this)" 
             src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"]?>/large">
             </iframe>
-
         </div>
     </div>
 </body>

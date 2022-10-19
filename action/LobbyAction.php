@@ -3,7 +3,7 @@
     class LobbyAction extends CommonAction {
 
         public function __construct() {
-            parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
+            parent::__construct(CommonAction::$VISIBILITY_MEMBER);
         }
 
         protected function executeAction() {
@@ -36,12 +36,18 @@
                     exit;
                 }
                 
+            }
+            elseif (isset($_POST["PVE"])){
+                $param["key"] = $_SESSION["key"];
+                $param["type"] = "PVE";
+                $param["mode"] = "STANDARD";
+                $result = CommonAction::callAPI("games/auto-match", $param);
+                
                 if($result = "JOINED_TRAINING"){
                     $_SESSION["visibility"] = 0;
                     
                     header("location:game.php");
                     exit;
-                    echo"pve";
                 }
             }
         
