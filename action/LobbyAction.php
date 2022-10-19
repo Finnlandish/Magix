@@ -30,7 +30,7 @@
                 $result = CommonAction::callAPI("games/auto-match", $param);
 
                 if($result = "CREATED_PVP"||$result="JOINED_PVP"){
-                    $_SESSION["visibility"] = 0;
+                    $_SESSION["visibility"] = 1;
                     
                     header("location:game.php");
                     exit;
@@ -44,7 +44,7 @@
                 $result = CommonAction::callAPI("games/auto-match", $param);
                 
                 if($result = "JOINED_TRAINING"){
-                    $_SESSION["visibility"] = 0;
+                    $_SESSION["visibility"] = 1;
                     
                     header("location:game.php");
                     exit;
