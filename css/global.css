@@ -184,7 +184,11 @@ ul.nav>li>a {
 
 /* lobby */
 
-.lbutton {}
+.lbutton {
+    color: black;
+    width: auto;
+    height: auto;
+}
 
 .lobby {
     width: 100%;

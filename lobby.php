@@ -12,24 +12,20 @@
         <div>
             <h1>Welcome <?= $_SESSION["username"] ?></h1>
         </div>
-        <div class="lbutton">
+        <div class="lobbybutton">
             <form action="" method="$_POST">
-                <button style.display = "block" type="submit" name="play" class="lButton">Jouer</button>
-            </form>
-            <form action="" method="$_POST">
-                <button style.display = "block" type="submit" name="practice" class="lButton">Pratique</button>
-            </form>
-            <form action="" method="$_POST">
-                <button style.display = "block" type="submit" name="deconnect" class="lButton"><a href="Index.php">Quitter</a> </button>
+                <button type="submit" name="PVP" class="lbutton">Jouer</button>
+            
+                <button type="submit" name="PVE" class="lbutton">Pratique</button>
+            
+                <button type="submit" name="loggout" class="lbutton"> Quitter</button>
             </form>
         </div>
         <div class="chat">
-            <iframe style="width:700px;height:240px;" onload="applyStyles(this)"  
-            src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"]?>">
+            
+            <iframe style="width:700px;height:562px;" 
+            src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"]?>/large">
             </iframe>
-            <!-- <iframe style="width:700px;height:562px;" 
-            src="https://magix.apps-de-cours.com/server/#/chat//<?= $_SESSION["key"]?>/large">
-            </iframe> -->
 
         </div>
     </div>

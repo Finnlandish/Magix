@@ -21,7 +21,7 @@ class IndexAction extends CommonAction
 
                     $result = CommonAction::callAPI("signin", $data);
                     if ($result == "INVALID_USERNAME_PASSWORD"){
-                        $message = "erreur mot de passe ou nom invalide";
+                        $message = "erreur : mot de passe ou nom invalide";
                     }
                     else{
                         $key = $result->key;
