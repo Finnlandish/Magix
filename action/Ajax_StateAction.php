@@ -1,7 +1,7 @@
 <?php
     require_once("action/CommonAction.php");
 
-    class ajax_state extends CommonAction {
+    class Ajax_StateAction extends CommonAction {
 
         public function __construct() {
             parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
