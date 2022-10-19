@@ -9,16 +9,24 @@
 
         protected function executeAction() {
             
-            if(isset($_POST["loggout"])){
+            if(isset($_POST["etat"])){
                 $key["key"] = $_SESSION["key"];
-                $result = CommonAction::callAPI("games/state", $key);
+                $result = CommonAction::callAPI("games/action", $key);
                     
-                if($result == "SIGNED_OUT"){
-                    $_SESSION["visibility"] = 0;
-                    header("location:index.php");
-                    exit;
-                    echo("loggout");
+                if($result == "WAITING"){
+                   
 
+                    exit;
+                }
+                if($result == "LAST_GAME_WON"){
+                   
+
+                    exit;
+                }
+                if($result == "LAST_GAME_LOST"){
+                   
+
+                    exit;
                 }
             }
 
