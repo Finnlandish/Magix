@@ -38,7 +38,6 @@ class IndexAction extends CommonAction
                 $message = "entrer un nom d'utilisateur";
             }
         }
-            
         return compact("message");
     }
 } 

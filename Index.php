@@ -15,10 +15,10 @@
             Bienvenue à Magix!
         </h1>
         <?php
-		if (!empty($data["hasError"] )) {
+		if (!empty($data["message"] )) {
 			?>
         <div style="color:red;text-align:center">
-            !!! Erreur d'authentification !!!
+            <?= $data["message"] ?>
         </div>
         <?php
 		}
