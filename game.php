@@ -6,8 +6,9 @@
 
     require_once("partial/header.php");
 ?>
+    <script src="js/game.js"></script>
 <div>
-    
+    <button></button>
 </div>
 <?php
     require_once("partial/footer.php");
