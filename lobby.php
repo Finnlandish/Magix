@@ -8,25 +8,24 @@
 
 ?>
 <body>
-    <script defer src="lobby.js"></script>
+    <script src="lobby.js"></script>
     <div class="lobby">
         <div>
             <h1>Welcome <?= $_SESSION["username"] ?></h1>
         </div>
         <div class="lobbybutton">
-            <form action="" method="$_POST">
+            <form action="" method="post">
                 <button type="submit" name="PVP" class="lbutton">Jouer</button>
-            
+
                 <button type="submit" name="PVE" class="lbutton">Pratique</button>
-            
                 <button type="submit" name="loggout" class="lbutton"> Quitter</button>
             </form>
         </div>
         <div class="chat">
-            
-            <iframe style="width:700px;height:562px;"onload="applyStyles(this)" 
-            src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"]?>/large">
+            <iframe style="width:700px;height:240px;" onload="applyStyles(this)" 
+            src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"]?>">
             </iframe>
+
         </div>
     </div>
 </body>

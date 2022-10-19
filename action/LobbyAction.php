@@ -8,47 +8,45 @@
 
         protected function executeAction() {
             $message = "";
-            $key = [];
+            
 
             if(isset($_POST["loggout"])){
-                $key["key"] = $_SESSION["key"];
-                $result = CommonAction::callAPI("signout", $key);
+                $param = [];
+                $param["key"] = $_SESSION["key"];
+                $result = CommonAction::callAPI("signout", $param);
                 $message = $result;
-                    
+               
                 if($result == "SIGNED_OUT"){
                     $_SESSION["visibility"] = 0;
                     header("location:index.php");
                     exit;
-                    echo"loggout";
-
                 }
             }
-            elseif (isset($_POST["PVP"])){
+            else if (isset($_POST["PVP"])){
+                $param = [];
                 $param["key"] = $_SESSION["key"];
                 $param["type"] = "PVP";
                 $param["mode"] = "STANDARD";
                 $result = CommonAction::callAPI("games/auto-match", $param);
 
-                if($result = "CREATED_PVP"||$result="JOINED_PVP"){
-                    $_SESSION["visibility"] = 1;
+                if($result == "CREATED_PVP"||$result="JOINED_PVP"){
                     
                     header("location:game.php");
                     exit;
                 }
                 
             }
-            elseif (isset($_POST["PVE"])){
+            else if (isset($_POST["PVE"])){
+                $param=[];
                 $param["key"] = $_SESSION["key"];
                 $param["type"] = "PVE";
-                $param["mode"] = "STANDARD";
                 $result = CommonAction::callAPI("games/auto-match", $param);
                 
-                if($result = "JOINED_TRAINING"){
-                    $_SESSION["visibility"] = 1;
-                    
+
                     header("location:game.php");
                     exit;
-                }
+            
+
             }
         
             return compact("message");
