@@ -41,7 +41,7 @@
                 $param["key"] = $_SESSION["key"];
                 $param["type"] = "PVE";
                 $result = CommonAction::callAPI("games/auto-match", $param);
-                
+                $message = $result;
 
                     header("location:game.php");
                     exit;

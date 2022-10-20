@@ -21,7 +21,7 @@
                 <button type="submit" name="loggout" class="lbutton"> Quitter</button>
             </form>
         </div>
-        <div class="chat">
+        <div class="gamechat">
             <iframe style="width:700px;height:240px;" onload="applyStyles(this)" 
             src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"]?>">
             </iframe>
