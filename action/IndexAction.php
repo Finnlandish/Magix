@@ -12,13 +12,12 @@ class IndexAction extends CommonAction
         $result = NULL;
         $data = [];
         $message = "";
-        $username = "";
         if(isset($_POST["connexion"])){
             if(isset($_POST["username"])){
                 if(isset($_POST["password"])){
                     $data["username"] = $_POST["username"];
                     $data["password"] = $_POST["password"];
-
+                    
                     $result = CommonAction::callAPI("signin", $data);
                     if ($result == "INVALID_USERNAME_PASSWORD"){
                         $message = "erreur : mot de passe ou nom invalide";
@@ -26,8 +25,8 @@ class IndexAction extends CommonAction
                     else{
                         $key = $result->key;
                         $_SESSION["key"] = $key;
-                        $_SESSION["username"] = $username;
                         $_SESSION["visibility"] = 1;
+                        $user = $data["username"];
                         header("location:lobby.php");
                         exit;
                     }

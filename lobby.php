@@ -11,13 +11,16 @@
     <script src="lobby.js"></script>
     <div class="lobby">
         <div>
-            <h1>Welcome <?= $_SESSION["username"] ?></h1>
+            <h1>Welcome <?= $user ?></h1>
         </div>
         <div class="lobbybutton">
             <form action="" method="post">
                 <button type="submit" name="PVP" class="lbutton">Jouer</button>
-
+            </form>
+            <form action="" method="post">
                 <button type="submit" name="PVE" class="lbutton">Pratique</button>
+            </form>
+            <form action="" method="post">
                 <button type="submit" name="loggout" class="lbutton"> Quitter</button>
             </form>
         </div>
