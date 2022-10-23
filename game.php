@@ -6,7 +6,7 @@
 
     require_once("partial/header.php");
 ?>
-    <script defer src="./js/game.js"></script>
+    <script src="./js/game.js"></script>
     <script src="./js/chat.js"></script>
 <div class="game">
     <div class="">

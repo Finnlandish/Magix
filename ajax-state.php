@@ -4,3 +4,4 @@
     $action = new Ajax_StateAction();
     $data = $action->execute();
 
+    
