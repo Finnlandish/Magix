@@ -14,6 +14,8 @@ abstract class CommonAction {
 
     public function execute() {
         
+        $user="";
+
         if (!empty($_GET["deconnect"])) {
             session_unset();
             session_destroy();
