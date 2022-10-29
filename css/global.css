@@ -121,6 +121,7 @@ ul.nav>li>a {
 }
 
 .login {
+    
     width: 100%;
     background-image: url('../img/elven-land-game-battle-backgrounds/PNG/game_background_4/game_background_4.png');
     background-size: 100% 100%;
@@ -132,8 +133,13 @@ ul.nav>li>a {
     align-items: center;
     justify-content: center;
 }
-
+.titleloggin{
+    
+}
 .box {
+    position:relative; 
+    left:80px; 
+    top:-223px;
     min-width: 382px;
     max-width: 600px;
     min-height: 612px;

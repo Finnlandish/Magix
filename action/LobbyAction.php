@@ -8,10 +8,10 @@
 
         protected function executeAction() {
             $message = "";
-            
+            $param = [];
+
 
             if(isset($_POST["loggout"])){
-                $param = [];
                 $param["key"] = $_SESSION["key"];
                 $result = CommonAction::callAPI("signout", $param);
                 $message = $result;
@@ -23,7 +23,6 @@
                 }
             }
             else if (isset($_POST["PVP"])){
-                $param = [];
                 $param["key"] = $_SESSION["key"];
                 $param["type"] = "PVP";
                 $param["mode"] = "STANDARD";
