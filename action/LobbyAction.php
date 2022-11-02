@@ -34,6 +34,21 @@ class LobbyAction extends CommonAction
 
                 header("location:game.php");
                 exit;
+            } elseif ($result == "INVALID_KE") {
+
+                $messageErr = "";
+                $messageErr = $result;
+            } elseif ($result == "INVALID_GAME_TYPE") {
+
+                $messageErr = "";
+                $messageErr = $result;
+            } elseif ($result == "DECK_INCOMPLETE") {
+                $messageErr = "";
+                $messageErr = $result;
+            } elseif ($result == "MAX_DEATH_THRESHOLD_REACHED") {
+
+                $messageErr = "";
+                $messageErr = $result;
             }
         } else if (isset($_POST["TRAINING"])) {
             $param = [];
@@ -46,6 +61,21 @@ class LobbyAction extends CommonAction
 
                 header("location:game.php");
                 exit;
+            } elseif ($result == "INVALID_KE") {
+
+                $messageErr = "";
+                $messageErr = $result;
+            } elseif ($result == "INVALID_GAME_TYPE") {
+
+                $messageErr = "";
+                $messageErr = $result;
+            } elseif ($result == "DECK_INCOMPLETE") {
+                $messageErr = "";
+                $messageErr = $result;
+            } elseif ($result == "MAX_DEATH_THRESHOLD_REACHED") {
+
+                $messageErr = "";
+                $messageErr = $result;
             }
         }
         return compact("messageErr");

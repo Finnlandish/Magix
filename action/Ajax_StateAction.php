@@ -8,9 +8,10 @@
         }
 
         protected function executeAction() {
-            $key["key"] = $_SESSION["key"];
+            $param = [];
+            $param["key"] = $_SESSION["key"];
             $result ="";
-            $result = CommonAction::callAPI("games/state", $key);
+            $result = CommonAction::callAPI("games/state", $param);
                 
             return compact("result");
         }
