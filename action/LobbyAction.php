@@ -11,13 +11,13 @@ class LobbyAction extends CommonAction
     protected function executeAction()
     {
         $messageErr = "";
-        $param = [];
+        $data = [];
         $data["username"] = !empty($_SESSION["username"]);
 
 
         if (isset($_POST["loggout"])) {
-            $param["key"] = $_SESSION["key"];
-            $result = CommonAction::callAPI("signout", $param);
+            $data["key"] = $_SESSION["key"];
+            $result = CommonAction::callAPI("signout", $data);
             $messageErr = $result;
 
             if ($result == "SIGNED_OUT") {
@@ -26,9 +26,9 @@ class LobbyAction extends CommonAction
                 exit;
             }
         } else if (isset($_POST["PVP"])) {
-            $param["key"] = $_SESSION["key"];
-            $param["type"] = "PVP";
-            $result = CommonAction::callAPI("games/auto-match", $param);
+            $data["key"] = $_SESSION["key"];
+            $data["type"] = "PVP";
+            $result = CommonAction::callAPI("games/auto-match", $data);
 
             if ($result == "CREATED_PVP" || $result = "JOINED_PVP") {
 
@@ -51,32 +51,16 @@ class LobbyAction extends CommonAction
                 $messageErr = $result;
             }
         } else if (isset($_POST["TRAINING"])) {
-            $param = [];
-            $param["key"] = $_SESSION["key"];
-            $param["type"] = "TRAINING";
-            $result = CommonAction::callAPI("games/auto-match", $param);
+            $data["key"] = $_SESSION["key"];
+            $data["type"] = "TRAINING";
+            $result = CommonAction::callAPI("games/auto-match", $data);
             $messageErr = $result;
             
             if ($result == "JOINED_TRAINING") {
 
                 header("location:game.php");
                 exit;
-            } elseif ($result == "INVALID_KE") {
-
-                $messageErr = "";
-                $messageErr = $result;
-            } elseif ($result == "INVALID_GAME_TYPE") {
-
-                $messageErr = "";
-                $messageErr = $result;
-            } elseif ($result == "DECK_INCOMPLETE") {
-                $messageErr = "";
-                $messageErr = $result;
-            } elseif ($result == "MAX_DEATH_THRESHOLD_REACHED") {
-
-                $messageErr = "";
-                $messageErr = $result;
-            }
+            } 
         }
         
         return compact("messageErr");

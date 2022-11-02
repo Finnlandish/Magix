@@ -198,7 +198,7 @@ ul.nav>li>a {
 .lobby {
     width: 100%;
     height: 100%;
-    background-image: url('..//img/pokemon/lobby.png');
+    background-color: #9de73c;
     background-size: contain;
     background-repeat: no-repeat;
     min-height: 95vh;

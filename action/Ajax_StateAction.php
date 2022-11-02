@@ -8,10 +8,10 @@
         }
 
         protected function executeAction() {
-            $param = [];
-            $param["key"] = $_SESSION["key"];
+            $data = [];
+            $data["key"] = $_SESSION["key"];
             $result ="";
-            $result = CommonAction::callAPI("games/state", $param);
+            $result = CommonAction::callAPI("games/state", $data);
                
             if($result == "WAITING"){
                 $messageErr = "";

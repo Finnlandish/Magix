@@ -9,14 +9,16 @@
 
         protected function executeAction() {
             $messageErr = "";
-            $param = [];
+            $data = [];
+            $data["key"] = $_SESSION["key"];
+
             if(isset($_POST["surrender"])){
-                $param["key"] = $_SESSION["key"];
-                $param["type"] = "SURRENDER";
-                $result = CommonAction::callAPI("games/action", $param);
-                if ($result == "INVALID_GAME_TYPE") {
-                    $param["key"] = $_SESSION["key"];
-                    $param["type"] = "SURRENDER";
+                $data["key"] = $_SESSION["key"];
+                $data["type"] = "SURRENDER";
+                $result = CommonAction::callAPI("games/action", $data);
+                if ($result == "SURRENDER") {
+                    $data["key"] = $_SESSION["key"];
+                    $data["type"] = "SURRENDER";
                     $messageErr = "";
                     $messageErr = $result;
                     header("location:lobby.php");
@@ -25,12 +27,12 @@
             
             }
             elseif(isset($_POST["endturn"])){
-                $param["key"] = $_SESSION["key"];
-                $param["type"] = "END_TURN";
-                $result = CommonAction::callAPI("games/action", $param);
+                $data["key"] = $_SESSION["key"];
+                $data["type"] = "END_TURN";
+                $result = CommonAction::callAPI("games/action", $data);
                 if ($result == "INVALID_GAME_TYPE") {
-                    $param["key"] = $_SESSION["key"];
-                    $param["type"] = "SURRENDER";
+                    $data["key"] = $_SESSION["key"];
+                    $data["type"] = "SURRENDER";
                     $messageErr = "";
                     $messageErr = $result;
                 }    
@@ -38,6 +40,6 @@
             }
 
 
-            return [];
+            return compact("messageErr");
         }
     }

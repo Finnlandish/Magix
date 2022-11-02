@@ -8,7 +8,7 @@
 
 ?>
 <body>
-    <script src="lobby.js"></script>
+    <script src="./js/chat.js"></script>
     <div class="lobby">
         <div>
             <h1>Welcome <?= $data["username"] ?></h1>
