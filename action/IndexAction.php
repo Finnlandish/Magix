@@ -11,7 +11,7 @@ class IndexAction extends CommonAction
     protected function executeAction() {
         $result = NULL;
         $data = [];
-        $message = "";
+        $messageErr = "";
         if(isset($_POST["connexion"])){
             if(isset($_POST["username"])){
                 if(isset($_POST["password"])){
@@ -20,23 +20,25 @@ class IndexAction extends CommonAction
                     
                     $result = CommonAction::callAPI("signin", $data);
                     if ($result == "INVALID_USERNAME_PASSWORD"){
-                        $message = "erreur : mot de passe ou nom invalide";
+                        $messageErr = "erreur : mot de passe ou nom invalide";
                     }
                     else{
                         $key = $result->key;
                         $_SESSION["key"] = $key;
                         $_SESSION["visibility"] = 1;
                         $user = $data["username"];
+                        $data["username"] = !empty($_SESSION["username"]);
                         header("location:lobby.php");
+
                         exit;
                     }
                 }else{
-                    $message = "entrer un mot de passe";
+                    $messageErr = "entrer un mot de passe";
                 }
             }else{
-                $message = "entrer un nom d'utilisateur";
+                $messageErr = "entrer un nom d'utilisateur";
             }
         }
-        return compact("message");
+        return compact("messageErr");
     }
 } 

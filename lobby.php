@@ -13,12 +13,21 @@
         <div>
             <h1>Welcome <?= $data["username"] ?></h1>
         </div>
+         <?php
+		if (!empty($data["message"] )) {
+			?>
+        <div style="color:red;text-align:center">
+            <?= $data["message"] ?>
+        </div>
+        <?php
+		}
+		?>
         <div class="lobbybutton">
             <form action="" method="post">
                 <button type="submit" name="PVP" class="lbutton">Jouer</button>
             </form>
             <form action="" method="post">
-                <button type="submit" name="PVE" class="lbutton">Pratique</button>
+                <button type="submit" name="TRAINING" class="lbutton">Pratique</button>
             </form>
             <form action="" method="post">
                 <button type="submit" name="loggout" class="lbutton"> Quitter</button>

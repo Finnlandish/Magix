@@ -8,9 +8,18 @@
 ?>
     <script src="./js/game.js"></script>
     <script src="./js/chat.js"></script>
+    
 <div class="game">
     <div class="">
-
+    <?php
+		if (!empty($data["message"] )) {
+			?>
+        <div style="color:red;text-align:center">
+            <?= $data["message"] ?>
+        </div>
+        <?php
+		}
+		?>
     </div>
     <div id="togglechat" class="clickable">toggle chat</div>
     <div id="chat" class="chat">
