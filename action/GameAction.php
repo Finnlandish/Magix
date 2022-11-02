@@ -8,26 +8,33 @@
         }
 
         protected function executeAction() {
+            $messageErr = "";
+            $param = [];
+            if(isset($_POST["surrender"])){
+                $param["key"] = $_SESSION["key"];
+                $param["type"] = "SURRENDER";
+                $result = CommonAction::callAPI("games/action", $param);
+                if ($result == "INVALID_GAME_TYPE") {
+                    $param["key"] = $_SESSION["key"];
+                    $param["type"] = "SURRENDER";
+                    $messageErr = "";
+                    $messageErr = $result;
+                    header("location:lobby.php");
+                    exit;
+                }    
             
-            if(isset($_POST["action"])){
-                $key["key"] = $_SESSION["key"];
-                $result = CommonAction::callAPI("games/action", $key);
-                    
-                if($result == "WAITING"){
-                   
-
-                    exit;
-                }
-                if($result == "LAST_GAME_WON"){
-                   
-
-                    exit;
-                }
-                if($result == "LAST_GAME_LOST"){
-                   
-
-                    exit;
-                }
+            }
+            elseif(isset($_POST["endturn"])){
+                $param["key"] = $_SESSION["key"];
+                $param["type"] = "END_TURN";
+                $result = CommonAction::callAPI("games/action", $param);
+                if ($result == "INVALID_GAME_TYPE") {
+                    $param["key"] = $_SESSION["key"];
+                    $param["type"] = "SURRENDER";
+                    $messageErr = "";
+                    $messageErr = $result;
+                }    
+            
             }
 
 

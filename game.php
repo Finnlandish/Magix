@@ -48,10 +48,10 @@ require_once("partial/header.php");
         <iframe style="width:700px;height:240px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
         </iframe>
     </div>
-    <div id="togglechat" class="btntogglechat"> 
+    <div id="togglechat" class="btntogglechat" name="surrender"> 
         <button class="surrender">surrender</button>
     </div>
-    <div id="togglechat" class="btntogglechat"> 
+    <div id="togglechat" class="btntogglechat" name="endturn"> 
         <button class="endturn">end-turn</button>
     </div>
     </div>

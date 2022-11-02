@@ -56,7 +56,7 @@ class LobbyAction extends CommonAction
             $param["type"] = "TRAINING";
             $result = CommonAction::callAPI("games/auto-match", $param);
             $messageErr = $result;
-
+            
             if ($result == "JOINED_TRAINING") {
 
                 header("location:game.php");
@@ -78,6 +78,7 @@ class LobbyAction extends CommonAction
                 $messageErr = $result;
             }
         }
+        
         return compact("messageErr");
     }
 }
