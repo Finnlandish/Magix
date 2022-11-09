@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="topNav">
+    <!-- <div class="topNav">
         <div>
             <ul class="nav">
                 <li><a href="index.php">Login</a></li>
@@ -20,4 +20,4 @@
                 <li><a href="deck.php">Deck</a></li>
             </ul>
         </div>
-    </div>
+    </div> -->

@@ -21,13 +21,11 @@ const state = () => {
 
 }
 
-
-
 const créer_area = (data, area)=>{
     data.forEach(e => {
         let card = document.createElement("div");
         card.id = e.uid;
-        card.appendChild(document.createTextNode("Uid: "+e.uid))
+        card.appendChild(document.createTextNode("id: "+e.uid))
         card.appendChild(document.createTextNode("Hp : "+e.hp))
         card.appendChild(document.createTextNode("Cost : "+e.cost ))
         card.appendChild(document.createTextNode("Dmg : "+e.atk))

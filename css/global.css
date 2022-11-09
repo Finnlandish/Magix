@@ -121,18 +121,62 @@ ul.nav>li>a {
 }
 
 .login {
-    width: 100%;
-    background-image: url('../img/elven-land-game-battle-backgrounds/PNG/game_background_4/game_background_4.png');
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/Indexbg/bg.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    min-height: 100vh;
     font-size: 20px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+#bush{
+    position: absolute;
+}
+#foliage{
+    position: absolute;
 
+}
+#monument2{
+    position: absolute;
+
+}
+#trees{
+    position: absolute;
+
+}
+#treeright{
+    position: absolute;
+
+}
+#mony{
+    position: absolute;
+}
+#poliwag{
+    position: absolute;    
+    width: auto;
+    height: 10vh;
+}
+#pichu{
+    position: absolute;
+    width: auto;
+    height: 10vh;
+}
+#wooper{
+    position: absolute;
+    width: auto;
+    height: 20vh;
+    bottom: 7vh;
+    right: 1vh;
+    transform: rotate(-9deg);}
+#eevee{
+    position: absolute;
+    width: auto;
+    height: 10vh;
+    left: 10vh;
+}
 .titleloggin {}
 
 .box {
@@ -201,7 +245,8 @@ ul.nav>li>a {
     background-color: #9de73c;
     background-size: contain;
     background-repeat: no-repeat;
-    min-height: 95vh;
+    min-height: 100vh;
+    max-height: 100vh;
     font-size: 20px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }

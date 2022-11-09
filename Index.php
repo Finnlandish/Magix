@@ -10,6 +10,21 @@
 	require_once("partial/header.php");
 ?>
 <div class="login">
+
+    <img id="trees" src="img/Indexbg/trees.png" alt="">
+    <img id="monument2" src="img/Indexbg/monument2.png" alt="">
+    <img id="mony" src="img/Indexbg/mony.png" alt="">
+    <img id="foliage" src="img/Indexbg/foliage.png" alt="">
+    <img id="bush" src="img/Indexbg/bush.png" alt="">
+    <img id="pichu" src="img/Indexbg/pichu.png" alt="">
+    <img id="wooper" src="img/Indexbg/Wooper.png" alt="">
+
+    <img id="treeright" src="img/Indexbg/treeright.png" alt="">
+    <img id="eevee" src="img/Indexbg/pichu.png" alt="">
+    
+    
+
+    
     <div class="box">
         <h1>
             Bienvenue à Magix!
