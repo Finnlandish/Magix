@@ -22,45 +22,38 @@ require_once("partial/header.php");
         }
         ?>
     </div>
-    
+
     <div class="board" id="board">
         <div class="action" id="timer"></div>
+
         <div class="area" id="enemystat"></div>
-        <div class="area" id="cardbox">
+
+        <div class="cardbox">
             <div class="area" id="enemycards"></div>
             <div class="area" id="mycards"></div>
         </div>
-        <div class="area" id="mydeck"></div>
-        </div>
-        <div class="area" id="mystats">
 
-                <!-- <div class="box child-to-body">
-                <img src="pokeBannerGimp.png" width="250" alt="">
-                <div class="poke_box">
-                    <div class="pokeball">
-                        <div class="pokeball__button"></div>
-                    </div>
-                </div> -->
-                
-        </div>
-        
-        <div id="togglechat" class="btntogglechat"> <button id="togglechat" class="clickable" onclick="togglechat()">toggle chat</button> </div>
+        <div class="area" id="mydeck"></div>
+        <div class="area" id="mystats"></div>
+
+    </div>
+    <div id="togglechat" class="btntogglechat"> <button id="togglechat" class="clickable" onclick="togglechat()">toggle chat</button> </div>
 
     <div id="chat" class="gamechat">
         <iframe style="width:700px;height:240px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
         </iframe>
     </div>
-    <div> 
+    <div>
         <form action="" method="POST">
             <button class="surrender" name="surrender">surrender</button>
         </form>
     </div>
-    <div > 
+    <div>
         <form action="" method="POST">
             <button class="endturn" name="endturn" type=submit>end-turn</button>
         </form>
     </div>
-    </div>
+</div>
 </div>
 
 <?php
