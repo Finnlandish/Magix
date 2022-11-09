@@ -29,8 +29,8 @@ require_once("partial/header.php");
         <div class="area" id="enemystat"></div>
 
         <div class="cardbox">
-            <div class="area" id="enemycards"></div>
-            <div class="area" id="mycards"></div>
+            <div class="area" id="enemycardBox"></div>
+            <div class="area" id="mycardBox"></div>
         </div>
 
         <div class="area" id="mydeck"></div>

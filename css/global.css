@@ -132,51 +132,59 @@ ul.nav>li>a {
     align-items: center;
     justify-content: center;
 }
-#bush{
-    position: absolute;
-}
-#foliage{
-    position: absolute;
 
-}
-#monument2{
+#bush {
     position: absolute;
+}
 
-}
-#trees{
+#foliage {
     position: absolute;
+}
 
-}
-#treeright{
+#monument2 {
     position: absolute;
+}
 
-}
-#mony{
+#trees {
     position: absolute;
 }
-#poliwag{
-    position: absolute;    
+
+#treeright {
+    position: absolute;
+}
+
+#mony {
+    position: absolute;
+}
+
+#poliwag {
+    position: absolute;
     width: auto;
     height: 10vh;
 }
-#pichu{
+
+#pichu {
     position: absolute;
     width: auto;
     height: 10vh;
 }
-#wooper{
+
+#wooper {
     position: absolute;
     width: auto;
     height: 20vh;
     bottom: 7vh;
     right: 1vh;
-    transform: rotate(-9deg);}
-#eevee{
+    transform: rotate(-9deg);
+}
+
+#eevee {
     position: absolute;
     width: auto;
     height: 10vh;
     left: 10vh;
 }
+
 .titleloggin {}
 
 .box {
@@ -195,6 +203,10 @@ ul.nav>li>a {
     color: black;
     align-items: center;
     justify-content: center;
+}
+
+.lobbybutton {
+    display: flex;
 }
 
 .champ {
@@ -281,7 +293,7 @@ ul.nav>li>a {
 .surrender {
     width: 16vh;
     position: absolute;
-    top: 80vh;
+    top: 50vh;
     right: 0.5vh;
 }
 
@@ -291,42 +303,71 @@ ul.nav>li>a {
     top: 55vh;
     right: 0.5vh;
 }
-.area{
 
+#area {
+    background-color: rgba(195, 231, 200, 0.596);
+    width: 550px;
+    height: 800px;
+    border: 2px solid rgb(235, 112, 36);
 }
-.enemystat {
+
+#enemystat {
     opacity: 50%;
     position: absolute;
-    top: 3vh;
+    top: 0vh;
     width: 100vw;
     height: 11vh;
-    background-color: #3c47e7;
+    background-color: #a1093c;
 }
 
-.cardbox {
+.boardbox {
     position: absolute;
-    bottom: 0vh;
+    bottom: 10vh;
+    background-color: rgba(195, 231, 200, 0.596);
     transform: translate(0, -50%);
     height: 52vh;
+    width: 100vh;
     align-content: center;
     opacity: 50%;
 }
 
-.enemycards {
-    background-image: url("../img/carte.png");
-    width: 100px;
-    height: 150px;
-    border: 2px solid rgb(235, 112, 36);
+.mycardBox {
+    position: absolute;
+    bottom: 0vh;
+    background-color: rgb(138, 214, 228);
+    transform: translate(0, -50%);
+    height: 26vh;
+    width: 100vh;
+    align-content: center;
+    opacity: 50%;
+    display: flex;
 }
 
-.mycards {
-    background-image: url("../img/carte.png");
-    width: 100px;
-    height: 150px;
-    border: 2px solid rgb(159, 244, 237);
+.enemycardBox {
+    position: relative;
+    top: 0vh;
+    background-color: rgb(253, 0, 0);
+    transform: translate(0, -50%);
+    height: 26vh;
+    width: 100vh;
+    align-content: center;
+    opacity: 50%;
+    display: flex;
+}
+
+.card {
+    background-color: #ffee00;
+    width: 150px;
+    height: 200px;
 }
 
 .mydeck {
+    background-image: url("../img/carte.png");
+    width: 150px;
+    height: 200px;
+}
+
+#mydeckbox {
     opacity: 50%;
     position: absolute;
     width: 75vw;
@@ -335,13 +376,24 @@ ul.nav>li>a {
     bottom: 11vh;
 }
 
-.mystats {
+#mydeck {
+    opacity: 50%;
+    position: absolute;
+    width: 100vw;
+    height: 20vh;
+    background-color: #9de73c;
+    bottom: 11vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+#mystats {
     opacity: 50%;
     position: absolute;
     bottom: 0vh;
     width: 100vw;
     height: 11vh;
-    background-color: #3c47e7;
+    background-color: #3ce7de;
 }
 
 
