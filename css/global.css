@@ -317,52 +317,41 @@ ul.nav>li>a {
     top: 0vh;
     width: 100vw;
     height: 11vh;
-    background-color: #a1093c;
+    background-color: #9b0036;
 }
 
-.boardbox {
-    position: absolute;
-    bottom: 10vh;
-    background-color: rgba(195, 231, 200, 0.596);
-    transform: translate(0, -50%);
-    height: 52vh;
-    width: 100vh;
-    align-content: center;
-    opacity: 50%;
-}
-
-.mycardBox {
-    position: absolute;
-    bottom: 0vh;
-    background-color: rgb(138, 214, 228);
-    transform: translate(0, -50%);
-    height: 26vh;
-    width: 100vh;
-    align-content: center;
-    opacity: 50%;
-    display: flex;
-}
-
-.enemycardBox {
+#enemycardBox {
     position: relative;
-    top: 0vh;
+    top: 26vh;
     background-color: rgb(253, 0, 0);
     transform: translate(0, -50%);
     height: 26vh;
-    width: 100vh;
+    width: 100vw;
     align-content: center;
     opacity: 50%;
     display: flex;
 }
 
-.card {
-    background-color: #ffee00;
+#enemycardBox>* {
+    background-color: #ff0000;
     width: 150px;
     height: 200px;
 }
 
-.mydeck {
-    background-image: url("../img/carte.png");
+#mycardBox {
+    position: absolute;
+    bottom: 20vh;
+    background-color: rgb(138, 214, 228);
+    transform: translate(0, -50%);
+    height: 26vh;
+    width: 100vw;
+    align-content: center;
+    opacity: 50%;
+    display: flex;
+}
+
+#mycardBox>* {
+    background-color: #06ff3c;
     width: 150px;
     height: 200px;
 }
@@ -370,10 +359,16 @@ ul.nav>li>a {
 #mydeckbox {
     opacity: 50%;
     position: absolute;
-    width: 75vw;
+    width: 100vw;
     height: 20vh;
     background-color: #9de73c;
     bottom: 11vh;
+}
+
+#mydeckbox>* {
+    background-color: #06ff3c;
+    width: 150px;
+    height: 200px;
 }
 
 #mydeck {
