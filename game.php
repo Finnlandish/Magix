@@ -42,7 +42,7 @@ require_once("partial/header.php");
     </div>
     <div>
         <form action="" method="POST">
-            <button class="surrender" name="surrender">surrender</button>
+            <button id="surrender" class="surrender" name="surrender">surrender</button>
         </form>
     </div>
     <div>
