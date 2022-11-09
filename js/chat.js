@@ -1,11 +1,11 @@
-// function togglechat() {
-//     var x = document.getElementById("chat");
-//     if (x.style.display === "none") {
-//         x.style.display = "block";
-//     } else {
-//         x.style.display = "none";
-//     }
-// }
+function togglechat() {
+    var x = document.getElementById("chat");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
 const applyStyles = iframe => {
 
     let styles = {
