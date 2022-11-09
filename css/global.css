@@ -246,7 +246,9 @@ ul.nav>li>a {
     top: 55vh;
     right: 0.5vh;
 }
+.area{
 
+}
 .enemystat {
     opacity: 50%;
     position: absolute;
@@ -266,19 +268,17 @@ ul.nav>li>a {
 }
 
 .enemycards {
-    opacity: 50%;
-    width: auto;
-    width: 75vw;
-    height: 26vh;
-    background-color: #3cc5e7;
+    background-image: url("../img/carte.png");
+    width: 100px;
+    height: 150px;
+    border: 2px solid rgb(235, 112, 36);
 }
 
 .mycards {
-    opacity: 50%;
-    width: auto;
-    width: 75vw;
-    height: 26vh;
-    background-color: #67c6dd;
+    background-image: url("../img/carte.png");
+    width: 100px;
+    height: 150px;
+    border: 2px solid rgb(159, 244, 237);
 }
 
 .mydeck {

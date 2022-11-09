@@ -32,7 +32,6 @@
                 $result = CommonAction::callAPI("games/action", $data);
                 if ($result == "INVALID_GAME_TYPE") {
                     $data["key"] = $_SESSION["key"];
-                    $data["type"] = "SURRENDER";
                     $messageErr = "";
                     $messageErr = $result;
                 }    

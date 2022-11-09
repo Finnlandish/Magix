@@ -15,7 +15,7 @@ class LobbyAction extends CommonAction
         $data["username"] = !empty($_SESSION["username"]);
 
 
-        if (isset($_POST["loggout"])) {
+        if (isset($_POST["loggout"])){
             $data["key"] = $_SESSION["key"];
             $result = CommonAction::callAPI("signout", $data);
             $messageErr = $result;
@@ -25,7 +25,7 @@ class LobbyAction extends CommonAction
                 header("location:index.php");
                 exit;
             }
-        } else if (isset($_POST["PVP"])) {
+        } else if (isset($_POST["PVP"])){
             $data["key"] = $_SESSION["key"];
             $data["type"] = "PVP";
             $result = CommonAction::callAPI("games/auto-match", $data);
@@ -46,11 +46,10 @@ class LobbyAction extends CommonAction
                 $messageErr = "";
                 $messageErr = $result;
             } elseif ($result == "MAX_DEATH_THRESHOLD_REACHED") {
-
                 $messageErr = "";
                 $messageErr = $result;
             }
-        } else if (isset($_POST["TRAINING"])) {
+        } else if (isset($_POST["TRAINING"])){
             $data["key"] = $_SESSION["key"];
             $data["type"] = "TRAINING";
             $result = CommonAction::callAPI("games/auto-match", $data);
