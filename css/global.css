@@ -330,42 +330,27 @@ ul.nav>li>a {
     align-content: center;
     opacity: 50%;
     display: flex;
+    justify-content: space-around;
 }
 
 #enemycardBox>* {
-    background-color: #ff0000;
+    background-color: #d44006;
     width: 150px;
     height: 200px;
 }
 
 #mycardBox {
-    position: absolute;
-    bottom: 20vh;
-    background-color: rgb(138, 214, 228);
-    transform: translate(0, -50%);
-    height: 26vh;
-    width: 100vw;
-    align-content: center;
-    opacity: 50%;
-    display: flex;
-}
-
-#mycardBox>* {
-    background-color: #06ff3c;
-    width: 150px;
-    height: 200px;
-}
-
-#mydeckbox {
     opacity: 50%;
     position: absolute;
     width: 100vw;
     height: 20vh;
     background-color: #9de73c;
     bottom: 11vh;
+    display: flex;
+    justify-content: space-around;
 }
 
-#mydeckbox>* {
+#mycardBox>* {
     background-color: #06ff3c;
     width: 150px;
     height: 200px;
@@ -379,7 +364,13 @@ ul.nav>li>a {
     background-color: #9de73c;
     bottom: 11vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+#mydeck>* {
+    background-color: #06ff3c;
+    width: 150px;
+    height: 200px;
 }
 
 #mystats {
