@@ -185,7 +185,9 @@ ul.nav>li>a {
     left: 10vh;
 }
 
-.titleloggin {}
+.titleloggin {
+    font-size: larger;
+}
 
 .box {
     position: relative;
@@ -342,8 +344,6 @@ ul.nav>li>a {
     min-height: 383px;
 }
 
-
-}
 #mycardBox {
     position: absolute;
     width: 100vw;
@@ -353,6 +353,7 @@ ul.nav>li>a {
     display: flex;
     justify-content: space-around;
 }
+
 #mycardBox>* {
     background-color: #06ff3c;
     max-width: 270px;
@@ -360,6 +361,7 @@ ul.nav>li>a {
     min-width: 270px;
     min-height: 383px;
 }
+
 #mydeck {
     position: absolute;
     width: 100vw;
@@ -369,6 +371,7 @@ ul.nav>li>a {
     display: flex;
     justify-content: space-around;
 }
+
 #mydeck>* {
     background-color: #78cbda;
     background-image: url("../img/carte.png");
@@ -380,7 +383,6 @@ ul.nav>li>a {
     min-height: 383px;
 }
 
-}
 #mystats {
     position: absolute;
     bottom: 0vh;
@@ -389,21 +391,23 @@ ul.nav>li>a {
     background-color: #3ce7de;
 }
 
+
 /* pokeball blink */
+
 .child-to-body {
     width: 300px;
     height: 400px;
     flex-shrink: 0;
 }
+
 .poke_box {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%,
-    -50%);
-    transform: translate(-50%,
-    -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
+
 .pokeball {
     position: relative;
     width: 150px;
@@ -413,15 +417,14 @@ ul.nav>li>a {
     border-radius: 50%;
     overflow: hidden;
     box-shadow: inset -10px 10px 0 10px #ccc;
-    animation: shake 1.25s cubic-bezier(.36,
-    .07,
-    .19,
-    .97) infinite;
+    animation: shake 1.25s cubic-bezier(.36, .07, .19, .97) infinite;
     animation-play-state: paused;
 }
+
 .pokeball:active {
     animation-play-state: running;
 }
+
 @keyframes shake {
     0% {
         transform: translate(0, 0) rotate(0);
@@ -442,22 +445,26 @@ ul.nav>li>a {
         transform: translate(0, 0) rotate(0);
     }
 }
+
 .pokeball::before,
 .pokeball::after {
     content: "";
     position: absolute;
 }
+
 .pokeball::before {
     background: red;
     width: 100%;
     height: 50%;
 }
+
 .pokeball::after {
     top: calc(50% - 5px);
     width: 100%;
     height: 10px;
     background: #000;
 }
+
 .pokeball__button {
     position: absolute;
     top: calc(50% - 15px);
@@ -472,9 +479,11 @@ ul.nav>li>a {
     animation: blink .5s alternate infinite;
     animation-play-state: paused;
 }
+
 .pokeball:active .pokeball__button {
     animation-play-state: running;
 }
+
 @keyframes blink {
     from {
         background: #eee;
@@ -482,8 +491,4 @@ ul.nav>li>a {
     to {
         background: #e74c3c;
     }
-}
-
-}
-
 }
