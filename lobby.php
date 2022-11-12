@@ -11,7 +11,7 @@
     <script src="./js/chat.js"></script>
     <div class="lobby">
         <div>
-            <h1>Welcome <?= $data["username"] ?></h1>
+            <h1>Welcome To Magix  <?= $_SESSION["username"] ?></h1>
         </div>
          <?php
 		if (!empty($data["message"] )) {

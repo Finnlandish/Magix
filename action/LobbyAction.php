@@ -34,7 +34,7 @@ class LobbyAction extends CommonAction
 
                 header("location:game.php");
                 exit;
-            } elseif ($result == "INVALID_KE") {
+            } elseif ($result == "INVALID_KEY") {
 
                 $messageErr = "";
                 $messageErr = $result;

@@ -12,20 +12,20 @@
             $data = [];
             $data["key"] = $_SESSION["key"];
 
-            // if(isset($_POST["surrender"])){
-            //     $data["key"] = $_SESSION["key"];
-            //     $data["type"] = "SURRENDER";
-            //     $result = CommonAction::callAPI("games/action", $data);
-            //     if ($result == "SURRENDER") {
-            //         $data["key"] = $_SESSION["key"];
-            //         $data["type"] = "SURRENDER";
-            //         $messageErr = "";
-            //         $messageErr = $result;
-            //         header("location:lobby.php");
-            //         exit;
-            //     }    
+            if(isset($_POST["surrender"])){
+                $data["key"] = $_SESSION["key"];
+                $data["type"] = "SURRENDER";
+                $result = CommonAction::callAPI("games/action", $data);
+                if ($result == "SURRENDER") {
+                    $data["key"] = $_SESSION["key"];
+                    $data["type"] = "SURRENDER";
+                    $messageErr = "";
+                    $messageErr = $result;
+                    header("location:lobby.php");
+                    exit;
+                }    
             
-            // }
+            }
             if(isset($_POST["endturn"])){
                 $data["key"] = $_SESSION["key"];
                 $data["type"] = "END_TURN";
