@@ -305,7 +305,12 @@ ul.nav>li>a {
     top: 55vh;
     right: 0.5vh;
 }
-
+.backLobby {
+    width: 16vh;
+    position: absolute;
+    top: 60vh;
+    right: 0.5vh;
+}
 #area {
     background-color: rgba(195, 231, 200, 0.596);
     width: 550px;
@@ -319,6 +324,22 @@ ul.nav>li>a {
     width: 100vw;
     height: 11vh;
     background-color: #9b0036;
+}
+#enemydeck{
+    position:absolute;
+    top:0vh;
+    background-color: #000;
+    width: 35vw;
+    height: 11vh;
+    display: flex;
+    justify-content: space-around;
+}
+.flipedCard{
+    background-image: url("../img/cardflipped.png");
+    max-width: 67.5px;
+    max-height: 95.75px;
+    min-width: 67.5px;
+    min-height: 95.75px;
 }
 
 #enemycardBox {
@@ -338,10 +359,10 @@ ul.nav>li>a {
     background-image: url("../img/carte.png");
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 270px;
-    max-height: 383px;
-    min-width: 270px;
-    min-height: 383px;
+    max-width: 135px;
+    max-height: 191.5px;
+    min-width: 135px;
+    min-height: 191.5px;
 }
 
 #mycardBox {
@@ -356,10 +377,10 @@ ul.nav>li>a {
 
 #mycardBox>* {
     background-color: #06ff3c;
-    max-width: 270px;
-    max-height: 383px;
-    min-width: 270px;
-    min-height: 383px;
+    max-width: 135px;
+    max-height: 191.5px;
+    min-width: 135px;
+    min-height: 191.5px;
 }
 
 #mydeck {
@@ -377,10 +398,10 @@ ul.nav>li>a {
     background-image: url("../img/carte.png");
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 270px;
-    max-height: 383px;
-    min-width: 270px;
-    min-height: 383px;
+    max-width: 135px;
+    max-height: 191.5px;
+    min-width: 135px;
+    min-height: 191.5px;
 }
 
 #mystats {

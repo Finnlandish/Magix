@@ -38,7 +38,12 @@ const créer_area = (data, area) => {
         card.appendChild(document.createElement("br"));
         card.appendChild(document.createTextNode(" mechanic : " + e.mechanics))
         document.getElementById(area).appendChild(card);
+        card.className="cards"
+        // card.onclick(playcard());
     });
+}
+const playcard =(data)=> {
+    board.append(data)
 }
 const créer_stats = (data, area) => {
     data.forEach(e => {
@@ -51,13 +56,23 @@ const créer_jeu = (data) => {
     let mycards = data.board;
     créer_area(deck, "mydeck");
     créer_area(mycards, "mycardBox");
-
 }
 const creer_enemy = (data) => {
     let enemycards = data.opponent.board;
+    
     créer_area(enemycards, "enemycardBox");
-}
 
+}
+const creer_enemydeck=(data)=> {
+    let deck = data.opponent.handSize;
+    for (let i = 0; i < data.opponent.handSize; i++) {
+        let card = document.createElement("div")
+        card.className="flipedCard"
+        document.getElementById("enemydeck").appendChild(card);
+        card.className="flipedCard"
+
+    }
+}
 
 const tickJeu = () => {
     document.getElementById("mydeck").innerHTML = "";
@@ -68,6 +83,15 @@ const tickJeu = () => {
 }
 
 
+
+
+const heroPower=()=>{
+    let data = new FormData();
+    data.append('POWER','skip')
+}
+const back=() => {
+    window.location = 'lobby.php';
+}
 
 // document.getElementById("surrender").onclick = surrender(;
 

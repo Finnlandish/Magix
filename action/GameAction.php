@@ -37,8 +37,11 @@
                 }    
             
             }
-
-
+            if(isset($_POST["backLobby"])){
+               header("location:lobby.php");
+               exit;
+            
+            }
             return compact("messageErr");
         }
     }

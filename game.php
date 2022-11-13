@@ -24,10 +24,11 @@ require_once("partial/header.php");
     </div>
 
     <div class="board" id="board">
+
         <div class="action" id="timer"></div>
 
         <div class="area" id="enemystat"></div>
-
+        <div class="area" id="enemydeck"></div>
         <div class="area" id="enemycardBox"></div>
         <div class="area" id="mycardBox"></div>
         <div class="area" id="mydeck"></div>
@@ -48,6 +49,11 @@ require_once("partial/header.php");
     <div>
         <form action="" method="POST">
             <button class="endturn" name="endturn" type=submit>end-turn</button>
+        </form>
+    </div>
+    <div>
+        <form action="" method="POST">
+            <button class="backLobby" name="backLobby" type=submit>backLobby</button>
         </form>
     </div>
 </div>
