@@ -15,6 +15,7 @@ const state = () => {
             tickJeu()
             créer_jeu(data)
             creer_enemy(data)
+            creer_enemydeck(data)
         }
         setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
 
@@ -64,7 +65,6 @@ const creer_enemy = (data) => {
 
 }
 const creer_enemydeck=(data)=> {
-    let deck = data.opponent.handSize;
     for (let i = 0; i < data.opponent.handSize; i++) {
         let card = document.createElement("div")
         card.className="flipedCard"
@@ -78,7 +78,7 @@ const tickJeu = () => {
     document.getElementById("mydeck").innerHTML = "";
     document.getElementById("mycardBox").innerHTML = "";
     document.getElementById("enemycardBox").innerHTML = "";
-
+    document.getElementById("enemydeck").innerHTML = "";
 
 }
 

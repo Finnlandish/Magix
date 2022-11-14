@@ -328,7 +328,6 @@ ul.nav>li>a {
 #enemydeck{
     position:absolute;
     top:0vh;
-    background-color: #000;
     width: 35vw;
     height: 11vh;
     display: flex;
@@ -336,6 +335,8 @@ ul.nav>li>a {
 }
 .flipedCard{
     background-image: url("../img/cardflipped.png");
+    background-repeat: no-repeat;
+    background-size: contain;
     max-width: 67.5px;
     max-height: 95.75px;
     min-width: 67.5px;
@@ -345,7 +346,6 @@ ul.nav>li>a {
 #enemycardBox {
     position: relative;
     top: 26vh;
-    background-color: rgb(253, 0, 0);
     transform: translate(0, -50%);
     height: 26vh;
     width: 100vw;
@@ -359,6 +359,8 @@ ul.nav>li>a {
     background-image: url("../img/carte.png");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
+
     max-width: 135px;
     max-height: 191.5px;
     min-width: 135px;
@@ -396,6 +398,8 @@ ul.nav>li>a {
 #mydeck>* {
     background-color: #78cbda;
     background-image: url("../img/carte.png");
+    background-size: contain;
+
     background-repeat: no-repeat;
     background-position: center;
     max-width: 135px;
