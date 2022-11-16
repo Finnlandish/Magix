@@ -368,7 +368,6 @@ ul.nav>li>a {
 }
 
 #mycardBox {
-    background-color: #9de73c;
     position: absolute;
     width: 80vw;
     height: 20vh;
@@ -380,6 +379,9 @@ ul.nav>li>a {
 
 #mycardBox>* {
     background-image: url("../img/card.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     max-width: 135px;
     max-height: 191.5px;
     min-width: 135px;
