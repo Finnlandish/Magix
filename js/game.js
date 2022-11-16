@@ -48,14 +48,13 @@ const créer_hand = (data, area) => {
         card.className = "cards"
         cards.push(card.id)
 
-        card.onclick = playcard(data)
+        card.onclick = playcard(card)
     });
 }
 const créer_enemy_board = (data, area) => {
     data.forEach(e => {
         let card = document.createElement("div");
         card.id = e.uid
-
         card.appendChild(document.createTextNode(" Hp : " + e.hp))
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createTextNode(" Cost : " + e.cost))
@@ -70,11 +69,7 @@ const créer_enemy_board = (data, area) => {
         enemycards.push(card)
     });
 }
-const playcard = (data) => {
-    form = new FormData()
-    form.append("type")
-        // mycards.push(card)
-}
+
 const créer_stats = (data, area) => {
 
     let stat = document.createElement("div")
@@ -154,6 +149,16 @@ const tickJeu = () => {
 const heroPower = () => {
     let data = new FormData()
     data.append('POWER', 'skip')
+}
+const playcard = (card) => {
+    let form = new FormData()
+    form.append("type", "PLAY")
+
+}
+const attackcard = (card) => {
+    let form = new FormData()
+    form.append("type", "PLAY")
+
 }
 const back = () => {
     window.location = 'lobby.php'

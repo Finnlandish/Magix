@@ -13,21 +13,16 @@
             $result ="";
             $result = CommonAction::callAPI("games/state", $data);
                
-            if($result == "WAITING"){
-                $messageErr = "";
-                $messageErr = "En attente d’un autre joueur";
+            if (!empty($_POST["type"])) {
+				if ($_POST["type"] === "PLAY") {
+                    $data = [];
+                    $data["key"] = $_SESSION["key"];
+                    $result ="";
+                    $result = CommonAction::callAPI("games/action", $data);
 
-            }
-            elseif($result == "LAST_GAME_WON"){
-                $messageErr = "";
-                $messageErr = "La partie n’existe plus, mais la dernière partie jouée a été gagnée";
-
-            }
-            elseif($result == "LAST_GAME_LOST"){
-                $messageErr = "";
-                $messageErr = "La dernière partie n’existe plus et vous l’aviez perdue";
-
-            }
+                }
+				
+			}
              
             return compact("result");
         }
