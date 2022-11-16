@@ -13,14 +13,15 @@ const state = () => {
         console.log(data); // contient les cartes/état du jeu.
         if (typeof data == "object") {
 
-
             tickJeu()
 
             timer(data)
             add_hand(data)
+            add_board(data)
             add_enemy_board(data)
             creer_enemy_hand(data)
             add_stat(data)
+
         }
         setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
 
@@ -34,6 +35,9 @@ let playedCards = []
 const créer_hand = (data, area) => {
     data.forEach(e => {
         let card = document.createElement("div")
+        let card_uid = e.uid
+        let card_id = e.id
+
         card.id = e.uid
         card.appendChild(document.createTextNode(" Hp : " + e.hp))
         card.appendChild(document.createElement("br"))
@@ -46,9 +50,20 @@ const créer_hand = (data, area) => {
         card.appendChild(document.createTextNode(" mechanic : " + e.mechanics))
         document.getElementById(area).appendChild(card)
         card.className = "cards"
-        cards.push(card.id)
 
-        card.onclick = playcard(card)
+        card.onclick = () => {
+            console.log("clicked")
+            let form = new FormData()
+            form.append("type", "PLAY")
+            form.append("uid", card_uid)
+            form.append("id", card_id)
+            fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
+                    method: "POST", // l’API (games/state)
+                    body: form
+                })
+                .then(response => response.json())
+                .then(data => {})
+        }
     });
 }
 const créer_enemy_board = (data, area) => {
@@ -119,8 +134,10 @@ const creer_enemy_hand = (data) => {
     }
 }
 
-const creer_enemy_stats = (data) => {
+const add_board = (data) => {
+    let myboard = data.board
 
+    créer_enemy_board(myboard, "mycardBox")
 }
 
 const timer = (data) => {
@@ -150,11 +167,7 @@ const heroPower = () => {
     let data = new FormData()
     data.append('POWER', 'skip')
 }
-const playcard = (card) => {
-    let form = new FormData()
-    form.append("type", "PLAY")
 
-}
 const attackcard = (card) => {
     let form = new FormData()
     form.append("type", "PLAY")
@@ -170,6 +183,7 @@ const back = () => {
 //     header("location:lobby.php");
 
 // }
+
 window.addEventListener("load", () => {
 
     setTimeout(state, 1000); // Appel initial (attendre 1 seconde)

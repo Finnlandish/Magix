@@ -338,10 +338,8 @@ ul.nav>li>a {
     background-image: url("../img/cardflipped.png");
     background-repeat: no-repeat;
     background-size: contain;
-    max-width: 67.5px;
-    max-height: 95.75px;
-    min-width: 67.5px;
-    min-height: 95.75px;
+    width: 67.5px;
+    height: 95.75px;
 }
 
 #enemycardBox {
