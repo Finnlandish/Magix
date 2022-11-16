@@ -25,14 +25,15 @@ require_once("partial/header.php");
 
     <div class="board" id="board">
 
-        <div class="action" id="timer"></div>
+        <div class="timer" id="timer"></div>
 
-        <div class="area" id="enemystat"></div>
+        <div class="enemystats" id="enemystats"></div>
         <div class="area" id="enemydeck"></div>
         <div class="area" id="enemycardBox"></div>
         <div class="area" id="mycardBox"></div>
         <div class="area" id="mydeck"></div>
         <div class="area" id="mystats"></div>
+
 
     </div>
     <div id="togglechat" class="btntogglechat"> <button id="togglechat" class="clickable" onclick="togglechat()">toggle chat</button> </div>
@@ -54,6 +55,11 @@ require_once("partial/header.php");
     <div>
         <form action="" method="POST">
             <button class="backLobby" name="backLobby" type=submit>backLobby</button>
+        </form>
+    </div>
+    <div>
+        <form action="" method="POST">
+            <button  class="heroPower" id="heroPower" name="heroPower" type=submit>heroPower</button>
         </form>
     </div>
 </div>

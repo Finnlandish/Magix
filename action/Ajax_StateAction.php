@@ -27,7 +27,8 @@
                 $messageErr = "";
                 $messageErr = "La dernière partie n’existe plus et vous l’aviez perdue";
 
-            }    
+            }
+             
             return compact("result");
         }
     }
