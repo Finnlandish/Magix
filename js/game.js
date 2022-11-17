@@ -31,6 +31,7 @@ const state = () => {
 let cards = []
 let enemycards = []
 let playedCards = []
+
 let attackform = new FormData()
 const créer_hand = (data, area) => {
     data.forEach(e => {
@@ -94,6 +95,9 @@ const créer_board = (data, area) => {
         enemycards.push(card)
         card.onclick = () => {
             console.log("clicked")
+            attackform.delete('type')
+            attackform.delete('uid')
+
             attackform.append("type", "ATTACK")
             attackform.append("uid", card_uid)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
@@ -125,6 +129,7 @@ const créer_enemy_board = (data, area) => {
         enemycards.push(card)
         card.onclick = () => {
             console.log("clicked")
+            attackform.delete('targetuid')
             attackform.append("targetuid", card_uid)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
                 method: "POST", // l’API (games/state)
@@ -163,6 +168,7 @@ const créer_enemy_stats = (data, area) => {
     document.getElementById(area).appendChild(stat)
     stat.onclick = () => {
         console.log("clicked")
+        attackform.delete('targetuid')
         attackform.append("targetuid", 0)
         fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
             method: "POST", // l’API (games/state)
@@ -205,7 +211,7 @@ const clear_attackform = (data) => {
             attackform.delete(pair[0]);
         }
     }
-    
+    console.log(attackform)
 }
 
 const tickJeu = () => {
@@ -227,15 +233,18 @@ const tickJeu = () => {
 
 
 const heroPower = () => {
-    let data = new FormData()
-    data.append('POWER', 'skip')
-}
-
-const attackcard = (card) => {
     let form = new FormData()
-    form.append("type", "PLAY")
+    form.append('type', 'HERO_POWER')
+    fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
+        method: "POST", // l’API (games/state)
+        body: form
+    })
+        .then(response => response.json())
+        .then(data => { })
 
 }
+
+
 const back = () => {
     window.location = 'lobby.php'
 }
