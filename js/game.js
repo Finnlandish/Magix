@@ -6,32 +6,32 @@ const state = () => {
 
     })
 
-    .then(response => response.json())
+        .then(response => response.json())
 
-    .then(data => {
+        .then(data => {
 
-        console.log(data); // contient les cartes/état du jeu.
-        if (typeof data == "object") {
+            console.log(data); // contient les cartes/état du jeu.
+            if (typeof data == "object") {
 
-            tickJeu()
+                tickJeu()
 
-            timer(data)
-            add_hand(data)
-            add_board(data)
-            add_enemy_board(data)
-            creer_enemy_hand(data)
-            add_stat(data)
+                timer(data)
+                add_hand(data)
+                add_board(data)
+                add_enemy_board(data)
+                creer_enemy_hand(data)
+                add_stat(data)
 
-        }
-        setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+            }
+            setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
 
-    })
+        })
 
 }
 let cards = []
 let enemycards = []
 let playedCards = []
-
+let attackform = new FormData()
 const créer_hand = (data, area) => {
     data.forEach(e => {
         let card = document.createElement("div")
@@ -52,24 +52,34 @@ const créer_hand = (data, area) => {
         card.className = "cards"
 
         card.onclick = () => {
-            console.log("clicked")
             let form = new FormData()
             form.append("type", "PLAY")
             form.append("uid", card_uid)
             form.append("id", card_id)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                    method: "POST", // l’API (games/state)
-                    body: form
-                })
+                method: "POST", // l’API (games/state)
+                body: form
+            })
                 .then(response => response.json())
-                .then(data => {})
+                .then(data => { })
         }
     });
 }
-const créer_enemy_board = (data, area) => {
+const creer_enemy_hand = (data) => {
+    for (let i = 0; i < data.opponent.handSize; i++) {
+        let card = document.createElement("div")
+        card.className = "flipedCard"
+        document.getElementById("enemydeck").appendChild(card)
+        card.className = "flipedCard"
+
+    }
+}
+
+const créer_board = (data, area) => {
     data.forEach(e => {
         let card = document.createElement("div");
         card.id = e.uid
+        let card_uid = e.uid
         card.appendChild(document.createTextNode(" Hp : " + e.hp))
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createTextNode(" Cost : " + e.cost))
@@ -82,6 +92,48 @@ const créer_enemy_board = (data, area) => {
         document.getElementById(area).appendChild(card)
         card.className = "enemyboard"
         enemycards.push(card)
+        card.onclick = () => {
+            console.log("clicked")
+            attackform.append("type", "ATTACK")
+            attackform.append("uid", card_uid)
+            fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
+                method: "POST", // l’API (games/state)
+                body: attackform
+            })
+                .then(response => response.json())
+                .then(data => { })
+        }
+
+    });
+}
+const créer_enemy_board = (data, area) => {
+    data.forEach(e => {
+        let card = document.createElement("div");
+        card.id = e.uid
+        let card_uid = e.uid
+        card.appendChild(document.createTextNode(" Hp : " + e.hp))
+        card.appendChild(document.createElement("br"))
+        card.appendChild(document.createTextNode(" Cost : " + e.cost))
+        card.appendChild(document.createElement("br"))
+        card.appendChild(document.createTextNode(" Dmg : " + e.atk))
+        card.appendChild(document.createElement("br"))
+        card.appendChild(document.createElement("br"))
+        card.appendChild(document.createElement("br"))
+        card.appendChild(document.createTextNode(" mechanic : " + e.mechanics))
+        document.getElementById(area).appendChild(card)
+        card.className = "enemyboard"
+        enemycards.push(card)
+        card.onclick = () => {
+            console.log("clicked")
+            attackform.append("targetuid", card_uid)
+            fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
+                method: "POST", // l’API (games/state)
+                body: attackform
+            })
+                .then(response => response.json())
+                .then(data => { })
+        }
+
     });
 }
 
@@ -95,28 +147,40 @@ const créer_stats = (data, area) => {
     stat.appendChild(document.createTextNode(" Mp : " + data.mp))
     stat.appendChild(document.createElement("br"))
     document.getElementById(area).appendChild(stat)
-}
-const add_stat = (data) => {
 
-    créer_stats(data, "mystats")
-    créer_stats(data.opponent, "enemystats")
 }
-const add_ememy_stat = (data) => {
+const créer_enemy_stats = (data, area) => {
+
     let stat = document.createElement("div")
-    stat.appendChild(document.createTextNode(" class : " + data.opponent.username))
+    stat.appendChild(document.createTextNode(" Enemy : " + data.username))
     stat.appendChild(document.createElement("br"))
-    stat.appendChild(document.createTextNode(" class : " + data.opponent.heroClass))
+    stat.appendChild(document.createTextNode(" Class : " + data.heroClass))
     stat.appendChild(document.createElement("br"))
-    stat.appendChild(document.createTextNode(" Hp : " + data.opponent.hp))
+    stat.appendChild(document.createTextNode(" Hp : " + data.hp))
     stat.appendChild(document.createElement("br"))
-    stat.appendChild(document.createTextNode(" Mp : " + data.opponent.mp))
+    stat.appendChild(document.createTextNode(" Mp : " + data.mp))
     stat.appendChild(document.createElement("br"))
     document.getElementById(area).appendChild(stat)
+    stat.onclick = () => {
+        console.log("clicked")
+        attackform.append("targetuid", 0)
+        fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
+            method: "POST", // l’API (games/state)
+            body: attackform
+        })
+            .then(response => response.json())
+            .then(data => { })
+    }
 }
 
 const add_hand = (data) => {
     let deck = data.hand;
     créer_hand(deck, "mydeck")
+}
+const add_board = (data) => {
+    let myboard = data.board
+
+    créer_board(myboard, "mycardBox")
 }
 const add_enemy_board = (data) => {
     let enemycards = data.opponent.board
@@ -124,25 +188,24 @@ const add_enemy_board = (data) => {
     créer_enemy_board(enemycards, "enemycardBox")
 
 }
-const creer_enemy_hand = (data) => {
-    for (let i = 0; i < data.opponent.handSize; i++) {
-        let card = document.createElement("div")
-        card.className = "flipedCard"
-        document.getElementById("enemydeck").appendChild(card)
-        card.className = "flipedCard"
+const add_stat = (data) => {
 
-    }
-}
-
-const add_board = (data) => {
-    let myboard = data.board
-
-    créer_enemy_board(myboard, "mycardBox")
+    créer_stats(data, "mystats")
+    créer_enemy_stats(data.opponent, "enemystats")
 }
 
 const timer = (data) => {
     let time = data.remainingTurnTime
     document.getElementById("timer").innerHTML = time
+}
+const clear_attackform = (data) => {
+    if(!data.yourTurn){
+        var entries = attackform.entries();
+        for (var pair of entries) {
+            attackform.delete(pair[0]);
+        }
+    }
+    
 }
 
 const tickJeu = () => {

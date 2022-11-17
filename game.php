@@ -36,11 +36,13 @@ require_once("partial/header.php");
 
 
     </div>
-    <div id="togglechat" class="btntogglechat"> <button id="togglechat" class="clickable" onclick="togglechat()">toggle chat</button> </div>
+    <div id="togglechat" class="btntogglechat"> <button id="togglechat" class="clickable" onclick="togglechat()">toggle chat</button>
 
-    <div id="chat" class="gamechat">
-        <iframe style="width:700px;height:240px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
-        </iframe>
+        <div id="chat" class="gamechat">
+            <iframe style="width:700px;height:240px;" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
+            </iframe>
+
+        </div>
     </div>
     <div>
         <form action="" method="POST">
@@ -59,7 +61,7 @@ require_once("partial/header.php");
     </div>
     <div>
         <form action="" method="POST">
-            <button  class="heroPower" id="heroPower" name="heroPower" type=submit>heroPower</button>
+            <button class="heroPower" id="heroPower" name="heroPower" type=submit>heroPower</button>
         </form>
     </div>
 </div>
