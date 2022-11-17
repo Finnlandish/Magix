@@ -33,15 +33,12 @@ class LobbyAction extends CommonAction
             $result = CommonAction::callAPI("games/auto-match", $data);
 
             if ($result == "CREATED_PVP" || $result = "JOINED_PVP") {
-
                 header("location:game.php");
                 exit;
             } elseif ($result == "INVALID_KEY") {
-
                 $messageErr = "";
                 $messageErr = $result;
             } elseif ($result == "INVALID_GAME_TYPE") {
-
                 $messageErr = "";
                 $messageErr = $result;
             } elseif ($result == "DECK_INCOMPLETE") {
