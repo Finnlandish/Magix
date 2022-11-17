@@ -52,6 +52,7 @@ class LobbyAction extends CommonAction
         } else if (isset($_POST["TRAINING"])){
             $data["key"] = $_SESSION["key"];
             $data["type"] = "TRAINING";
+            $data["mode"]= "STANDARD";
             $result = CommonAction::callAPI("games/auto-match", $data);
             $messageErr = $result;
             
