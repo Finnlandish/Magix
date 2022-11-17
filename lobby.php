@@ -26,14 +26,12 @@ require_once("partial/header.php");
         <div class="lobbybutton">
             <form action="" method="post">
                 <button type="submit" name="PVP" class="lbutton">Jouer</button>
-            </form>
-            <form action="" method="post">
                 <button type="submit" name="TRAINING" class="lbutton">Pratique</button>
-            </form>
-            <form action="" method="post">
                 <button type="submit" name="loggout" class="lbutton"> Quitter</button>
             </form>
-            <div id="togglechat" class="btntogglechat"> <button id="togglechat" class="clickable" onclick="togglechat()">toggle chat</button> </div>
+            <div id="togglechat" class="btntogglechat">
+                <button id="togglechat" class="clickable" onclick="togglechat()">toggle chat</button>
+            </div>
 
         </div>
         <div id="chat" class="lobbychat">

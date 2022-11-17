@@ -245,9 +245,9 @@ const heroPower = () => {
 }
 
 
-const back = () => {
-    window.location = 'lobby.php'
-}
+// const back = () => {
+//     window.location = 'lobby.php'
+// }
 
 // document.getElementById("surrender").onclick = surrender(;
 

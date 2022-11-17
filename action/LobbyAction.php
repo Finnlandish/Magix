@@ -1,5 +1,6 @@
 <?php
 require_once("action/CommonAction.php");
+
 class LobbyAction extends CommonAction
 {
 
@@ -15,17 +16,7 @@ class LobbyAction extends CommonAction
         $data["username"] = !empty($_SESSION["username"]);
 
 
-        if (isset($_POST["loggout"])){
-            $data["key"] = $_SESSION["key"];
-            $result = CommonAction::callAPI("signout", $data);
-            $messageErr = $result;
-
-            if ($result == "SIGNED_OUT") {
-                $_SESSION["visibility"] = 0;
-                header("location:index.php");
-                exit;
-            }
-        } else if (isset($_POST["PVP"])){
+        if (isset($_POST["PVP"])){
             $data["key"] = $_SESSION["key"];
             $data["type"] = "PVP";
             $result = CommonAction::callAPI("games/auto-match", $data);
@@ -54,14 +45,23 @@ class LobbyAction extends CommonAction
             $data["type"] = "TRAINING";
             $result = CommonAction::callAPI("games/auto-match", $data);
             $messageErr = $result;
-            
+            echo("training");
             if ($result == "JOINED_TRAINING") {
-
+                echo("joined training");
                 header("location:game.php");
                 exit;
             } 
-        }
-        
+        }elseif (isset($_POST["loggout"])){
+            $data["key"] = $_SESSION["key"];
+            $result = CommonAction::callAPI("signout", $data);
+            $messageErr = $result;
+
+            if ($result == "SIGNED_OUT") {
+                $_SESSION["visibility"] = 0;
+                header("location:index.php");
+                exit;
+            }
+        } 
         return compact("messageErr");
     }
 }
