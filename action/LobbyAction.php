@@ -16,7 +16,18 @@ class LobbyAction extends CommonAction
         $data["username"] = !empty($_SESSION["username"]);
 
 
-        if (isset($_POST["PVP"])){
+        if (isset($_POST["TRAINING"])){
+            $data["key"] = $_SESSION["key"];
+            $data["type"] = "TRAINING";
+            $result = CommonAction::callAPI("games/auto-match", $data);
+            $messageErr = $result;
+            echo("training");
+            if ($result == "JOINED_TRAINING") {
+                echo("joined training");
+                header("location:game.php");
+                exit;
+            } 
+        }elseif (isset($_POST["PVP"])){
             $data["key"] = $_SESSION["key"];
             $data["type"] = "PVP";
             $result = CommonAction::callAPI("games/auto-match", $data);
@@ -40,18 +51,6 @@ class LobbyAction extends CommonAction
                 $messageErr = "";
                 $messageErr = $result;
             }
-        } else if (isset($_POST["TRAINING"])){
-            $data["key"] = $_SESSION["key"];
-            $data["type"] = "TRAINING";
-            $data["mode"]= "STANDARD";
-            $result = CommonAction::callAPI("games/auto-match", $data);
-            $messageErr = $result;
-            echo("training");
-            if ($result == "JOINED_TRAINING") {
-                echo("joined training");
-                header("location:game.php");
-                exit;
-            } 
         }elseif (isset($_POST["loggout"])){
             $data["key"] = $_SESSION["key"];
             $result = CommonAction::callAPI("signout", $data);

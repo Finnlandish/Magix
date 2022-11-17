@@ -26,7 +26,7 @@
                 }    
             
             }
-            if(isset($_POST["endturn"])){
+            elseif(isset($_POST["endturn"])){
                 $data["key"] = $_SESSION["key"];
                 $data["type"] = "END_TURN";
                 $result = CommonAction::callAPI("games/action", $data);
@@ -37,7 +37,7 @@
                 }    
             
             }
-            if(isset($_POST["backLobby"])){
+            elseif(isset($_POST["backLobby"])){
                header("location:lobby.php");
                exit;
             
