@@ -6,26 +6,26 @@ const state = () => {
 
     })
 
-        .then(response => response.json())
+    .then(response => response.json())
 
-        .then(data => {
+    .then(data => {
 
-            console.log(data); // contient les cartes/état du jeu.
-            if (typeof data == "object") {
+        console.log(data); // contient les cartes/état du jeu.
+        if (typeof data == "object") {
 
-                tickJeu()
+            tickJeu()
 
-                timer(data)
-                add_hand(data)
-                add_board(data)
-                add_enemy_board(data)
-                creer_enemy_hand(data)
-                add_stat(data)
+            timer(data)
+            add_hand(data)
+            add_board(data)
+            add_enemy_board(data)
+            creer_enemy_hand(data)
+            add_stat(data)
 
-            }
-            setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+        }
+        setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
 
-        })
+    })
 
 }
 let cards = []
@@ -33,6 +33,7 @@ let enemycards = []
 let playedCards = []
 
 let attackform = new FormData()
+
 const créer_hand = (data, area) => {
     data.forEach(e => {
         let card = document.createElement("div")
@@ -58,11 +59,11 @@ const créer_hand = (data, area) => {
             form.append("uid", card_uid)
             form.append("id", card_id)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                method: "POST", // l’API (games/state)
-                body: form
-            })
+                    method: "POST", // l’API (games/state)
+                    body: form
+                })
                 .then(response => response.json())
-                .then(data => { })
+                .then(data => {})
         }
     });
 }
@@ -100,12 +101,7 @@ const créer_board = (data, area) => {
 
             attackform.append("type", "ATTACK")
             attackform.append("uid", card_uid)
-            fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                method: "POST", // l’API (games/state)
-                body: attackform
-            })
-                .then(response => response.json())
-                .then(data => { })
+
         }
 
     });
@@ -132,11 +128,11 @@ const créer_enemy_board = (data, area) => {
             attackform.delete('targetuid')
             attackform.append("targetuid", card_uid)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                method: "POST", // l’API (games/state)
-                body: attackform
-            })
+                    method: "POST", // l’API (games/state)
+                    body: attackform
+                })
                 .then(response => response.json())
-                .then(data => { })
+                .then(data => {})
         }
 
     });
@@ -171,11 +167,11 @@ const créer_enemy_stats = (data, area) => {
         attackform.delete('targetuid')
         attackform.append("targetuid", 0)
         fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-            method: "POST", // l’API (games/state)
-            body: attackform
-        })
+                method: "POST", // l’API (games/state)
+                body: attackform
+            })
             .then(response => response.json())
-            .then(data => { })
+            .then(data => {})
     }
 }
 
@@ -205,7 +201,7 @@ const timer = (data) => {
     document.getElementById("timer").innerHTML = time
 }
 const clear_attackform = (data) => {
-    if(!data.yourTurn){
+    if (!data.yourTurn) {
         var entries = attackform.entries();
         for (var pair of entries) {
             attackform.delete(pair[0]);
@@ -236,11 +232,11 @@ const heroPower = () => {
     let form = new FormData()
     form.append('type', 'HERO_POWER')
     fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-        method: "POST", // l’API (games/state)
-        body: form
-    })
+            method: "POST", // l’API (games/state)
+            body: form
+        })
         .then(response => response.json())
-        .then(data => { })
+        .then(data => {})
 
 }
 

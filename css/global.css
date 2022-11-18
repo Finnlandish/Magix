@@ -299,6 +299,7 @@ ul.nav>li>a {
 }
 
 .gamechat {
+    display: none;
     position: absolute;
     top: 85px;
     right: -1vh;
