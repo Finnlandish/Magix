@@ -1,3 +1,22 @@
+
+const applyStyles = iframe => {
+	let styles = {
+		fontColor : "#333",
+		backgroundColor : "rgba(126, 142, 185, 0.48)",
+		fontGoogleName : "Teko",
+		fontSize : "24px",
+		hideIcons : true,
+		inputFontColor : "black",
+		height : "700px",
+		memberListFontColor : "#ff00dd",
+		memberListBackgroundColor : "white"
+		
+	}
+	
+	setTimeout(() => {
+		iframe.contentWindow.postMessage(JSON.stringify(styles), "*");	
+}, 100);
+}
 function togglechat() {
     var x = document.getElementById("chat");
     if (x.style.display == "none") {
@@ -6,23 +25,3 @@ function togglechat() {
         x.style.display = "none";
     }
 }
-const applyStyles = iframe => {
-	let styles = {
-		fontColor : "#333",
-		backgroundColor : "rgba(87, 41, 5, 0.2)",
-		fontGoogleName : "Sofia",
-		fontSize : "20px",
-		hideIcons : true,
-		inputBackgroundColor : "red",
-		inputFontColor : "blue",
-		height : "700px",
-		memberListFontColor : "#ff00dd",
-		memberListBackgroundColor : "white"
-	}
-	
-	setTimeout(() => {
-		iframe.contentWindow.postMessage(JSON.stringify(styles), "*");	
-}, 100);
-}
-
-

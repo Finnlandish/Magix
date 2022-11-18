@@ -9,6 +9,7 @@
         protected function executeAction() {   
             $result ="";
             $data = [];
+            $errMessage="";
 
             if (!empty($_POST["type"])) {
 				if ($_POST["type"] == "PLAY") {
@@ -41,34 +42,24 @@
                     echo("INVALID_KEY");
 
                 }else if($result=="INVALID_ACTION"){
-                    echo("INVALID_ACTION");
 
                 }else if($result=="ACTION_IS_NOT_AN_OBJECT"){
-                    echo("ACTION_IS_NOT_AN_OBJECT");
 
                 }else if($result=="NOT_ENOUGH_ENERGY"){
-                    echo("NOT_ENOUGH_ENERGY");
-
+                    
                 }else if($result=="BOARD_IS_FULL "){
-                    echo("BOARD_IS_FULL");
 
                 }else if($result=="CARD_NOT_IN_HAND"){
-                    echo("CARD_NOT_IN_HAND");
 
                 }else if($result=="CARD_IS_SLEEPING"){
-                    echo("CARD_IS_SLEEPING");
 
                 }else if($result=="MUST_ATTACK_TAUNT_FIRST"){
-                    echo("MUST_ATTACK_TAUNT_FIRST");
 
                 }else if($result=="OPPONENT_CARD_NOT_FOUND"){
-                    echo("OPPONENT_CARD_NOT_FOUND");
 
                 }else if($result=="OPPONENT_CARD_HAS_STEALTH"){ 
-                    echo("OPPONENT_CARD_HAS_STEALTH");
                     
                 }else if($result=="CARD_NOT_FOUND"){
-                    echo("CARD_NOT_FOUND");
                 }
 			}
           
@@ -86,6 +77,6 @@
                 }
             }
              
-            return compact("result");
+            return compact("result","errMessage");
         }
     }

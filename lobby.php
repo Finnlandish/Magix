@@ -34,8 +34,10 @@ require_once("partial/header.php");
             </div>
 
         </div>
-        <div id="chat" class="gamechat">
-            <iframe style="width:700px;height:240px;" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
+        <div id="chat" class="lobbychat">
+            <iframe style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
+            </iframe>
+
             </iframe>
 
         </div>
