@@ -5,12 +5,10 @@ const applyStyles = iframe => {
 		backgroundColor : "rgba(126, 142, 185, 0.48)",
 		fontGoogleName : "Teko",
 		fontSize : "24px",
-		hideIcons : true,
+		hideIcons : false,
 		inputFontColor : "black",
-		height : "700px",
 		memberListFontColor : "#ff00dd",
 		memberListBackgroundColor : "white"
-		
 	}
 	
 	setTimeout(() => {
