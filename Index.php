@@ -30,10 +30,10 @@
             Bienvenue à Magix!
         </h1>
         <?php
-		if (!empty($data["message"] )) {
+		if (!empty($data["messageErr"] )) {
 			?>
         <div style="color:red;text-align:center">
-            <?= $data["message"] ?>
+            <?= $data["messageErr"] ?>
         </div>
         <?php
 		}

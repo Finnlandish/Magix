@@ -1,3 +1,9 @@
+let curdata = []
+let cards = []
+let enemycards = []
+let playedCards = []
+let attackform = new FormData()
+
 const state = () => {
 
     fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
@@ -6,33 +12,53 @@ const state = () => {
 
     })
 
-    .then(response => response.json())
+        .then(response => response.json())
 
-    .then(data => {
+        .then(data => {
 
-        console.log(data); // contient les cartes/état du jeu.
-        if (typeof data == "object") {
+            console.log(data); // contient les cartes/état du jeu.
+            if (typeof data == "object") {
+                //reduces flickerring
+                if (JSON.stringify(curdata["hand"]) != JSON.stringify(data["hand"]) ||
+                    JSON.stringify(curdata["board"]) !== JSON.stringify(data["board"]) ||
+                    JSON.stringify(curdata["opponent"]["board"]) !== JSON.stringify(data["opponent"]["board"])) {
+                    curdata = data
+                    tickJeu()
+                    add_hand(data)
+                    add_board(data)
+                    add_enemy_board(data)
+                    creer_enemy_hand(data)
+                    add_stat(data)
+                }
+                timer(data)
 
-            tickJeu()
+                curdata = data
 
-            timer(data)
-            add_hand(data)
-            add_board(data)
-            add_enemy_board(data)
-            creer_enemy_hand(data)
-            add_stat(data)
+            } else {
+                if (data == "LAST_GAME_WON") {
 
-        }
-        setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+                }
+            }
+            if (!data.heroPowerAlreadyUsed) {
+                document.getElementById("heroPower").onclick = () => {
+                    console.log("hero")
+                    let form = new FormData()
+                    form.append('type', 'HERO_POWER')
+                    fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
+                        method: "POST", // l’API (games/state)
+                        body: form
+                    })
+                        .then(response => response.json())
+                        .then(data => { })
 
-    })
+                }
+            }
+            setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+
+        })
 
 }
-let cards = []
-let enemycards = []
-let playedCards = []
 
-let attackform = new FormData()
 
 const créer_hand = (data, area) => {
     data.forEach(e => {
@@ -49,24 +75,36 @@ const créer_hand = (data, area) => {
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createElement("br"))
+        card.appendChild(document.createElement("br"))
+        card.appendChild(document.createElement("br"))
         card.appendChild(document.createTextNode(" mechanic : " + e.mechanics))
         document.getElementById(area).appendChild(card)
         card.className = "cards"
 
+        card.onmouseenter = () => {
+            card.style.border = "thick solid #0000FF"
+
+        }
+        card.onmouseleave = () => {
+            card.style.border = "none";
+            card.style.height = "70%"
+        }
         card.onclick = () => {
             let form = new FormData()
             form.append("type", "PLAY")
             form.append("uid", card_uid)
             form.append("id", card_id)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                    method: "POST", // l’API (games/state)
-                    body: form
-                })
+                method: "POST", // l’API (games/state)
+                body: form
+            })
                 .then(response => response.json())
-                .then(data => {})
+                .then(data => { })
         }
     });
+
 }
+
 const creer_enemy_hand = (data) => {
     for (let i = 0; i < data.opponent.handSize; i++) {
         let card = document.createElement("div")
@@ -80,6 +118,7 @@ const creer_enemy_hand = (data) => {
 const créer_board = (data, area) => {
     data.forEach(e => {
         let card = document.createElement("div");
+        // let state = board.state
         card.id = e.uid
         let card_uid = e.uid
         card.appendChild(document.createTextNode(" Hp : " + e.hp))
@@ -90,15 +129,34 @@ const créer_board = (data, area) => {
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createElement("br"))
+        card.appendChild(document.createElement("br"))
         card.appendChild(document.createTextNode(" mechanic : " + e.mechanics))
         document.getElementById(area).appendChild(card)
-        card.className = "enemyboard"
+        card.className = "myboard"
+        if (e.state == "SLEEP") {
+            card.style.backgroundImage = "url('img/dittoSleep.png')"
+        }
+        else {
+            card.style.backgroundImage = "url('img/Dittocart.png')"
+        }
+        card.onmouseenter = () => {
+            let hov = document.createElement("div");
+            card.appendChild(hov)
+            hov.className="hoverCard"
+            card.style.border = "thick solid #0000FF"
+        }
+        card.onmouseleave = () => {
+            card.style.border = "none";
+            card.style.height = "70%"
+        }
+        // if (state=="SLEEP"){
+        //     card.style.backgroundImage="url('../img/dittoSleep.png')";
+        // }
         enemycards.push(card)
         card.onclick = () => {
             console.log("clicked")
             attackform.delete('type')
             attackform.delete('uid')
-
             attackform.append("type", "ATTACK")
             attackform.append("uid", card_uid)
 
@@ -119,20 +177,35 @@ const créer_enemy_board = (data, area) => {
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createElement("br"))
+        card.appendChild(document.createElement("br"))
         card.appendChild(document.createTextNode(" mechanic : " + e.mechanics))
         document.getElementById(area).appendChild(card)
         card.className = "enemyboard"
         enemycards.push(card)
+        if (e.state == "SLEEP") {
+            card.style.backgroundImage = "url('img/dittoSleep.png')"
+        }
+        else {
+            card.style.backgroundImage = "url('img/Dittocart.png')"
+        }
+        card.onmouseenter = () => {
+            card.style.border = "thick solid #FF0000"
+
+        }
+        card.onmouseleave = () => {
+            card.style.border = "none";
+            card.style.height = "70%"
+        }
         card.onclick = () => {
             console.log("clicked")
             attackform.delete('targetuid')
             attackform.append("targetuid", card_uid)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                    method: "POST", // l’API (games/state)
-                    body: attackform
-                })
+                method: "POST", // l’API (games/state)
+                body: attackform
+            })
                 .then(response => response.json())
-                .then(data => {})
+                .then(data => { })
         }
 
     });
@@ -167,11 +240,11 @@ const créer_enemy_stats = (data, area) => {
         attackform.delete('targetuid')
         attackform.append("targetuid", 0)
         fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                method: "POST", // l’API (games/state)
-                body: attackform
-            })
+            method: "POST", // l’API (games/state)
+            body: attackform
+        })
             .then(response => response.json())
-            .then(data => {})
+            .then(data => { })
     }
 }
 
@@ -228,17 +301,6 @@ const tickJeu = () => {
 
 
 
-const heroPower = () => {
-    let form = new FormData()
-    form.append('type', 'HERO_POWER')
-    fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-            method: "POST", // l’API (games/state)
-            body: form
-        })
-        .then(response => response.json())
-        .then(data => {})
-
-}
 
 
 // const back = () => {

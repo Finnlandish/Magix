@@ -29,6 +29,7 @@ class IndexAction extends CommonAction
                         $_SESSION["visibility"] = 1;
                         $_SESSION['username'] = $_POST["username"];
                         $data["username"] = $_SESSION["username"];
+                        
                         header("location:lobby.php");
 
                         exit;

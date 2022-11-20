@@ -256,7 +256,7 @@ ul.nav>li>a {
 .lobby {
     width: 100%;
     height: 100%;
-    background-image: url('../img/lobby.png');
+    background-image: url('../img/LImage.png');
     background-repeat: no-repeat;
     background-size: fill;
     min-height: 100vh;
@@ -342,7 +342,16 @@ ul.nav>li>a {
     width: 67.5px;
     height: 95.75px;
 }
-
+.hoverCard{
+    background-color: aquamarine;
+    opacity: 40%;
+    max-width: 182.25px;
+    max-height: 258.525px;
+    min-width: 182.25px;
+    min-height: 258.525px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
 #enemycardBox {
     position: relative;
     top: 26vh;
@@ -356,14 +365,14 @@ ul.nav>li>a {
 }
 
 #enemycardBox>* {
-    background-image: url("../img/card.png");
+    background-image: url("../img/Dittocart.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    max-width: 135px;
-    max-height: 191.5px;
-    min-width: 135px;
-    min-height: 191.5px;
+    max-width: 182.25px;
+    max-height: 258.525px;
+    min-width: 182.25px;
+    min-height: 258.525px;
     padding-top: 10px;
     padding-left: 10px;
 }
@@ -379,14 +388,14 @@ ul.nav>li>a {
 }
 
 #mycardBox>* {
-    background-image: url("../img/card.png");
+    background-image: url("../img/Dittocart.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 135px;
-    max-height: 191.5px;
-    min-width: 135px;
-    min-height: 191.5px;
+    max-width: 182.25px;
+    max-height: 258.525px;
+    min-width: 182.25px;
+    min-height: 258.525px;
     padding-top: 10px;
     padding-left: 10px;
 }
@@ -403,14 +412,14 @@ ul.nav>li>a {
 }
 
 #mydeck>* {
-    background-image: url("../img/card.png");
+    background-image: url("../img/Dittocart.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 135px;
-    max-height: 191.5px;
-    min-width: 135px;
-    min-height: 191.5px;
+    max-width: 182.25px;
+    max-height: 258.525px;
+    min-width: 182.25px;
+    min-height: 258.525px;
     padding-top: 10px;
     padding-left: 10px;
 }

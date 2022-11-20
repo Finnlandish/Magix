@@ -13,10 +13,10 @@ require_once("partial/header.php");
 <div class="game">
     <div class="">
         <?php
-        if (!empty($data["message"])) {
+        if (!empty($data["messageErr"])) {
         ?>
             <div style="color:red;text-align:center">
-                <?= $data["message"] ?>
+                <?= $data["messageErr"] ?>
             </div>
         <?php
         }
@@ -39,7 +39,7 @@ require_once("partial/header.php");
     <div id="togglechat" class="btntogglechat"> <button id="togglechat" class="clickable" onclick="togglechat()">toggle chat</button>
 
         <div id="chat" class="gamechat">
-            <iframe style="width:700px;height:240px;"onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
+            <iframe style="width:700px;height:240px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
             </iframe>
 
         </div>
@@ -51,19 +51,15 @@ require_once("partial/header.php");
     </div>
     <div>
         <form action="" method="POST">
-            <button class="endturn" name="endturn" type=submit>end-turn</button>
+            <button class="endturn" name="endturn">end-turn</button>
         </form>
     </div>
     <div>
         <form action="" method="POST">
-            <button class="backLobby" name="backLobby" type=submit>backLobby</button>
+            <button class="backLobby" name="backLobby">backLobby</button>
         </form>
     </div>
-    <div>
-        <form action="" method="POST">
-            <button class="heroPower" id="heroPower" name="heroPower">heroPower</button>
-        </form>
-    </div>
+    <div class="heroPower" id="heroPower">heroPower</div>
 </div>
 </div>
 

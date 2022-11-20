@@ -15,10 +15,10 @@ require_once("partial/header.php");
             <h1>Welcome To Magix <?= $_SESSION["username"] ?></h1>
         </div>
         <?php
-        if (!empty($data["message"])) {
+        if (!empty($data["messageErr"])) {
         ?>
             <div style="color:red;text-align:center">
-                <?= $data["message"] ?>
+                <?= $data["messageErr"] ?>
             </div>
         <?php
         }
