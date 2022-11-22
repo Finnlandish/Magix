@@ -44,23 +44,24 @@ require_once("partial/header.php");
 
         </div>
     </div>
-    <div>
-        <form action="" method="POST">
-            <button id="surrender" class="surrender" name="surrender">surrender</button>
-        </form>
-    </div>
-    <div>
-        <form action="" method="POST">
-            <button class="endturn" name="endturn">end-turn</button>
-        </form>
-    </div>
-    <div>
-        <form action="" method="POST">
-            <button class="backLobby" name="backLobby">backLobby</button>
-        </form>
-    </div>
-    <div class="heroPower" id="heroPower">heroPower</div>
-</div>
+        <div class="button">
+            <form action="" method="POST">
+                <button id="surrender"  name="surrender"><a>surrender</a> </button>
+            </form>
+        </div>
+        <div class="button">
+            <form action="" method="POST">
+                <button id="endturn" class="button" name="endturn"><a>end-turn</a> </button>
+            </form>
+        </div>
+        <div class="button">
+            <form action="" method="POST">
+                <button id="backLobby" class="button" name="backLobby"><a >Return to lobby</a></button>
+            </form>
+        </div>
+        <button id="heroPower"class="button" name="heroPower"><a >heroPower</a></button>
+
+
 </div>
 
 <?php
