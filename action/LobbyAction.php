@@ -58,7 +58,10 @@ class LobbyAction extends CommonAction
                 header("location:index.php");
                 exit;
             }
-        } 
+        }elseif (isset($_POST["Stats"])){
+            header("location:stats.php");
+            exit;   
+        }
         return compact("messageErr");
     }
 }

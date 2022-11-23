@@ -13,91 +13,89 @@ const state = () => {
 
     })
 
-        .then(response => response.json())
+    .then(response => response.json())
 
-        .then(data => {
+    .then(data => {
 
-            console.log(data); // contient les cartes/état du jeu.
-            if (typeof data == "object") {
-                //supposed to reduces flickerring
-                if (JSON.stringify(curdata["hand"]) != JSON.stringify(data["hand"]) ||
-                    JSON.stringify(curdata["board"]) !== JSON.stringify(data["board"]) ||
-                    JSON.stringify(curdata["opponent"]["board"]) !== JSON.stringify(data["opponent"]["board"])) {
-                    curdata = data
-                    clearJeu()
-                    add_hand(data)
-                    add_board(data)
-                    add_enemy_board(data)
-                    creer_enemy_hand(data)
-                    add_stat(data)
-                }
-                timer(data)
-
+        console.log(data); // contient les cartes/état du jeu.
+        if (typeof data == "object") {
+            //supposed to reduces flickerring
+            if (JSON.stringify(curdata["hand"]) != JSON.stringify(data["hand"]) ||
+                JSON.stringify(curdata["board"]) !== JSON.stringify(data["board"]) ||
+                JSON.stringify(curdata["opponent"]["board"]) !== JSON.stringify(data["opponent"]["board"])) {
                 curdata = data
-
-            } else {
-                if (data == "LAST_GAME_WON") {
-                    gamewon = true
-                   
-                }
-                else if (data == "LAST_GAME_LOST") {
-                    gamelost = true
-                   
-
-                }
-                if (gamewon) {
-                    clearJeu()
-                    const boxes = document.querySelectorAll('.EndcardWon');
-
-                    boxes.forEach(box => {
-                      box.remove();
-                    });
-                    let Endcard = document.createElement("div")
-                    Endcard.appendChild(document.createTextNode("GAME WON!!!"))
-                    Endcard.appendChild(document.createElement("br"))
-                    Endcard.appendChild(document.createElement("br"))
-                    Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
-                    
-                    Endcard.className = "EndcardWon"
-                    document.querySelector(".EndcardLost").appendChild(Endcard)
-
-                }
-                else if (gamelost) {
-                    clearJeu()
-                    const boxes = document.querySelectorAll('.EndcardLost');
-
-                    boxes.forEach(box => {
-                      box.remove();
-                    });
-                    let Endcard = document.createElement("div")
-                    Endcard.appendChild(document.createTextNode("GAME LOST"))
-                    Endcard.appendChild(document.createElement("br"))
-                    Endcard.appendChild(document.createTextNode("better luck next time!"))
-                    Endcard.appendChild(document.createElement("br"))
-                    Endcard.appendChild(document.createElement("br"))
-                    Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
-
-                    Endcard.className = "EndcardLost"
-                    document.querySelector(".game").appendChild(Endcard)
-                }
+                clearJeu()
+                add_hand(data)
+                add_board(data)
+                add_enemy_board(data)
+                creer_enemy_hand(data)
+                add_stat(data)
             }
-            if (!data.heroPowerAlreadyUsed) {
-                document.getElementById("heroPower").onclick = () => {
-                    console.log("hero")
-                    let form = new FormData()
-                    form.append('type', 'HERO_POWER')
-                    fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
+            timer(data)
+
+            curdata = data
+
+        } else {
+            if (data == "LAST_GAME_WON") {
+                gamewon = true
+
+            } else if (data == "LAST_GAME_LOST") {
+                gamelost = true
+
+
+            }
+            if (gamewon) {
+                clearJeu()
+                const boxes = document.querySelectorAll('.EndcardWon');
+
+                boxes.forEach(box => {
+                    box.remove();
+                });
+                let Endcard = document.createElement("div")
+                Endcard.appendChild(document.createTextNode("GAME WON!!!"))
+                Endcard.appendChild(document.createElement("br"))
+                Endcard.appendChild(document.createElement("br"))
+                Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
+
+                Endcard.className = "EndcardWon"
+                document.querySelector(".game").appendChild(Endcard)
+
+            } else if (gamelost) {
+                clearJeu()
+                const boxes = document.querySelectorAll('.EndcardLost');
+
+                boxes.forEach(box => {
+                    box.remove();
+                });
+                let Endcard = document.createElement("div")
+                Endcard.appendChild(document.createTextNode("GAME LOST"))
+                Endcard.appendChild(document.createElement("br"))
+                Endcard.appendChild(document.createTextNode("better luck next time!"))
+                Endcard.appendChild(document.createElement("br"))
+                Endcard.appendChild(document.createElement("br"))
+                Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
+
+                Endcard.className = "EndcardLost"
+                document.querySelector(".game").appendChild(Endcard)
+            }
+        }
+        if (!data.heroPowerAlreadyUsed) {
+            document.getElementById("heroPower").onclick = () => {
+                console.log("hero")
+                let form = new FormData()
+                form.append('type', 'HERO_POWER')
+                fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
                         method: "POST", // l’API (games/state)
                         body: form
                     })
-                        .then(response => response.json())
-                        .then(data => { })
+                    .then(response => response.json())
+                    .then(data => {})
 
-                }
             }
-            setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+        }
+        setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
 
-        })
+    })
 
 }
 
@@ -137,11 +135,11 @@ const créer_hand = (data, area) => {
             form.append("uid", card_uid)
             form.append("id", card_id)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                method: "POST", // l’API (games/state)
-                body: form
-            })
+                    method: "POST", // l’API (games/state)
+                    body: form
+                })
                 .then(response => response.json())
-                .then(data => { })
+                .then(data => {})
         }
     });
 
@@ -177,8 +175,7 @@ const créer_board = (data, area) => {
         card.className = "myboard"
         if (e.state == "SLEEP") {
             card.style.backgroundImage = "url('img/dittoSleep.png')"
-        }
-        else {
+        } else {
             card.style.backgroundImage = "url('img/Dittocart.png')"
         }
         card.onmouseenter = () => {
@@ -188,12 +185,12 @@ const créer_board = (data, area) => {
             card.style.border = "thick solid #0000FF"
         }
         card.onmouseleave = () => {
-            card.style.border = "none";
-            card.style.height = "70%"
-        }
-        // if (state=="SLEEP"){
-        //     card.style.backgroundImage="url('../img/dittoSleep.png')";
-        // }
+                card.style.border = "none";
+                card.style.height = "70%"
+            }
+            // if (state=="SLEEP"){
+            //     card.style.backgroundImage="url('../img/dittoSleep.png')";
+            // }
         enemycards.push(card)
         card.onclick = () => {
             console.log("clicked")
@@ -226,8 +223,7 @@ const créer_enemy_board = (data, area) => {
         enemycards.push(card)
         if (e.state == "SLEEP") {
             card.style.backgroundImage = "url('img/dittoSleep.png')"
-        }
-        else {
+        } else {
             card.style.backgroundImage = "url('img/Dittocart.png')"
         }
         card.onmouseenter = () => {
@@ -243,11 +239,11 @@ const créer_enemy_board = (data, area) => {
             attackform.delete('targetuid')
             attackform.append("targetuid", card_uid)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                method: "POST", // l’API (games/state)
-                body: attackform
-            })
+                    method: "POST", // l’API (games/state)
+                    body: attackform
+                })
                 .then(response => response.json())
-                .then(data => { })
+                .then(data => {})
         }
 
     });
@@ -282,11 +278,11 @@ const créer_enemy_stats = (data, area) => {
         attackform.delete('targetuid')
         attackform.append("targetuid", 0)
         fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-            method: "POST", // l’API (games/state)
-            body: attackform
-        })
+                method: "POST", // l’API (games/state)
+                body: attackform
+            })
             .then(response => response.json())
-            .then(data => { })
+            .then(data => {})
     }
 }
 

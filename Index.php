@@ -43,6 +43,6 @@ require_once("partial/header.php");
 
         </form>
     </div>
-
-    <?php
-    require_once("partial/footer.php");
+</body>
+<?php
+require_once("partial/footer.php");

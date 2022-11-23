@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +7,8 @@
 html,
 body {
     background-color: black;
-    min-height: 100vh;
-    color: rgb(48, 3, 3);
+    max-width: 100vw;
+    max-height: 100vh;
     font-size: 20px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
@@ -47,44 +46,6 @@ input {
 
 .no-outline:focus {
     outline: none;
-}
-
-buttonIndex {
-    border: 0;
-    color: black;
-    padding: 10px;
-    font-size: 20px;
-    width: 100%;
-    display: inline-block;
-    padding: 10px 20px;
-}
-
-
-/* header */
-
-ul.nav {
-    padding-left: 0px;
-    background-color: black;
-    text-align: end;
-    padding-right: 1em;
-}
-
-ul.nav>li {
-    display: inline-block;
-    padding: 10px 20px;
-}
-
-ul.nav>li:hover {
-    background-color: silver;
-}
-
-ul.nav>li>a {
-    color: white;
-    text-decoration: none;
-}
-
-.topNav {
-    align-content: flex-end;
 }
 
 
@@ -128,11 +89,11 @@ ul.nav>li>a {
 }
 
 .login {
-    width: 100vw;
-    height: 100vh;
     background-image: url('../img/lab.png');
-    background-size: 100% 100%;
     background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
     font-size: 20px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     display: flex;
@@ -183,8 +144,6 @@ ul.nav>li>a {
     justify-content: center;
 }
 
-
-
 .champ {
     margin-left: 2vw;
     width: 14.8vw;
@@ -206,7 +165,6 @@ ul.nav>li>a {
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: hidden;
-
 }
 
 .center {
@@ -219,40 +177,14 @@ ul.nav>li>a {
     height: 100vh;
 }
 
-.pokeball__button {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 4px solid #7f8c8d;
-    border-radius: 50%;
-    top: calc(50% - 15px);
-    left: calc(50% - 15px);
-    box-shadow: 0 0 0 7px black;
-    background: #fff;
-    z-index: 10;
-    animation: blink .5s alternate infinite;
-}
-
-.pokeball:hover .pokeball__button {
-    animation-play-state: running;
-}
-
-@keyframes blink {
-    from {
-        background: #eee;
-    }
-
-    to {
-        background: #e74c3c;
-    }
-}
-#connect{
-    position:relative;
+#connect {
+    position: relative;
     left: 2vw;
     width: 16vw;
     background-color: rgb(110, 171, 244);
 }
-.welcomeIndex{
+
+.welcomeIndex {
     top: 0;
     width: 100vw;
     height: 5vh;
@@ -265,6 +197,7 @@ ul.nav>li>a {
     display: flex;
 }
 
+
 /* lobby */
 
 .lobbybutton {
@@ -274,13 +207,11 @@ ul.nav>li>a {
 }
 
 .lobby {
-    width: 100%;
-    height: 100%;
     background-image: url('../img/LImage.png');
     background-repeat: no-repeat;
-    background-size: fill;
-    min-height: 100vh;
-    max-height: 100vh;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
     font-size: 20px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
@@ -307,55 +238,36 @@ ul.nav>li>a {
 @keyframes lights {
     0% {
         color: hsl(230, 40%, 80%);
-        text-shadow:
-            0 0 1em hsla(320, 100%, 50%, 0.2),
-            0 0 0.125em hsla(320, 100%, 60%, 0.3),
-            -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
-            1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+        text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2), 0 0 0.125em hsla(320, 100%, 60%, 0.3), -1em -0.125em 0.5em hsla(40, 100%, 60%, 0), 1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
     }
-
     30% {
         color: hsl(230, 80%, 90%);
-        text-shadow:
-            0 0 1em hsla(320, 100%, 50%, 0.5),
-            0 0 0.125em hsla(320, 100%, 60%, 0.5),
-            -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
-            0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+        text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5), 0 0 0.125em hsla(320, 100%, 60%, 0.5), -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2), 0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
     }
-
     40% {
         color: hsl(230, 100%, 95%);
-        text-shadow:
-            0 0 1em hsla(320, 100%, 50%, 0.5),
-            0 0 0.125em hsla(320, 100%, 90%, 0.5),
-            -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
-            0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+        text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5), 0 0 0.125em hsla(320, 100%, 90%, 0.5), -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2), 0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
     }
-
     70% {
         color: hsl(230, 80%, 90%);
-        text-shadow:
-            0 0 1em hsla(320, 100%, 50%, 0.5),
-            0 0 0.125em hsla(320, 100%, 60%, 0.5),
-            0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
-            -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+        text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5), 0 0 0.125em hsla(320, 100%, 60%, 0.5), 0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2), -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
     }
-
     100% {
         color: hsl(230, 40%, 80%);
-        text-shadow:
-            0 0 1em hsla(320, 100%, 50%, 0.2),
-            0 0 0.125em hsla(320, 100%, 60%, 0.3),
-            1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
-            -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+        text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2), 0 0 0.125em hsla(320, 100%, 60%, 0.3), 1em -0.125em 0.5em hsla(40, 100%, 60%, 0), -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
     }
-
 }
-
 
 h2 {
     animation: lights 5s 750ms linear infinite;
     text-align: center;
+}
+
+#stats {
+    position: absolute;
+    top: 29vh;
+    left: 0;
+    background-color: #fd9cdd;
 }
 
 #jouer {
@@ -369,12 +281,12 @@ h2 {
     position: absolute;
     top: 13vh;
     left: 0;
-    background-color: aquamarine;
+    background-color: rgb(0, 255, 34);
 }
 
 #logout {
     position: absolute;
-    top: 20vh;
+    top: 21vh;
     left: 0;
     background-color: aliceblue;
 }
@@ -386,21 +298,26 @@ h2 {
     background-color: wheat;
 }
 
+
 /* lobby animations */
 
-.container {
-    width: 100vw;
-    height: 100vh;
-    background-color: #000;
+.chansey {
+    /* background-image: url("../img/pokemon/chansey.png"); */
+    /* background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; */
+    position: absolute;
+    width: 20vw;
+    height: 30vh;
+    bottom: 10vh;
+    left: 10vw;
 }
-
-
 
 
 /* game */
 
 .timer {
-    width:30px;
+    width: 30px;
     height: 30px;
     position: absolute;
     top: 40vh;
@@ -416,8 +333,6 @@ h2 {
     background-size: cover;
     height: 100vh;
 }
-
-
 
 .gamechat {
     display: none;
@@ -589,9 +504,7 @@ h2 {
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-        7px 7px 20px 0px rgba(0, 0, 0, .1),
-        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
     outline: none;
 }
 
@@ -604,7 +517,6 @@ h2 {
     padding: 0;
     font-size: 20px;
     border: none;
-
 }
 
 .btn-3 span {
@@ -678,7 +590,7 @@ h2 {
     width: 100%;
 }
 
-.EndcardWon{
+.EndcardWon {
     position: absolute;
     top: 0;
     width: 100vw;
@@ -690,7 +602,8 @@ h2 {
     color: rgb(0, 255, 30);
     opacity: 80%;
 }
-.EndcardLost{
+
+.EndcardLost {
     position: absolute;
     top: 0;
     width: 100vw;
@@ -701,116 +614,4 @@ h2 {
     padding: 35vh 0;
     color: rgb(255, 0, 0);
     opacity: 80%;
-
-
-
-
-}
-
-
-/* pokeball blink */
-
-.child-to-body {
-    width: 300px;
-    height: 400px;
-    flex-shrink: 0;
-}
-
-.poke_box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-.pokeball {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    background: #fff;
-    border: 5px solid #000;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: inset -10px 10px 0 10px #ccc;
-    animation: shake 1.25s cubic-bezier(.36, .07, .19, .97) infinite;
-    animation-play-state: paused;
-}
-
-.pokeball:active {
-    animation-play-state: running;
-}
-
-@keyframes shake {
-    0% {
-        transform: translate(0, 0) rotate(0);
-    }
-
-    20% {
-        transform: translate(-10px, 0) rotate(-20deg);
-    }
-
-    30% {
-        transform: translate(10px, 0) rotate(20deg);
-    }
-
-    50% {
-        transform: translate(-10px, 0) rotate(-10deg);
-    }
-
-    60% {
-        transform: translate(10px, 0) rotate(10deg);
-    }
-
-    100% {
-        transform: translate(0, 0) rotate(0);
-    }
-}
-
-.pokeball::before,
-.pokeball::after {
-    content: "";
-    position: absolute;
-}
-
-.pokeball::before {
-    background: red;
-    width: 100%;
-    height: 50%;
-}
-
-.pokeball::after {
-    top: calc(50% - 5px);
-    width: 100%;
-    height: 10px;
-    background: #000;
-}
-
-.pokeball__button {
-    position: absolute;
-    top: calc(50% - 15px);
-    left: calc(50% - 15px);
-    width: 30px;
-    height: 30px;
-    background: #fff;
-    border: 4px solid #7f8c8d;
-    border-radius: 50%;
-    z-index: 10;
-    box-shadow: 0 0 0 7px black;
-    animation: blink .5s alternate infinite;
-    animation-play-state: paused;
-}
-
-.pokeball:active .pokeball__button {
-    animation-play-state: running;
-}
-
-@keyframes blink {
-    from {
-        background: #eee;
-    }
-
-    to {
-        background: #e74c3c;
-    }
 }
