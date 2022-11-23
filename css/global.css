@@ -186,9 +186,9 @@ ul.nav>li>a {
 
 
 .champ {
-    width: 80%;
-    margin-left: 1.8em;
-    padding: auto;
+    margin-left: 2vw;
+    width: 14.8vw;
+    text-align: center;
 }
 
 .buttonIndex {
@@ -245,6 +245,24 @@ ul.nav>li>a {
     to {
         background: #e74c3c;
     }
+}
+#connect{
+    position:relative;
+    left: 2vw;
+    width: 16vw;
+    background-color: rgb(110, 171, 244);
+}
+.welcomeIndex{
+    top: 0;
+    width: 100vw;
+    height: 5vh;
+    position: absolute;
+    text-align: center;
+    left: 40%;
+    margin: 0;
+    font: 200% / 1.5 Raleway, sans-serif;
+    color: hsl(230, 40%, 80%);
+    display: flex;
 }
 
 /* lobby */

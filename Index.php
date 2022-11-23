@@ -11,18 +11,16 @@ require_once("partial/header.php");
 ?>
 <div class="login">
 
-    <img id="pichu" src="img/Indexbg/pichu.png" alt="">
+    <!-- <img id="pichu" src="img/Indexbg/pichu.png" alt=""> -->
     <img id="wooper" src="img/Indexbg/Wooper.png" alt="">
-    <img id="eevee" src="img/Indexbg/pichu.png" alt="">
+    <!-- <img id="eevee" src="img/Indexbg/pichu.png" alt=""> -->
 
 
 
 
-
-    <h1 class="welcomeIndex">
-        Bienvenue à Magix!
-    </h1>
-
+    <div class="welcomeIndex">
+        <h2>Magix Arena</h2>
+    </div>
     <?php
     if (!empty($data["messageErr"])) {
     ?>
@@ -41,7 +39,8 @@ require_once("partial/header.php");
             <div>
                 <input type="password" name="password" class="champ" placeholder="Password">
             </div>
-            <Button type="submit" name="connexion" id="connect" class="button"><a>Connect</a></Button>
+            <Button type="submit" name="connexion" id="connect" class="custom-btn btn-3"><span>Connect</span></Button>
+
         </form>
     </div>
 
