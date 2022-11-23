@@ -3,7 +3,8 @@ let cards = []
 let enemycards = []
 let playedCards = []
 let attackform = new FormData()
-
+let gamelost = false
+let gamewon = false
 const state = () => {
 
     fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
@@ -18,12 +19,12 @@ const state = () => {
 
             console.log(data); // contient les cartes/état du jeu.
             if (typeof data == "object") {
-                //reduces flickerring
+                //supposed to reduces flickerring
                 if (JSON.stringify(curdata["hand"]) != JSON.stringify(data["hand"]) ||
                     JSON.stringify(curdata["board"]) !== JSON.stringify(data["board"]) ||
                     JSON.stringify(curdata["opponent"]["board"]) !== JSON.stringify(data["opponent"]["board"])) {
                     curdata = data
-                    tickJeu()
+                    clearJeu()
                     add_hand(data)
                     add_board(data)
                     add_enemy_board(data)
@@ -36,7 +37,48 @@ const state = () => {
 
             } else {
                 if (data == "LAST_GAME_WON") {
+                    gamewon = true
+                   
+                }
+                else if (data == "LAST_GAME_LOST") {
+                    gamelost = true
+                   
 
+                }
+                if (gamewon) {
+                    clearJeu()
+                    const boxes = document.querySelectorAll('.EndcardWon');
+
+                    boxes.forEach(box => {
+                      box.remove();
+                    });
+                    let Endcard = document.createElement("div")
+                    Endcard.appendChild(document.createTextNode("GAME WON!!!"))
+                    Endcard.appendChild(document.createElement("br"))
+                    Endcard.appendChild(document.createElement("br"))
+                    Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
+                    
+                    Endcard.className = "EndcardWon"
+                    document.querySelector(".EndcardLost").appendChild(Endcard)
+
+                }
+                else if (gamelost) {
+                    clearJeu()
+                    const boxes = document.querySelectorAll('.EndcardLost');
+
+                    boxes.forEach(box => {
+                      box.remove();
+                    });
+                    let Endcard = document.createElement("div")
+                    Endcard.appendChild(document.createTextNode("GAME LOST"))
+                    Endcard.appendChild(document.createElement("br"))
+                    Endcard.appendChild(document.createTextNode("better luck next time!"))
+                    Endcard.appendChild(document.createElement("br"))
+                    Endcard.appendChild(document.createElement("br"))
+                    Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
+
+                    Endcard.className = "EndcardLost"
+                    document.querySelector(".game").appendChild(Endcard)
                 }
             }
             if (!data.heroPowerAlreadyUsed) {
@@ -140,9 +182,9 @@ const créer_board = (data, area) => {
             card.style.backgroundImage = "url('img/Dittocart.png')"
         }
         card.onmouseenter = () => {
-            let hov = document.createElement("div");
-            card.appendChild(hov)
-            hov.className="hoverCard"
+            // let hov = document.createElement("div");
+            // card.appendChild(hov)
+            // hov.className = "hoverCard"
             card.style.border = "thick solid #0000FF"
         }
         card.onmouseleave = () => {
@@ -283,7 +325,7 @@ const clear_attackform = (data) => {
     console.log(attackform)
 }
 
-const tickJeu = () => {
+const clearJeu = () => {
     document.getElementById("mydeck").innerHTML = ""
     document.getElementById("mycardBox").innerHTML = ""
     document.getElementById("enemycardBox").innerHTML = ""

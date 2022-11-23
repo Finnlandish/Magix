@@ -36,7 +36,7 @@ require_once("partial/header.php");
 
 
     </div>
-    <div id="togglechat" class="btntogglechat"> <button id="togglechat" class="clickable" onclick="togglechat()">toggle chat</button>
+    <button class="custom-btn btn-3" id="togglechat" onclick="togglechat()"><span>toggle chat</span></button>
 
         <div id="chat" class="gamechat">
             <iframe style="width:700px;height:240px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
@@ -44,23 +44,22 @@ require_once("partial/header.php");
 
         </div>
     </div>
-        <div class="button">
-            <form action="" method="POST">
-                <button id="surrender"  name="surrender"><a>surrender</a> </button>
-            </form>
-        </div>
-        <div class="button">
-            <form action="" method="POST">
-                <button id="endturn" class="button" name="endturn"><a>end-turn</a> </button>
-            </form>
-        </div>
-        <div class="button">
-            <form action="" method="POST">
-                <button id="backLobby" class="button" name="backLobby"><a >Return to lobby</a></button>
-            </form>
-        </div>
-        <button id="heroPower"class="button" name="heroPower"><a >heroPower</a></button>
-
+    <div class="button">
+        <form action="" method="POST">
+            <button class="custom-btn btn-3" id="surrender" name="surrender"><span>surrender</span></button>
+        </form>
+    </div>
+    <div class="button">
+        <form action="" method="POST">
+            <button class="custom-btn btn-3" id="endturn" name="endturn"><span>end-turn</span></button>
+        </form>
+    </div>
+    <div class="button">
+        <form action="" method="POST">
+            <button class="custom-btn btn-3" id="backLobby" name="backLobby"><span>Return to lobby</span></button>
+        </form>
+    </div>
+    <button class="custom-btn btn-3" id="heroPower" name="heroPower"><span>Hero Power</span></button>
 
 </div>
 
