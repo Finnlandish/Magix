@@ -43,6 +43,5 @@ require_once("partial/header.php");
 
         </form>
     </div>
-</body>
 <?php
 require_once("partial/footer.php");

@@ -11,8 +11,5 @@
         </iframe>
     </div>
     
-</body>
-    
-
 <?php
     require_once("partial/footer.php");

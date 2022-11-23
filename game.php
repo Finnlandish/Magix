@@ -59,9 +59,7 @@ require_once("partial/header.php");
         <button class="custom-btn btn-3" id="backLobby" name="backLobby"><span>Return to lobby</span></button>
     </form>
 </div>
-<button class="custom-btn btn-3" id="heroPower" name="heroPower"><span>Hero Power</span></button>
+<button class="custom-btn btn-3" id="heroPower" name="heroPower"><span>Hero Power</span></button></div>
 
-</div>
-</body>
 <?php
 require_once("partial/footer.php");

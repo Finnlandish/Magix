@@ -8,7 +8,7 @@ require_once("partial/header.php");
 
 ?>
 <script src="./js/chat.js"></script>
-<!-- <script src="./js/lobby.js"></script> -->
+<script defer src="./js/lobby.js" type="module"></script>
 <div class="welcomLobby">
     <h2>Welcome to Magix <?= $_SESSION["username"] ?></h2>
 </div>
@@ -41,13 +41,7 @@ require_once("partial/header.php");
         <iframe style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
         </iframe>
     </div>
-    <div id="example">
-        <p id="test">x: , y:</p>
-    </div>
-    <div id="container" style="position: relative;"></div>
-
-    <!-- <div class="chansey"><a href="https://pokemondb.net/pokedex/blissey"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/blissey.gif" alt="Blissey"></a></div> -->
-
+    <div id="container"></div>
 </div>
 
 </body>
