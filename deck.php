@@ -10,6 +10,7 @@
         <iframe style="height: 100vh;width:100vh;" src="https://magix.apps-de-cours.com/server/#/deck/<?= $_SESSION["key"]?>">
         </iframe>
     </div>
-    
+    <button class="custom-btn btn-3" id="backLobby" name="backLobby" onclick="window.location='lobby.php';"><span>Return to lobby</span></button>
+
 <?php
     require_once("partial/footer.php");

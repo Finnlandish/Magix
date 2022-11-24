@@ -12,6 +12,7 @@ require_once("partial/header.php");
 <div>
     <p>hello</p>
 </div>    
+<button class="custom-btn btn-3" id="backLobby" name="backLobby" onclick="window.location='lobby.php';"><span>Return to lobby</span></button>
 
 
 <?php

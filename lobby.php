@@ -36,6 +36,7 @@ require_once("partial/header.php");
             <button type="submit" name="TRAINING" id="practice" class="custom-btn btn-3"><span>Pratique</span></button>
             <button type="submit" name="loggout" id="logout" class="custom-btn btn-3"> <span>Logout</span></button>
             <button type="submit" name="Stats" id="stats" class="custom-btn btn-3"> <span>Stats</span></button>
+            <button type="submit" name="deck" id="deck" class="custom-btn btn-3"> <span>Deck</span></button>
             <div id="music" class="custom-btn btn-3" onclick="playMusic()"> <span>Music</span></div>
 
         </form>

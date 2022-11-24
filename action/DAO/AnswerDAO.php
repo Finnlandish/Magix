@@ -1,6 +1,6 @@
 <?php
    
-   require_once("action/Connection.php");
+   require_once("action/DAO/Connection.php");
    
     class AnswerDAO {
         public static function getAnswers()

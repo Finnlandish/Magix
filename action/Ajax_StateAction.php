@@ -1,5 +1,6 @@
 <?php
     require_once("action/CommonAction.php");
+    require_once("action/DAO/AnswerDAO.php");
 
     class Ajax_StateAction extends CommonAction {
 
@@ -17,6 +18,7 @@
                     $data["type"]= $_POST["type"];
                     $data["uid"]= $_POST["uid"];
                     $result = CommonAction::callAPI("games/action", $data);
+                    AnswerDAO::addCard($_POST["id"]);
                 }
                 elseif ($_POST["type"] == "ATTACK") {
                     $data["key"] = $_SESSION["key"];
@@ -42,6 +44,9 @@
                     $data["key"] = $_SESSION["key"];
                     $data["type"]= $_POST["type"];
                     $result = CommonAction::callAPI("games/action", $data);
+                }
+                elseif ($_POST["type"] == "BD") {
+                    
                 }
                 if($result=="INVALID_KEY"){
                     echo("INVALID_KEY");
