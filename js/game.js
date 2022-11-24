@@ -175,6 +175,11 @@ const créer_hand = (data, area) => {
                     }
                 })
         }
+        if (e.mechanics.includes("charge")) {
+            card.style.backgroundImage = "url(\img\pichuCard.png)";
+        } else if (e.mechanics.includes("taunt")) {
+            card.style.backgroundImage = "url(\img\snorlaxCard.png)";
+        }
         if (e.cost >= data.mp) {
             card.style.opacity = "0.5";
         }
@@ -210,10 +215,16 @@ const créer_board = (data, area) => {
         card.appendChild(document.createTextNode(" mechanic : " + e.mechanics))
         document.getElementById(area).appendChild(card)
         card.className = "myboard"
+
         if (e.state == "SLEEP") {
             card.style.backgroundImage = "url('img/dittoSleep.png')"
         } else {
             card.style.backgroundImage = "url('img/Dittocart.png')"
+        }
+        if (e.mechanics.includes("charge")) {
+            card.style.backgroundImage = "url(\img\pichuCard.png)";
+        } else if (e.mechanics.includes("taunt")) {
+            card.style.backgroundImage = "url(\img\snorlaxCard.png)";
         }
         card.onmouseenter = () => {
 
@@ -252,6 +263,11 @@ const créer_enemy_board = (data, area) => {
         document.getElementById(area).appendChild(card)
         card.className = "enemyboard"
         enemycards.push(card)
+        if (e.mechanics.includes("charge")) {
+            card.style.backgroundImage = "url(\img\pichuCard.png)";
+        } else if (e.mechanics.includes("taunt")) {
+            card.style.backgroundImage = "url(\img\snorlaxCard.png)";
+        }
         if (e.state == "SLEEP") {
             card.style.backgroundImage = "url('img/dittoSleep.png')"
         } else {
