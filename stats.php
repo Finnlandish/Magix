@@ -8,9 +8,11 @@ $data = $action->execute();
 // $data contient les variables nécessaires à gérer l'interface graphique
 require_once("partial/header.php");
 ?>
-<body>
+<body class="stats">
 <div>
-    <p>hello</p>
+<?= $_SESSION["stats"]?>
+<div id="piechart"></div>
+
 </div>    
 <button class="custom-btn btn-3" id="backLobby" name="backLobby" onclick="window.location='lobby.php';"><span>Return to lobby</span></button>
 

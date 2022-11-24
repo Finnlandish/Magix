@@ -1,6 +1,3 @@
-
-
-
 import TiledImage from './TiledImage.js'
 // =======================================================
 // Animation in a canvas
@@ -37,7 +34,7 @@ tiledImageDOM.changeMinMaxInterval(0, 4, () => {
 });
 
 let x = 2000;
-let y = 1150;
+let y = 930;
 let depx = -0.5;
 let depy = 0.01;
 
@@ -49,10 +46,10 @@ const tickDOM = () => {
         depx = -0.8
         depy = 0.5
         tiledImageDOM.updateDimensions()
-        
+
         if (y >= 1500) {
             x = 2000;
-            y = 1150;
+            y = 935;
             depx = -0.5;
             depy = 0.01;
 
@@ -87,6 +84,7 @@ wooper.onclick = () => {
 function playAudio() {
     a.play();
 }
+
 function playWooper() {
     b.play();
 }

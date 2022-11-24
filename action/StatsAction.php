@@ -9,16 +9,10 @@
 
         protected function executeAction() {
 
-            $answers = AnswerDAO::getAnswers();
-
-            return compact("answers");
-
-            if (isset($_POST["text"])) {
-                # code...
-                $reponce = AnswerDAO::addCard($_POST["card"]);
-
-                return compact("reponce");
-            }
+            $stats = AnswerDAO::getStats();
+            $_SESSION["stats"]=$stats;
+            
+            return compact("stats");
             
         }
     }

@@ -3,11 +3,11 @@
    require_once("action/DAO/Connection.php");
    
     class AnswerDAO {
-        public static function getAnswers()
+        public static function getStats()
         {
             $connection = Connection::getConnection();
 
-            $statement = $connection->prepare("SELECT * FROM stats");
+            $statement = $connection->prepare("SELECT COUNT(cardid) FROM stats GROUP BY cardid;");
 
             $statement->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -22,7 +22,7 @@
             # code...
             $connection = Connection::getConnection();
 
-            $statement = $connection->prepare("INSERT INTO stats ($cardid) VALUES ($cardid)");
+            $statement = $connection->prepare("INSERT INTO stats (cardid) VALUES ($cardid)");
 
             $statement->execute();
 
