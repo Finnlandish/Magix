@@ -9,16 +9,17 @@ $data = $action->execute();
 
 require_once("partial/header.php");
 ?>
-<div class="login">
+<script defer src="./js/index.js" type="module"></script>
 
-    <!-- <img id="pichu" src="img/Indexbg/pichu.png" alt=""> -->
-    <img id="wooper" src="img/Indexbg/Wooper.png" alt="">
-    <!-- <img id="eevee" src="img/Indexbg/pichu.png" alt=""> -->
-
-
-
-
-    <div class="welcomeIndex">
+<div class="login" >
+    <audio id="welcomeAudio">
+        <source src="Sounds/index/welcome.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="wooperAudio">
+        <source src="Sounds/PokeSound/wooper.mp3" type="audio/mpeg">
+    </audio>
+   
+    <div class="welcomeIndex" >
         <h2>Magix Arena</h2>
     </div>
     <?php
@@ -42,6 +43,10 @@ require_once("partial/header.php");
             <Button type="submit" name="connexion" id="connect" class="custom-btn btn-3"><span>Connect</span></Button>
 
         </form>
+
     </div>
-<?php
-require_once("partial/footer.php");
+    <div id="welcomePlay" class="custom-btn btn-3"><span>Info</span></div>
+
+    <div id="container"></div>
+    <?php
+    require_once("partial/footer.php");

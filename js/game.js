@@ -5,6 +5,8 @@ let playedCards = []
 let attackform = new FormData()
 let gamelost = false
 let gamewon = false
+var audio = new Audio('audio_file.mp3');
+audio.play();
 const state = () => {
 
     fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
@@ -25,11 +27,11 @@ const state = () => {
                 JSON.stringify(curdata["opponent"]["board"]) !== JSON.stringify(data["opponent"]["board"])) {
                 curdata = data
                 clearJeu()
+                add_stat(data)
                 add_hand(data)
                 add_board(data)
                 add_enemy_board(data)
                 creer_enemy_hand(data)
-                add_stat(data)
             }
             timer(data)
 
@@ -40,6 +42,10 @@ const state = () => {
                 gamewon = true
 
             } else if (data == "LAST_GAME_LOST") {
+                gamelost = true
+
+
+            }else if (data == "WAITING") {
                 gamelost = true
 
 
@@ -77,6 +83,7 @@ const state = () => {
 
                 Endcard.className = "EndcardLost"
                 document.querySelector(".game").appendChild(Endcard)
+                
             }
         }
         if (!data.heroPowerAlreadyUsed) {
@@ -120,7 +127,7 @@ const créer_hand = (data, area) => {
         card.appendChild(document.createTextNode(" mechanic : " + e.mechanics))
         document.getElementById(area).appendChild(card)
         card.className = "cards"
-
+       
         card.onmouseenter = () => {
             card.style.border = "thick solid #0000FF"
 
@@ -139,7 +146,17 @@ const créer_hand = (data, area) => {
                     body: form
                 })
                 .then(response => response.json())
-                .then(data => {})
+                .then(data => {
+                    if (typeof data == "object") {
+                        //si la carte est jouer
+                        if (JSON.stringify(curdata["hand"]) != JSON.stringify(data["hand"])) {
+                           playedCards.push(card_id)
+                        }
+                    } 
+                })
+        }
+        if(e.cost>=data.mp){
+            card.style.opacity = "0.5";
         }
     });
 
@@ -179,26 +196,20 @@ const créer_board = (data, area) => {
             card.style.backgroundImage = "url('img/Dittocart.png')"
         }
         card.onmouseenter = () => {
-            // let hov = document.createElement("div");
-            // card.appendChild(hov)
-            // hov.className = "hoverCard"
+            
             card.style.border = "thick solid #0000FF"
         }
         card.onmouseleave = () => {
                 card.style.border = "none";
                 card.style.height = "70%"
             }
-            // if (state=="SLEEP"){
-            //     card.style.backgroundImage="url('../img/dittoSleep.png')";
-            // }
-        enemycards.push(card)
         card.onclick = () => {
             console.log("clicked")
             attackform.delete('type')
             attackform.delete('uid')
             attackform.append("type", "ATTACK")
             attackform.append("uid", card_uid)
-
+            
         }
 
     });
@@ -329,11 +340,6 @@ const clearJeu = () => {
     document.getElementById("timer").innerHTML = ""
     document.getElementById("mystats").innerHTML = ""
     document.getElementById("enemystats").innerHTML = ""
-
-
-    cards = []
-    enemycards = []
-    playedCards = []
 }
 
 

@@ -9,6 +9,23 @@ require_once("partial/header.php");
 ?>
 <script src="./js/chat.js"></script>
 <script defer src="./js/lobby.js" type="module"></script>
+<!-- Audio -->
+<audio id="chanseyAudio">
+        <source src="Sounds/PokeSound/Chansey.mp3" type="audio/mpeg">
+</audio>
+<audio id="musiclob1">
+        <source src="Sounds/lobby/cool-jazz-loops-2641.mp3" type="audio/mpeg">
+</audio>
+<audio id="musiclob2">
+        <source src="Sounds/lobby/lullaby-13005.mp3" type="audio/mpeg">
+</audio>
+<audio id="musiclob3">
+        <source src="Sounds/lobby/lovely-time-13003.mp3" type="audio/mpeg">
+</audio>
+<audio id="musiclob4">
+        <source src="Sounds/lobby/piano-bar-piano-lounge-background-chill-music-4178.mp3" type="audio/mpeg">
+</audio>
+
 <div class="welcomLobby">
     <h2>Welcome to Magix <?= $_SESSION["username"] ?></h2>
 </div>
@@ -19,6 +36,7 @@ require_once("partial/header.php");
             <button type="submit" name="TRAINING" id="practice" class="custom-btn btn-3"><span>Pratique</span></button>
             <button type="submit" name="loggout" id="logout" class="custom-btn btn-3"> <span>Logout</span></button>
             <button type="submit" name="Stats" id="stats" class="custom-btn btn-3"> <span>Stats</span></button>
+            <div id="music" class="custom-btn btn-3" onclick="playMusic()"> <span>Music</span></div>
 
         </form>
 

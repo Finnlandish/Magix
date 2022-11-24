@@ -1,0 +1,92 @@
+
+
+
+import TiledImage from './TiledImage.js'
+// =======================================================
+// Animation in a canvas
+// -------------------------------------------------------
+let columnCount = 4;
+let rowCount = 1;
+let refreshDelay = 100; // msec
+let loopColumns = true; // or by row?
+let scale = 1.0;
+// =======================================================
+// Embed animation in a div
+// Works the same way, with the same features as canvas, but embeds the sprite in a div instead of a canvas
+// -------------------------------------------------------
+
+let node = document.createElement("div");
+document.getElementById("container").append(node);
+
+let tiledImageDOM = new TiledImage("img/Indexbg/Wooper.png", 4, 1, 300, true, 1, node);
+let ghost = new TiledImage("img/Indexbg/Wooper.png", 4, 1, 300, true, 1, node);
+
+node.id = "wooperNode";
+tiledImageDOM.changeRow(0);
+let dim1 = 0
+let dim2 = 50
+let dim3 = 150
+let dim4 = 150
+
+tiledImageDOM.setMinMaxDimensions(dim1, dim2, dim3, dim4);
+
+// Logic where the sprite changes row after animating through its columns
+tiledImageDOM.changeMinMaxInterval(0, 4, () => {
+    tiledImageDOM.changeRow(0);
+    tiledImageDOM.changeMinMaxInterval(0, 4);
+});
+
+let x = 2000;
+let y = 1150;
+let depx = -0.5;
+let depy = 0.01;
+
+const tickDOM = () => {
+
+    x += depx
+    y += depy
+    if (x <= 1000) {
+        depx = -0.8
+        depy = 0.5
+        tiledImageDOM.updateDimensions()
+        
+        if (y >= 1500) {
+            x = 2000;
+            y = 1150;
+            depx = -0.5;
+            depy = 0.01;
+
+        }
+
+
+    }
+
+
+
+    tiledImageDOM.tick(x, y);
+
+    window.requestAnimationFrame(tickDOM);
+}
+
+tickDOM();
+
+let doc = document.getElementById("welcomePlay");
+var a = document.getElementById("welcomeAudio");
+
+let wooper = document.getElementById("wooperNode");
+var b = document.getElementById("wooperAudio");
+
+doc.onclick = () => {
+    playAudio()
+}
+wooper.onclick = () => {
+    playWooper()
+}
+
+
+function playAudio() {
+    a.play();
+}
+function playWooper() {
+    b.play();
+}
