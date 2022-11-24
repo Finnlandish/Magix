@@ -175,10 +175,10 @@ const créer_hand = (data, area) => {
                     }
                 })
         }
-        if (e.mechanics.includes("charge")) {
-            card.style.backgroundImage = "url(\img\pichuCard.png)";
-        } else if (e.mechanics.includes("taunt")) {
-            card.style.backgroundImage = "url(\img\snorlaxCard.png)";
+        if (e.mechanics.includes("Charge")) {
+            card.style.backgroundImage = "url('img/pichuCard.png')";
+        } else if (e.mechanics.includes("Taunt")) {
+            card.style.backgroundImage = "url('img/snorlaxCard.png')";
         }
         if (e.cost >= data.mp) {
             card.style.opacity = "0.5";
@@ -222,9 +222,9 @@ const créer_board = (data, area) => {
             card.style.backgroundImage = "url('img/Dittocart.png')"
         }
         if (e.mechanics.includes("charge")) {
-            card.style.backgroundImage = "url(\img\pichuCard.png)";
+            card.style.backgroundImage = "url(img/pichuCard.png)";
         } else if (e.mechanics.includes("taunt")) {
-            card.style.backgroundImage = "url(\img\snorlaxCard.png)";
+            card.style.backgroundImage = "url(img/snorlaxCard.png)";
         }
         card.onmouseenter = () => {
 
@@ -240,6 +240,15 @@ const créer_board = (data, area) => {
             attackform.delete('uid')
             attackform.append("type", "ATTACK")
             attackform.append("uid", card_uid)
+
+        }
+        if (e.mechanics.includes("Charge")) {
+            card.style.backgroundImage = "url('img/pichuCard.png')";
+            card.style.backgroundSize = 'cover';
+
+        } else if (e.mechanics.includes("Taunt")) {
+            card.style.backgroundImage = "url('img/snorlaxCard.png')";
+            card.style.backgroundSize = 'cover';
 
         }
 
@@ -263,11 +272,7 @@ const créer_enemy_board = (data, area) => {
         document.getElementById(area).appendChild(card)
         card.className = "enemyboard"
         enemycards.push(card)
-        if (e.mechanics.includes("charge")) {
-            card.style.backgroundImage = "url(\img\pichuCard.png)";
-        } else if (e.mechanics.includes("taunt")) {
-            card.style.backgroundImage = "url(\img\snorlaxCard.png)";
-        }
+
         if (e.state == "SLEEP") {
             card.style.backgroundImage = "url('img/dittoSleep.png')"
         } else {
@@ -291,6 +296,17 @@ const créer_enemy_board = (data, area) => {
                 })
                 .then(response => response.json())
                 .then(data => {})
+        }
+        if (e.mechanics.includes("Charge")) {
+
+        } else if (e.mechanics.includes("Taunt")) {
+            if (e.state == "SLEEP") {
+                card.style.backgroundImage = "url('img/snorlaxCard.png')";
+            } else {
+                // card.style.backgroundImage = "url('img/pichuSleep.png')"
+            }
+
+
         }
 
     });
