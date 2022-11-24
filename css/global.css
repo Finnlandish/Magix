@@ -600,3 +600,16 @@
         color: rgb(255, 0, 0);
         opacity: 80%;
     }
+    .waitingCard {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(138, 198, 226);
+        text-align: center;
+        font-size: 50px;
+        padding: 35vh 0;
+        color: rgb(107, 132, 143);
+        opacity: 80%;
+    }
+    

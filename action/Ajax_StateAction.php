@@ -28,14 +28,19 @@
                 }
                 elseif ($_POST["type"] == "HERO_POWER") {
                     $data["key"] = $_SESSION["key"];
+                    $data["type"]= $_POST["type"];
+
                     $result = CommonAction::callAPI("games/action", $data);
                 }
                 elseif ($_POST["type"] == "END_TURN") {
                     $data["key"] = $_SESSION["key"];
+                    $data["type"]= $_POST["type"];
+
                     $result = CommonAction::callAPI("games/action", $data);
                 }
                 elseif ($_POST["type"] == "SURRENDER") {
                     $data["key"] = $_SESSION["key"];
+                    $data["type"]= $_POST["type"];
                     $result = CommonAction::callAPI("games/action", $data);
                 }
                 if($result=="INVALID_KEY"){

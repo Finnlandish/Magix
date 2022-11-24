@@ -1,13 +1,12 @@
 <?php
 require_once("action/GameAction.php");
-require_once("action/GameAction.php");
 
 $action = new GameAction();
 $data = $action->execute();
 
 require_once("partial/header.php");
 ?>
-<script src="./js/game.js"></script>
+<script defer src="./js/game.js"></script>
 <script src="./js/chat.js"></script>
 
 <div class="game">
@@ -46,12 +45,12 @@ require_once("partial/header.php");
 </div>
 <div class="button">
     <form action="" method="POST">
-        <button class="custom-btn btn-3" id="surrender" name="surrender"><span>surrender</span></button>
+        <div class="custom-btn btn-3" id="surrender" name="surrender" onclick="surrender()"><span>surrender</span></div>
     </form>
 </div>
 <div class="button">
     <form action="" method="POST">
-        <button class="custom-btn btn-3" id="endturn" name="endturn"><span>end-turn</span></button>
+        <div class="custom-btn btn-3" id="endturn" name="endturn"><span>end-turn</span></div>
     </form>
 </div>
 <div class="button">
@@ -59,7 +58,7 @@ require_once("partial/header.php");
         <button class="custom-btn btn-3" id="backLobby" name="backLobby"><span>Return to lobby</span></button>
     </form>
 </div>
-<button class="custom-btn btn-3" id="heroPower" name="heroPower"><span>Hero Power</span></button></div>
+<div class="custom-btn btn-3" id="heroPower" name="heroPower"><span>Hero Power</span></div></div>
 
 <?php
 require_once("partial/footer.php");
