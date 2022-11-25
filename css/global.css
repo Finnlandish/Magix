@@ -201,7 +201,7 @@
         width: 100vw;
         font-size: 20px;
         font-family: 'Yanone Kaffeesatz', sans-serif;
-        z-index: 1;
+        z-index: 10;
     }
     
     .lobby {
@@ -308,7 +308,7 @@
         position: absolute;
         width: 100vw;
         height: 100vw;
-        z-index: 1;
+        z-index: 3;
     }
     /* game */
     
