@@ -179,7 +179,12 @@ const créer_hand = (data, area) => {
             card.style.backgroundImage = "url('img/pichuCard.png')";
         } else if (e.mechanics.includes("Taunt")) {
             card.style.backgroundImage = "url('img/snorlaxCard.png')";
+        } else if (e.mechanics.includes("Stealth")) {
+            card.style.backgroundImage = "url('img/greninjaCard.png')";
         }
+        // else if (e.mechanics.includes("battlecry")) {
+        //     card.style.backgroundImage = "url('img/snorlaxCard.png')";
+        // }
         if (e.cost >= data.mp) {
             card.style.opacity = "0.5";
         }
