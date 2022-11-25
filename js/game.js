@@ -252,13 +252,22 @@ const créer_board = (data, area) => {
         if (e.mechanics.includes("Charge")) {
             card.style.backgroundImage = "url('img/pichuCard.png')";
             card.style.backgroundSize = 'cover';
+            if (e.state == "SLEEP") {
+                card.style.backgroundImage = "url('img/pichuSleep.png')";
+            }
 
         } else if (e.mechanics.includes("Taunt")) {
             card.style.backgroundImage = "url('img/snorlaxCard.png')";
             card.style.backgroundSize = 'cover';
+            if (e.state == "SLEEP") {
+                card.style.backgroundImage = "url('img/snorlaxSleep.png')";
+            }
 
         } else if (e.mechanics.includes("Stealth")) {
             card.style.backgroundImage = "url('img/greninjaCard.png')";
+            if (e.state == "SLEEP") {
+                card.style.backgroundImage = "url('img/greninjaSleep.png')";
+            }
         }
 
     });
@@ -309,14 +318,24 @@ const créer_enemy_board = (data, area) => {
         if (e.mechanics.includes("Charge")) {
             card.style.backgroundImage = "url('img/pichuCard.png')";
             card.style.backgroundSize = 'cover';
+            if (e.state == "SLEEP") {
+                card.style.backgroundImage = "url('img/pichuSleep.png')";
+            }
 
         } else if (e.mechanics.includes("Taunt")) {
             card.style.backgroundImage = "url('img/snorlaxCard.png')";
             card.style.backgroundSize = 'cover';
+            if (e.state == "SLEEP") {
+                card.style.backgroundImage = "url('img/snorlaxSleep.png')";
+            }
 
         } else if (e.mechanics.includes("Stealth")) {
             card.style.backgroundImage = "url('img/greninjaCard.png')";
+            if (e.state == "SLEEP") {
+                card.style.backgroundImage = "url('img/greninjaSleep.png')";
+            }
         }
+
 
     });
 }

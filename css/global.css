@@ -266,11 +266,12 @@
     }
     
     #stats {
+        background-image: url('../img/leftbg.png');
         position: absolute;
         top: 29vh;
         left: 0;
         background-color: #fd9cdd;
-        z-index: 5;
+        z-index: 54;
     }
     
     #jouer {
