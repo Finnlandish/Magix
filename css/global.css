@@ -194,11 +194,13 @@
     }
     
     #leftStair {
-        background-image: url('../img/leftstair.png');
+        background-image: url('../img/leftbg.png');
+        position: absolute;
         background-repeat: no-repeat;
         background-size: fill;
         height: 100vh;
         width: 100vw;
+        top: 22vh;
         font-size: 20px;
         font-family: 'Yanone Kaffeesatz', sans-serif;
         z-index: 10;
@@ -308,7 +310,18 @@
         position: absolute;
         width: 100vw;
         height: 100vw;
-        z-index: 3;
+        z-index: 4;
+    }
+    
+    #chansey {
+        z-index: 5;
+    }
+    
+    .container {
+        position: absolute;
+        width: 100vw;
+        height: 100vw;
+        z-index: 4;
     }
     /* game */
     
