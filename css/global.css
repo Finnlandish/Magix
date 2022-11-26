@@ -318,7 +318,36 @@
     #chansey {
         z-index: 5;
     }
-    
+    #baulbasaur {
+        position: absolute;
+        background-image: url("../img/pokeSprites/bulbisaurAction.gif");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 200px;
+        height: 200px;
+        z-index: 565;
+    }
+    #charmander {
+        position: absolute;
+        background-image: url("../img/pokeSprites/charmander.gif");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 200px;
+        height: 200px;
+        z-index: 565;
+    }
+    #squirtle {
+        position: absolute;
+        background-image: url("../img/pokeSprites/squirtle.gif");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 200px;
+        height: 200px;
+        z-index: 565;
+    }
     .container {
         position: absolute;
         width: 100vw;

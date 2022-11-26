@@ -10,6 +10,7 @@ require_once("partial/header.php");
 <script src="./js/chat.js"></script>
 <script src="./js/music.js"></script>
 <script defer src="./js/lobby.js" type="module"></script>
+<script defer src="./js/pokemonPicker.js" type="module"></script>
 <!-- Audio -->
 <audio id="chanseyAudio">
         <source src="Sounds/PokeSound/Chansey.mp3" type="audio/mpeg">

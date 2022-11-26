@@ -15,8 +15,7 @@ let scale = 1.0;
 let node = document.createElement("div");
 document.getElementById("container").append(node);
 
-let tiledImageDOM = new TiledImage("img/Indexbg/Wooper.png", 4, 1, 300, true, 1, node);
-let ghost = new TiledImage("img/Indexbg/Wooper.png", 4, 1, 300, true, 1, node);
+let tiledImageDOM = new TiledImage("img/pokeSprites/Wooper.png", 4, 1, 300, true, 1, node);
 
 node.id = "wooperNode";
 tiledImageDOM.changeRow(0);
