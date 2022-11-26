@@ -11,4 +11,21 @@
 </head>
 
 <body>
-  
+<audio id="musiclob1">
+        <source src="Sounds/music/14 - Icirrus City.mp3" type="audio/mpeg">
+</audio>
+<audio id="musiclob2">
+        <source src="Sounds/music/21 - A Lullaby for Trains.mp3" type="audio/mpeg">
+</audio>
+<audio id="musiclob3">
+        <source src="Sounds/music/37 - Anville Town.mp3" type="audio/mpeg">
+</audio>
+<audio id="musiclob4">
+        <source src="Sounds/music/42 - Marnie's Theme.mp3" type="audio/mpeg">
+</audio>
+<audio id="musiclob5">
+        <source src="Sounds/music/44 - Route 3.mp3" type="audio/mpeg">
+</audio>
+<audio id="musiclob6">
+        <source src="Sounds/music/wild area.mp3" type="audio/mpeg">
+</audio>

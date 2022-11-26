@@ -10,6 +10,8 @@ $data = $action->execute();
 require_once("partial/header.php");
 ?>
 <script defer src="./js/index.js" type="module"></script>
+<script src="./js/music.js"></script>
+
 
 <div class="login" >
     <audio id="welcomeAudio">
@@ -46,6 +48,7 @@ require_once("partial/header.php");
 
     </div>
     <div id="welcomePlay" class="custom-btn btn-3"><span>Info</span></div>
+    <div id="music" class="custom-btn btn-3" onclick="playMusic()"> <span>Music</span></div>
 
     <div id="container"></div>
     <?php

@@ -117,6 +117,7 @@
         right: 10px;
         z-index: 10;
         background-color: white;
+        z-index: 50;
     }
     
     .box {
@@ -221,7 +222,7 @@
         position: absolute;
         top: 10vh;
         left: 31vw;
-        z-index: 5;
+        z-index: 97;
     }
     
     .welcomLobby {
@@ -266,7 +267,7 @@
     }
     
     #stats {
-        background-image: url('../img/leftbg.png');
+        
         position: absolute;
         top: 29vh;
         left: 0;
@@ -279,7 +280,7 @@
         top: 5vh;
         left: 0;
         background-color: #e74c3c;
-        z-index: 5;
+        z-index: 50;
     }
     
     #practice {
@@ -287,7 +288,7 @@
         top: 13vh;
         left: 0;
         background-color: rgb(0, 255, 34);
-        z-index: 5;
+        z-index: 50;
     }
     
     #logout {
@@ -295,7 +296,7 @@
         top: 21vh;
         left: 0;
         background-color: aliceblue;
-        z-index: 5;
+        z-index: 50;
     }
     
     #togglechat {
@@ -303,7 +304,7 @@
         top: 2vh;
         right: 15px;
         background-color: wheat;
-        z-index: 5;
+        z-index: 50;
     }
     /* lobby animations */
     

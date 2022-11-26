@@ -8,8 +8,11 @@ $data = $action->execute();
 // $data contient les variables nécessaires à gérer l'interface graphique
 require_once("partial/header.php");
 ?>
+<script src="./js/music.js"></script>
 
 <body class="stats">
+    <script src="./js/music.js"></script>
+
     <div>
         <?
         for ($x = 0; $x <= (sizeof($_SESSION["stats"])); $x++) {
@@ -20,6 +23,7 @@ require_once("partial/header.php");
 
     </div>
     <button class="custom-btn btn-3" id="backLobby" name="backLobby" onclick="window.location='lobby.php';"><span>Return to lobby</span></button>
+    <div id="music" class="custom-btn btn-3" onclick="playMusic()"> <span>Music</span></div>
 
 
     <?php
