@@ -39,7 +39,7 @@ function playMusic() {
         b6.volume = 0.01;
         musicPlaying = true
     }
-    else {
+    else if(musicPlaying){
 
         b1.pause();
         b2.pause();

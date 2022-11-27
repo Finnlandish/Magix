@@ -59,7 +59,6 @@ tickDOM();
 
 
 //audio
-let musicPlaying = false
 let chansey = document.getElementById("chansey");
 var a = document.getElementById("chanseyAudio");
 
