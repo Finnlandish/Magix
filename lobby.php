@@ -37,6 +37,7 @@ require_once("partial/header.php");
 
     </div>
     <div id="leftStair"></div>
+    <div id="rightStair"></div>
 
     <?php
     if (!empty($data["messageErr"])) {

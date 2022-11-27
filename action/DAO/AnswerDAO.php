@@ -27,5 +27,15 @@
             $statement->execute();
 
         }
+        public static function clearBD()
+        {
+            # code...
+            $connection = Connection::getConnection();
+
+            $statement = $connection->prepare("DELETE * FROM stats");
+
+            $statement->execute();
+
+        }
         
     }

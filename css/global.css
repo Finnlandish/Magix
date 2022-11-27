@@ -209,6 +209,19 @@
         font-family: 'Yanone Kaffeesatz', sans-serif;
         z-index: 10;
     }
+    #rightStair {
+        background-image: url('../img/rightbg.png');
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: fill;
+        height: 100vh;
+        width: 100vw;
+        top: 25vh;
+        left: 73vw;
+        font-size: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        z-index: 10;
+    }
 
     .lobby {
         background-image: url('../img/LImage.png');
@@ -689,4 +702,12 @@
         width: 100vw;
         height: 100vh;
         background-color: rgba(177, 235, 213, 0.521);
+    }
+
+    #chartContainer{
+        height: 50vh;
+        width: 50vw;
+        position: absolute;
+        left: 20vw;
+        top: 20vh;
     }

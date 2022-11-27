@@ -134,7 +134,19 @@ const créer_hand = (data, area) => {
         let card_id = e.id
 
         card.id = e.uid
-        card.appendChild(document.createTextNode(" Hp : " + e.hp))
+        card.appendChild(document.createTextNode(" hp : " + e.hp))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode(" id : " +e.id))
+
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createTextNode(" Cost : " + e.cost))
         card.appendChild(document.createElement("br"))
@@ -208,7 +220,18 @@ const créer_board = (data, area) => {
         // let state = board.state
         card.id = e.uid
         let card_uid = e.uid
-        card.appendChild(document.createTextNode(" Hp : " + e.hp))
+        card.appendChild(document.createTextNode(" hp : " + e.hp))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode(" id : " +e.id))
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createTextNode(" Cost : " + e.cost))
         card.appendChild(document.createElement("br"))
@@ -277,7 +300,19 @@ const créer_enemy_board = (data, area) => {
         let card = document.createElement("div");
         card.id = e.uid
         let card_uid = e.uid
-        card.appendChild(document.createTextNode(" Hp : " + e.hp))
+        card.appendChild(document.createTextNode(" hp : " + e.hp))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode('\u00A0\u00A0'))
+        card.appendChild(document.createTextNode(" id : " +e.id))
+
         card.appendChild(document.createElement("br"))
         card.appendChild(document.createTextNode(" Cost : " + e.cost))
         card.appendChild(document.createElement("br"))
@@ -345,7 +380,7 @@ const créer_stats = (data, area) => {
     let stat = document.createElement("div")
     stat.appendChild(document.createTextNode(" class : " + data.heroClass))
     stat.appendChild(document.createElement("br"))
-    stat.appendChild(document.createTextNode(" Hp : " + data.hp))
+    stat.appendChild(document.createTextNode(" " + data.hp))
     stat.appendChild(document.createElement("br"))
     stat.appendChild(document.createTextNode(" Mp : " + data.mp))
     stat.appendChild(document.createElement("br"))
@@ -359,7 +394,7 @@ const créer_enemy_stats = (data, area) => {
     stat.appendChild(document.createElement("br"))
     stat.appendChild(document.createTextNode(" Class : " + data.heroClass))
     stat.appendChild(document.createElement("br"))
-    stat.appendChild(document.createTextNode(" Hp : " + data.hp))
+    stat.appendChild(document.createTextNode(" " + data.hp))
     stat.appendChild(document.createElement("br"))
     stat.appendChild(document.createTextNode(" Mp : " + data.mp))
     stat.appendChild(document.createElement("br"))
