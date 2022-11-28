@@ -8,6 +8,9 @@ require_once("partial/header.php");
 ?>
 <script defer src="./js/game.js"></script>
 <script src="./js/chat.js"></script>
+<script src="./js/music.js"></script>
+
+
 
 <div class="game">
     <div class="">
@@ -65,7 +68,9 @@ require_once("partial/header.php");
         <button class="custom-btn btn-3" id="backLobby" name="backLobby"><span>Return to lobby</span></button>
     </form>
 </div>
-<div class="custom-btn btn-3" id="heroPower" name="heroPower"><span>Hero Power</span></div></div>
+<div class="custom-btn btn-3" id="heroPower" name="heroPower"><span>Hero Power</span></div>
+</div>
+<div id="battlemusic" class="custom-btn btn-3" onclick="playBattleMusic()"><span>Music</span></div>
 
 <?php
 require_once("partial/footer.php");

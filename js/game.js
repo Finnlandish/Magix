@@ -156,7 +156,7 @@ const créer_hand = (data, area) => {
         card.appendChild(document.createTextNode(" mechanic : " + e.mechanics))
         document.getElementById(area).appendChild(card)
         card.className = "cards"
-        if (e.cost < mp) {
+        if (e.cost <= mp) {
             card.style.border = "thick inset #FFFF00"
 
         } else {
@@ -165,7 +165,7 @@ const créer_hand = (data, area) => {
         }
 
         card.onmouseenter = () => {
-            if (e.cost < mp) {
+            if (e.cost <= mp) {
                 card.style.border = "thick inset #FFFFF0"
                 card.style.boxShadow = "0 0 6px 6px #FFFF00"
     
@@ -177,7 +177,7 @@ const créer_hand = (data, area) => {
             card.style.border = "none";
             card.style.boxShadow = "none";
             card.style.height = "70%"
-            if (e.cost < mp) {
+            if (e.cost <= mp) {
                 card.style.border = "thick inset #FFFF00"
 
             } else {
@@ -505,7 +505,12 @@ const add_stat = (data) => {
 
 const timer = (data) => {
     let time = data.remainingTurnTime
-    document.getElementById("timer").innerHTML = "<br> "+time
+    if(data.yourTurn){
+        document.getElementById("timer").innerHTML = "<br>your turn <br> "+time
+    }else{
+        document.getElementById("timer").innerHTML = "<br>opponent's turn<br> "+time
+
+    }
 }
 const clear_attackform = (data) => {
     if (!data.yourTurn) {

@@ -121,6 +121,15 @@
         background-color: white;
         z-index: 50;
     }
+    #battlemusic {
+        position: absolute;
+        text-align: center;
+        bottom: 10px;
+        right: 10px;
+        z-index: 10;
+        background-color: white;
+        z-index: 50;
+    }
 
     .box {
         position: absolute;
@@ -203,10 +212,9 @@
         background-repeat: no-repeat;
         background-size: fill;
         height: 100vh;
-        width: 100vw;
+        width: 30vw;
         top: 22vh;
-        font-size: 20px;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
+        left: 0vw;
         z-index: 10;
     }
 
@@ -219,8 +227,6 @@
         width: 100vw;
         top: 25vh;
         left: 73vw;
-        font-size: 20px;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
         z-index: 10;
     }
 
@@ -341,7 +347,7 @@
         z-index: 5;
     }
 
-    #baulbasaur {
+    #bulbasaur {
         position: absolute;
         background-image: url("../img/pokeSprites/bulbisaurAction.gif");
         background-size: contain;
@@ -384,10 +390,10 @@
     /* game */
 
     .timer {
-        width: 10vh;
-        height: 6vw;
+        width: 15vh;
+        height: 7vw;
         position: absolute;
-        top: 40vh;
+        top: 30vh;
         right: 0.5vh;
         color: rgb(4, 40, 30);
         background-image: url("../img/timer.png");
@@ -395,7 +401,7 @@
         background-size: contain;
         background-position: right;
         text-align: center;
-        font-size: 30px;
+        font-size: 3vh;
 
     }
 
@@ -541,40 +547,48 @@
         max-height: 198.86px;
         min-width: 140.20px;
         min-height: 198.86px;
-
+        font-size: 25px;
         margin-left: 20px;
         font-size: medium;
 
     }
 
-    #mystats {
-        position: absolute;
-        width: 20vw;
-        height: 10vh;
+    #mystats>* {
+        background-color: #e3a4dd;
         bottom: 0;
         left: 0;
-        background-image: url(../img/Lucas_Back.png);
-        background-size: contain;
-        background-repeat: no-repeat;
+        position: absolute;
+        width: fit-content;
+        height: fit-content;
+        
+        text-align: justify;
+        font-size: 25px;
+        padding: 1vw;
     }
-    #myAvatar{
-        background-image: url(../img/Lucas_Back.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    #enemyAvatar{
+
+    #myAvatar {
         background-image: url(../img/Lucas_Back.png);
         background-size: contain;
         background-repeat: no-repeat;
     }
 
-    #enemystats {
+    #enemyAvatar {
+        background-image: url(../img/Lucas_Back.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #enemystats>* {
         background-color: #e74c3c;
-        position: absolute;
-        width: 20vw;
-        height: 10vh;
         left: 60vw;
         top: 0vh;
+        position: absolute;
+        width: fit-content;
+        height: fit-content;
+        
+        text-align: justify;
+        font-size: 25px;
+        padding: 1vw;
     }
 
     #heroPower {

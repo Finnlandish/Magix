@@ -15,6 +15,15 @@ require_once("partial/header.php");
 <audio id="chanseyAudio">
         <source src="Sounds/PokeSound/Chansey.mp3" type="audio/mpeg">
 </audio>
+<audio id="squirtleAudio">
+        <source src="Sounds/PokeSound/squirtleSound.mp3" type="audio/mpeg">
+</audio>
+<audio id="bulbasaurAudio">
+        <source src="Sounds/PokeSound/bulbasaurSound.mp3" type="audio/mpeg">
+</audio>
+<audio id="charmanderAudio">
+        <source src="Sounds/PokeSound/charmanderSound.mp3" type="audio/mpeg">
+</audio>
 
 
 <div class="welcomLobby">
@@ -36,8 +45,8 @@ require_once("partial/header.php");
 
 
     </div>
-    <div id="leftStair"></div>
     <div id="rightStair"></div>
+    <div id="leftStair"></div>
 
     <?php
     if (!empty($data["messageErr"])) {

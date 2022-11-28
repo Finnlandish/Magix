@@ -1,13 +1,12 @@
 let squirtle = document.createElement("div");
 document.getElementById("container").append(squirtle);
 squirtle.id = 'squirtle'
-let baulbasaur = document.createElement("div");
-document.getElementById("container").append(baulbasaur);
-baulbasaur.id = 'baulbasaur'
+let bulbasaur = document.createElement("div");
+document.getElementById("container").append(bulbasaur);
+bulbasaur.id = 'bulbasaur'
 let charmander = document.createElement("div");
 document.getElementById("container").append(charmander);
 charmander.id = 'charmander'
-
 
 var id = null;
 function move() {
@@ -22,8 +21,8 @@ function move() {
 
     squirtle.style.top = y1 + 'px';
     squirtle.style.left = x1 + 'px';
-    baulbasaur.style.top = y2 + 'px';
-    baulbasaur.style.left = x2 + 'px';
+    bulbasaur.style.top = y2 + 'px';
+    bulbasaur.style.left = x2 + 'px';
     charmander.style.top = y3 + 'px';
     charmander.style.left = x3 + 'px';
     clearInterval(id);
@@ -33,7 +32,7 @@ function move() {
         x2--;
         x3--;
         squirtle.style.left = x1 + 'px';
-        baulbasaur.style.left = x2 + 'px';
+        bulbasaur.style.left = x2 + 'px';
         charmander.style.left = x3 + 'px';
 
         if(x1<750){
@@ -44,7 +43,7 @@ function move() {
             y3+=0.2
             x3+=1
             squirtle.style.top = y1 + 'px';
-            baulbasaur.style.top = y2 + 'px';
+            bulbasaur.style.top = y2 + 'px';
             charmander.style.top = y3 + 'px';
 
             if(y1>672){
@@ -52,10 +51,10 @@ function move() {
                 y2+=1
                 y3+=1
                 squirtle.style.top = y1 + 'px';
-                baulbasaur.style.top = y2 + 'px';
+                bulbasaur.style.top = y2 + 'px';
                 charmander.style.top = y3 + 'px';
 
-                if(y1>872){
+                if(y1>1072){
                     move()
                     
                 }
@@ -66,3 +65,31 @@ function move() {
     }
 }
 move()
+
+
+//audio
+var squirtleAud = document.getElementById("squirtleAudio");
+var bulbasaurAud = document.getElementById("bulbasaurAudio");
+var charmanderAud = document.getElementById("charmanderAudio");
+
+
+squirtle.onclick = () => {
+    playsquirtle()
+}
+bulbasaur.onclick = () => {
+    playbulbasaur()
+}
+charmander.onclick = () => {
+    playcharmander()
+}
+
+
+function playsquirtle() {
+    squirtleAud.play();
+}
+function playbulbasaur() {
+    bulbasaurAud.play();
+}
+function playcharmander() {
+    charmanderAud.play();
+}
