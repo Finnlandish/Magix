@@ -31,10 +31,12 @@ require_once("partial/header.php");
         window.onload = function() {
 
             var chart = new CanvasJS.Chart("chartContainer", {
-                theme: "light2",
+                backgroundColor: '#FFFFFF50',
                 animationEnabled: true,
+                fontColor: "black",
                 title: {
-                    text: "Percentage of card picked by ID"
+                    text: "Percentage of card picked by ID",
+                    fontColor: "black",
                 },
                 data: [{
                     type: "doughnut",
@@ -42,6 +44,7 @@ require_once("partial/header.php");
                     yValueFormatString: "#,##0.0\"%\"",
                     showInLegend: true,
                     legendText: "{label} : {y}",
+                    fontColor: "black",
                     dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
                 }]
             });

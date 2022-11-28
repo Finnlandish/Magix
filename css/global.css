@@ -221,7 +221,7 @@
         background-size: fill;
         height: 100vh;
         width: 30vw;
-        top: 22vh;
+        top: 25vh;
         left: 0vw;
         z-index: 10;
     }
@@ -233,8 +233,8 @@
         background-size: fill;
         height: 100vh;
         width: 100vw;
-        top: 25vh;
-        left: 73vw;
+        top: 28vh;
+        left: 91vw;
         z-index: 10;
     }
     
@@ -363,8 +363,8 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         z-index: 565;
     }
     
@@ -374,8 +374,8 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         z-index: 565;
     }
     
@@ -385,8 +385,8 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         z-index: 565;
     }
     
@@ -447,10 +447,10 @@
     }
     
     #backLobby {
-        width: 16vh;
         position: absolute;
         top: 60vh;
         right: 0.5vh;
+        width: 16vh;
         background-color: red;
         text-align: center;
     }
@@ -562,7 +562,7 @@
     #mystats>* {
         background-color: #e3a4dd;
         bottom: 0;
-        left: 0;
+        left: 10vw;
         position: absolute;
         width: fit-content;
         height: fit-content;
@@ -572,20 +572,30 @@
     }
     
     #myAvatar {
+        position: absolute;
         background-image: url(../img/Lucas_Back.png);
         background-size: contain;
         background-repeat: no-repeat;
+        min-width: 10vw;
+        min-height: 10vw;
+        bottom: -1vh;
+        left: 0;
     }
     
     #enemyAvatar {
-        background-image: url(../img/Lucas_Back.png);
+        position: absolute;
+        background-image: url(../img/Heros/eDefault.png);
         background-size: contain;
         background-repeat: no-repeat;
+        min-width: 15vw;
+        min-height: 13vw;
+        left: 60vw;
+        top: -4vh;
     }
     
     #enemystats>* {
         background-color: #e74c3c;
-        left: 60vw;
+        left: 50vw;
         top: 0vh;
         position: absolute;
         width: fit-content;
@@ -766,7 +776,7 @@
         height: 35vh;
         width: 40vw;
         position: absolute;
-        left: 25vw;
+        left: 34vw;
         top: 31vh;
     }
     

@@ -24,27 +24,20 @@ require_once("partial/header.php");
         }
         ?>
     </div>
-
+    
     <div class="board" id="board">
-
         <div class="timer" id="timer"></div>
-
-        <div class="enemystats" id="enemystats"></div>
+        <div class="enemyAvatar" id="enemystats"></div>
         <div class="enemyAvatar" id="enemyAvatar"></div>
-        <div class="area" id="enemydeck"></div>
+
         <div class="area" id="enemydeck"></div>
         <div class="area" id="enemycardBox"></div>
-        <div class="area" id="enemycardBox"></div>
-        <div class="area" id="mycardBox"></div>
         <div class="area" id="mycardBox"></div>
         <div class="area" id="mydeck"></div>
         <div class="area" id="mystats"></div>
-        <div class="area" id="mystats"></div>
-        <div class="area" id="mystats"></div>
-        <div class="myAvatar" id="myAvatar"></div>
-
-
     </div>
+    <div class="myAvatar" id="myAvatar"></div>
+
     <button class="custom-btn btn-3" id="togglechat" onclick="togglechat()"><span>toggle chat</span></button>
 
     <div id="chat" class="gamechat">
