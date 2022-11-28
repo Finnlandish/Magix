@@ -14,6 +14,7 @@ require_once("partial/header.php");
 
 
 <div class="login" >
+    <div id="indexlayer2"></div>
     <audio id="welcomeAudio">
         <source src="Sounds/index/welcome.mp3" type="audio/mpeg">
     </audio>

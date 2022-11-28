@@ -103,6 +103,18 @@
         z-index: 0;
     }
 
+    #indexlayer2 {
+        height: 100vh;
+        width: 100vw;
+        
+        background-image: url('../img/indexlayer2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        justify-content: center;
+
+        z-index: 5;
+    }
+
     #welcomePlay {
         position: absolute;
         text-align: center;
@@ -121,6 +133,7 @@
         background-color: white;
         z-index: 50;
     }
+
     #battlemusic {
         position: absolute;
         text-align: center;
@@ -219,7 +232,7 @@
     }
 
     #rightStair {
-        background-image: url('../img/rightbg.png');
+        background-image: url('../img/rightlay2.png');
         position: absolute;
         background-repeat: no-repeat;
         background-size: fill;
@@ -325,6 +338,7 @@
         background-color: aliceblue;
         z-index: 50;
     }
+
     #deck {
         position: absolute;
         top: 37vh;
@@ -567,7 +581,7 @@
         position: absolute;
         width: fit-content;
         height: fit-content;
-        
+
         text-align: justify;
         font-size: 25px;
         padding: 1vw;
@@ -592,7 +606,7 @@
         position: absolute;
         width: fit-content;
         height: fit-content;
-        
+
         text-align: justify;
         font-size: 25px;
         padding: 1vw;
@@ -779,11 +793,11 @@
         background-color: transparent;
     }
 
-    #clearBD{
+    #clearBD {
         width: 16vh;
         position: absolute;
         top: 50vh;
         right: 0.5vh;
         background-color: white;
-        text-align: center;  
+        text-align: center;
     }
