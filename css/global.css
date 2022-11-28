@@ -1,15 +1,14 @@
     @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
-
     * {
         margin: 0;
         padding: 0;
     }
-
-    :root {
+    
+     :root {
         max-width: 100vw;
         overflow: hidden;
     }
-
+    
     html,
     body {
         background-color: black;
@@ -19,19 +18,19 @@
         font-size: 20px;
         font-family: 'Yanone Kaffeesatz', sans-serif;
     }
-
+    
     h1,
     h2,
     h3 {
         text-align: center;
         border-bottom: 1px solid white;
     }
-
+    
     a {
         color: rgb(238, 231, 231);
         text-decoration: underline;
     }
-
+    
     input,
     select {
         font-size: 25px;
@@ -43,20 +42,19 @@
         padding: 10px;
         width: 100%;
     }
-
+    
     input {
         border-top-style: groove;
         border-right-style: groove;
         border-left-style: groove;
         border-bottom-style: groove;
     }
-
+    
     .no-outline:focus {
         outline: none;
     }
-
     /* index */
-
+    
     .success-message {
         position: absolute;
         width: fit-content;
@@ -67,7 +65,7 @@
         text-align: center;
         margin-top: 20px;
     }
-
+    
     .error-message {
         position: absolute;
         width: fit-content;
@@ -78,17 +76,17 @@
         text-align: center;
         margin-top: 20px;
     }
-
+    
     .data-line {
         margin-top: 10px;
         text-align: center;
     }
-
+    
     .half-width {
         width: 50%;
         margin: 0 auto;
     }
-
+    
     .login {
         background-image: url('../img/lab.png');
         background-repeat: no-repeat;
@@ -102,19 +100,17 @@
         justify-content: center;
         z-index: 0;
     }
-
+    
     #indexlayer2 {
         height: 100vh;
         width: 100vw;
-        
         background-image: url('../img/indexlayer2.png');
         background-repeat: no-repeat;
         background-size: cover;
         justify-content: center;
-
         z-index: 5;
     }
-
+    
     #welcomePlay {
         position: absolute;
         text-align: center;
@@ -123,7 +119,7 @@
         z-index: 10;
         background-color: white;
     }
-
+    
     #music {
         position: absolute;
         text-align: center;
@@ -133,7 +129,7 @@
         background-color: white;
         z-index: 50;
     }
-
+    
     #battlemusic {
         position: absolute;
         text-align: center;
@@ -143,7 +139,7 @@
         background-color: white;
         z-index: 50;
     }
-
+    
     .box {
         position: absolute;
         align-self: center;
@@ -156,13 +152,13 @@
         justify-content: center;
         z-index: 10;
     }
-
+    
     .champ {
         margin-left: 2vw;
         width: 14.8vw;
         text-align: center;
     }
-
+    
     .buttonIndex {
         min-width: 227px;
         min-height: 74px;
@@ -179,24 +175,24 @@
         border-left-style: hidden;
         border-bottom-style: hidden;
     }
-
+    
     .center {
         display: flex;
         justify-content: center
     }
-
+    
     .deck {
         width: 100vh;
         height: 100vh;
     }
-
+    
     #connect {
         position: relative;
         left: 2vw;
         width: 16vw;
         background-color: rgb(110, 171, 244);
     }
-
+    
     .welcomeIndex {
         top: 0vh;
         width: 100vw;
@@ -210,15 +206,14 @@
         display: flex;
         z-index: 2;
     }
-
     /* lobby */
-
+    
     .lobbybutton {
         bottom: 0;
         display: flex;
         flex-direction: column;
     }
-
+    
     #leftStair {
         background-image: url('../img/leftbg.png');
         position: absolute;
@@ -230,7 +225,7 @@
         left: 0vw;
         z-index: 10;
     }
-
+    
     #rightStair {
         background-image: url('../img/rightlay2.png');
         position: absolute;
@@ -242,7 +237,7 @@
         left: 73vw;
         z-index: 10;
     }
-
+    
     .lobby {
         background-image: url('../img/LImage.png');
         background-repeat: no-repeat;
@@ -253,14 +248,14 @@
         font-family: 'Yanone Kaffeesatz', sans-serif;
         z-index: 0;
     }
-
+    
     .lobbychat {
         position: absolute;
         top: 10vh;
         left: 31vw;
         z-index: 97;
     }
-
+    
     .welcomLobby {
         top: 0;
         width: 100vw;
@@ -273,48 +268,43 @@
         color: hsl(230, 100%, 95%);
         display: flex;
     }
-
+    
     @keyframes lights {
         0% {
             color: hsl(230, 40%, 80%);
             text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2), 0 0 0.125em hsla(320, 100%, 60%, 0.3), -1em -0.125em 0.5em hsla(40, 100%, 60%, 0), 1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
         }
-
         30% {
             color: hsl(230, 80%, 90%);
             text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5), 0 0 0.125em hsla(320, 100%, 60%, 0.5), -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2), 0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
         }
-
         40% {
             color: hsl(230, 100%, 95%);
             text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5), 0 0 0.125em hsla(320, 100%, 90%, 0.5), -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2), 0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
         }
-
         70% {
             color: hsl(230, 80%, 90%);
             text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5), 0 0 0.125em hsla(320, 100%, 60%, 0.5), 0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2), -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
         }
-
         100% {
             color: hsl(230, 40%, 80%);
             text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2), 0 0 0.125em hsla(320, 100%, 60%, 0.3), 1em -0.125em 0.5em hsla(40, 100%, 60%, 0), -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
         }
     }
-
+    
     h2 {
         animation: lights 5s 750ms linear infinite;
         text-align: center;
     }
-
+    
     #stats {
-
         position: absolute;
         top: 29vh;
         left: 0;
         background-color: #8fc1c7;
         z-index: 54;
     }
-
+    
     #jouer {
         position: absolute;
         top: 5vh;
@@ -322,7 +312,7 @@
         background-color: #e74c3c;
         z-index: 50;
     }
-
+    
     #practice {
         position: absolute;
         top: 13vh;
@@ -330,7 +320,7 @@
         background-color: rgb(0, 255, 34);
         z-index: 50;
     }
-
+    
     #logout {
         position: absolute;
         top: 21vh;
@@ -338,7 +328,7 @@
         background-color: aliceblue;
         z-index: 50;
     }
-
+    
     #deck {
         position: absolute;
         top: 37vh;
@@ -346,7 +336,7 @@
         background-color: rgb(211, 184, 96);
         z-index: 50;
     }
-
+    
     #togglechat {
         position: absolute;
         top: 2vh;
@@ -354,20 +344,19 @@
         background-color: wheat;
         z-index: 50;
     }
-
     /* lobby animations */
-
+    
     #container {
         position: absolute;
         width: 100vw;
         height: 100vw;
         z-index: 4;
     }
-
+    
     #chansey {
         z-index: 5;
     }
-
+    
     #bulbasaur {
         position: absolute;
         background-image: url("../img/pokeSprites/bulbisaurAction.gif");
@@ -378,7 +367,7 @@
         height: 200px;
         z-index: 565;
     }
-
+    
     #charmander {
         position: absolute;
         background-image: url("../img/pokeSprites/charmander.gif");
@@ -389,7 +378,7 @@
         height: 200px;
         z-index: 565;
     }
-
+    
     #squirtle {
         position: absolute;
         background-image: url("../img/pokeSprites/squirtle.gif");
@@ -400,16 +389,15 @@
         height: 200px;
         z-index: 565;
     }
-
+    
     .container {
         position: absolute;
         width: 100vw;
         height: 100vw;
         z-index: 4;
     }
-
     /* game */
-
+    
     .timer {
         width: 15vh;
         height: 7vw;
@@ -423,16 +411,15 @@
         background-position: right;
         text-align: center;
         font-size: 30px;
-
     }
-
+    
     .game {
         background-image: url("../img/stad.png");
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;
     }
-
+    
     .gamechat {
         display: none;
         position: absolute;
@@ -440,7 +427,7 @@
         right: -1vh;
         z-index: 100;
     }
-
+    
     #surrender {
         width: 16vh;
         position: absolute;
@@ -449,7 +436,7 @@
         background-color: white;
         text-align: center;
     }
-
+    
     #endturn {
         width: 16vh;
         position: absolute;
@@ -457,9 +444,8 @@
         right: 0.5vh;
         background-color: orange;
         text-align: center;
-
     }
-
+    
     #backLobby {
         width: 16vh;
         position: absolute;
@@ -467,9 +453,8 @@
         right: 0.5vh;
         background-color: red;
         text-align: center;
-
     }
-
+    
     #enemydeck {
         position: absolute;
         top: 0vh;
@@ -478,7 +463,7 @@
         display: flex;
         justify-content: center;
     }
-
+    
     .flipedCard {
         background-image: url("../img/cardflipped.png");
         background-repeat: no-repeat;
@@ -486,7 +471,7 @@
         width: 67.5px;
         height: 95.75px;
     }
-
+    
     .hoverCard {
         background-color: aquamarine;
         opacity: 40%;
@@ -497,7 +482,7 @@
         padding-top: 10px;
         padding-left: 10px;
     }
-
+    
     #enemycardBox {
         position: relative;
         top: 26vh;
@@ -509,21 +494,21 @@
         display: flex;
         justify-content: center;
     }
-
+    
     #enemycardBox>* {
         background-image: url("../img/Dittocart.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        background-size: auto 100%;
         max-width: 140.20px;
         max-height: 198.86px;
         min-width: 140.20px;
         min-height: 198.86px;
-
         margin-left: 20px;
         font-size: medium;
     }
-
+    
     #mycardBox {
         position: absolute;
         width: 80vw;
@@ -533,7 +518,7 @@
         display: flex;
         justify-content: center;
     }
-
+    
     #mycardBox>* {
         background-image: url("../img/Dittocart.png");
         background-size: contain;
@@ -545,9 +530,9 @@
         min-height: 198.86px;
         margin-left: 20px;
         font-size: medium;
-
+        background-size: auto 100%;
     }
-
+    
     #mydeck {
         position: absolute;
         width: 80vw;
@@ -558,7 +543,7 @@
         justify-content: center;
         left: 10vw;
     }
-
+    
     #mydeck>* {
         background-image: url("../img/Dittocart.png");
         background-size: contain;
@@ -571,9 +556,9 @@
         font-size: 25px;
         margin-left: 20px;
         font-size: medium;
-
+        background-size: auto 100%;
     }
-
+    
     #mystats>* {
         background-color: #e3a4dd;
         bottom: 0;
@@ -581,24 +566,23 @@
         position: absolute;
         width: fit-content;
         height: fit-content;
-
         text-align: justify;
         font-size: 25px;
         padding: 1vw;
     }
-
+    
     #myAvatar {
         background-image: url(../img/Lucas_Back.png);
         background-size: contain;
         background-repeat: no-repeat;
     }
-
+    
     #enemyAvatar {
         background-image: url(../img/Lucas_Back.png);
         background-size: contain;
         background-repeat: no-repeat;
     }
-
+    
     #enemystats>* {
         background-color: #e74c3c;
         left: 60vw;
@@ -606,12 +590,11 @@
         position: absolute;
         width: fit-content;
         height: fit-content;
-
         text-align: justify;
         font-size: 25px;
         padding: 1vw;
     }
-
+    
     #heroPower {
         width: 16vh;
         position: absolute;
@@ -619,7 +602,7 @@
         right: 0.5vh;
         background-color: #e73cd9;
     }
-
+    
     .custom-btn {
         width: 130px;
         height: 40px;
@@ -636,7 +619,7 @@
         box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
         outline: none;
     }
-
+    
     .btn-3 {
         background: rgb(0, 172, 238);
         background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
@@ -647,13 +630,13 @@
         font-size: 20px;
         border: none;
     }
-
+    
     .btn-3 span {
         display: block;
         width: 100%;
         height: 100%;
     }
-
+    
     .btn-3:before,
     .btn-3:after {
         position: absolute;
@@ -663,34 +646,34 @@
         background: rgba(2, 126, 251, 1);
         transition: all 0.3s ease;
     }
-
+    
     .btn-3:before {
         height: 0%;
         width: 2px;
     }
-
+    
     .btn-3:after {
         width: 0%;
         height: 2px;
     }
-
+    
     .btn-3:hover {
         background: transparent;
         box-shadow: none;
     }
-
+    
     .btn-3:hover:before {
         height: 100%;
     }
-
+    
     .btn-3:hover:after {
         width: 100%;
     }
-
+    
     .btn-3 span:hover {
         color: rgba(2, 126, 251, 1);
     }
-
+    
     .btn-3 span:before,
     .btn-3 span:after {
         position: absolute;
@@ -700,25 +683,25 @@
         background: rgba(2, 126, 251, 1);
         transition: all 0.3s ease;
     }
-
+    
     .btn-3 span:before {
         width: 2px;
         height: 0%;
     }
-
+    
     .btn-3 span:after {
         width: 0%;
         height: 2px;
     }
-
+    
     .btn-3 span:hover:before {
         height: 100%;
     }
-
+    
     .btn-3 span:hover:after {
         width: 100%;
     }
-
+    
     .EndcardWon {
         position: absolute;
         top: 0;
@@ -731,7 +714,7 @@
         color: rgb(0, 255, 30);
         opacity: 80%;
     }
-
+    
     .EndcardLost {
         position: absolute;
         top: 0;
@@ -744,7 +727,7 @@
         color: rgb(255, 0, 0);
         opacity: 80%;
     }
-
+    
     .waitingCard {
         position: absolute;
         top: 0;
@@ -757,9 +740,8 @@
         color: rgb(107, 132, 143);
         opacity: 80%;
     }
-
     /* stats */
-
+    
     .stats {
         background-image: url("../img/statsbg.jpg");
         background-size: cover;
@@ -768,7 +750,7 @@
         width: 100vw;
         height: 100vh;
     }
-
+    
     .statsborder {
         background-image: url("../img/statsborder.png");
         background-repeat: no-repeat;
@@ -778,9 +760,8 @@
         top: -8vh;
         left: 12.5vw;
         position: absolute;
-
     }
-
+    
     #chartContainer {
         height: 35vh;
         width: 40vw;
@@ -788,11 +769,11 @@
         left: 25vw;
         top: 31vh;
     }
-
+    
     .canvasjs-chart-canvas {
         background-color: transparent;
     }
-
+    
     #clearBD {
         width: 16vh;
         position: absolute;
