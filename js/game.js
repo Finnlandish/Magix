@@ -12,141 +12,218 @@ const state = () => {
 
     })
 
-        .then(response => response.json())
+    .then(response => response.json())
 
-        .then(data => {
+    .then(data => {
 
-            console.log(data); // contient les cartes/état du jeu.
-            if (typeof data == "object") {
-                //supposed to reduces flickerring
-                if (JSON.stringify(curdata["hand"]) != JSON.stringify(data["hand"]) ||
-                    JSON.stringify(curdata["board"]) !== JSON.stringify(data["board"]) ||
-                    JSON.stringify(curdata["opponent"]["board"]) !== JSON.stringify(data["opponent"]["board"])) {
-                    mp = data.mp
-                    curdata = data
-                    clearJeu()
-                    add_stat(data)
-                    add_hand(data)
-                    add_board(data)
-                    add_enemy_board(data)
-                    creer_enemy_hand(data)
-                }
-
-                timer(data)
-
+        console.log(data); // contient les cartes/état du jeu.
+        if (typeof data == "object") {
+            //supposed to reduces flickerring
+            if (JSON.stringify(curdata["hand"]) != JSON.stringify(data["hand"]) ||
+                JSON.stringify(curdata["board"]) !== JSON.stringify(data["board"]) ||
+                JSON.stringify(curdata["opponent"]["board"]) !== JSON.stringify(data["opponent"]["board"])) {
+                mp = data.mp
                 curdata = data
+                clearJeu()
+                add_stat(data)
+                add_hand(data)
+                add_board(data)
+                add_enemy_board(data)
+                creer_enemy_hand(data)
+                afficher_Avatar(data)
+            }
+
+            timer(data)
+
+            curdata = data
+
+        } else {
+            if (data == "LAST_GAME_WON") {
+                gamewon = true
+
+            } else if (data == "LAST_GAME_LOST") {
+                gamelost = true
+
+
+            } else if (data == "WAITING") {
+                waiting = true
+
+
+            }
+            if (gamewon) {
+                clearJeu()
+                const boxes = document.querySelectorAll('.EndcardWon');
+
+                boxes.forEach(box => {
+                    box.remove();
+                });
+                let Endcard = document.createElement("div")
+                Endcard.appendChild(document.createTextNode("GAME WON!!!"))
+                Endcard.appendChild(document.createElement("br"))
+                Endcard.appendChild(document.createElement("br"))
+                Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
+
+                Endcard.className = "EndcardWon"
+                document.querySelector(".game").appendChild(Endcard)
+
+                document.getElementById("backLobby").style.display = "block"
+                document.getElementById("backLobby").style.backgroundColor = "#00FFFF"
+                document.getElementById("backLobby").style.right = "40vw"
+                document.getElementById("backLobby").style.width = "20vw"
+                document.getElementById("backLobby").style.height = "5vh"
+                document.getElementById("backLobby").style.fontSize = "36px"
+                document.getElementById("heroPower").style.display = "none"
+                document.getElementById("endturn").style.display = "none"
+                document.getElementById("surrender").style.display = "none"
+
+            } else if (gamelost) {
+                clearJeu()
+                const boxes = document.querySelectorAll('.EndcardLost');
+
+                boxes.forEach(box => {
+                    box.remove();
+                });
+                let Endcard = document.createElement("div")
+                Endcard.appendChild(document.createTextNode("GAME LOST"))
+                Endcard.appendChild(document.createElement("br"))
+                Endcard.appendChild(document.createTextNode("better luck next time!"))
+                Endcard.appendChild(document.createElement("br"))
+                Endcard.appendChild(document.createElement("br"))
+                Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
+
+                Endcard.className = "EndcardLost"
+                document.querySelector(".game").appendChild(Endcard)
+                document.getElementById("backLobby").style.display = "block"
+                document.getElementById("backLobby").style.right = "40vw"
+                document.getElementById("backLobby").style.width = "20vw"
+                document.getElementById("backLobby").style.height = "5vh"
+                document.getElementById("backLobby").style.fontSize = "36px"
+                document.getElementById("heroPower").style.display = "none"
+                document.getElementById("endturn").style.display = "none"
+                document.getElementById("surrender").style.display = "none"
+
 
             } else {
-                if (data == "LAST_GAME_WON") {
-                    gamewon = true
+                document.getElementById("backLobby").style.display = "none"
 
-                } else if (data == "LAST_GAME_LOST") {
-                    gamelost = true
-
-
-                } else if (data == "WAITING") {
-                    waiting = true
-
-
-                }
-                if (gamewon) {
-                    clearJeu()
-                    const boxes = document.querySelectorAll('.EndcardWon');
-
-                    boxes.forEach(box => {
-                        box.remove();
-                    });
-                    let Endcard = document.createElement("div")
-                    Endcard.appendChild(document.createTextNode("GAME WON!!!"))
-                    Endcard.appendChild(document.createElement("br"))
-                    Endcard.appendChild(document.createElement("br"))
-                    Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
-
-                    Endcard.className = "EndcardWon"
-                    document.querySelector(".game").appendChild(Endcard)
-                    
-                    document.getElementById("backLobby").style.display = "block"
-                    document.getElementById("backLobby").style.backgroundColor = "#00FFFF"
-                    document.getElementById("backLobby").style.right = "40vw"
-                    document.getElementById("backLobby").style.width = "20vw"
-                    document.getElementById("backLobby").style.height = "5vh"
-                    document.getElementById("backLobby").style.fontSize = "36px"
-                    document.getElementById("heroPower").style.display = "none"
-                    document.getElementById("endturn").style.display = "none"
-                    document.getElementById("surrender").style.display = "none"
-
-                } else if (gamelost) {
-                    clearJeu()
-                    const boxes = document.querySelectorAll('.EndcardLost');
-
-                    boxes.forEach(box => {
-                        box.remove();
-                    });
-                    let Endcard = document.createElement("div")
-                    Endcard.appendChild(document.createTextNode("GAME LOST"))
-                    Endcard.appendChild(document.createElement("br"))
-                    Endcard.appendChild(document.createTextNode("better luck next time!"))
-                    Endcard.appendChild(document.createElement("br"))
-                    Endcard.appendChild(document.createElement("br"))
-                    Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
-
-                    Endcard.className = "EndcardLost"
-                    document.querySelector(".game").appendChild(Endcard)
-                    document.getElementById("backLobby").style.display = "block"
-                    document.getElementById("backLobby").style.right = "40vw"
-                    document.getElementById("backLobby").style.width = "20vw"
-                    document.getElementById("backLobby").style.height = "5vh"
-                    document.getElementById("backLobby").style.fontSize = "36px"
-                    document.getElementById("heroPower").style.display = "none"
-                    document.getElementById("endturn").style.display = "none"
-                    document.getElementById("surrender").style.display = "none"
-
-
-                }else{
-                    document.getElementById("backLobby").style.display = "none"
-               
-                }
-                // else if (waiting) {
-                //     clearJeu()
-                //     const boxes = document.querySelectorAll('.waitingCard');
-
-                //     boxes.forEach(box => {
-                //         box.remove();
-                //     });
-                //     let Endcard = document.createElement("div")
-                //     Endcard.appendChild(document.createTextNode("Waiting for another player"))
-                //     Endcard.className = "waitingCard"
-                //     document.querySelector(".game").appendChild(Endcard)
-
-                // }else{
-                //     const boxes = document.querySelectorAll('.waitingCard');
-                //     boxes.forEach(box => {
-                //         box.style.display == "none"
-                //         box.remove();
-                //     });
-
-                // }
             }
-            if (!data.heroPowerAlreadyUsed) {
-                document.getElementById("heroPower").onclick = () => {
-                    console.log("hero")
-                    let form = new FormData()
-                    form.append('type', 'HERO_POWER')
-                    fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
+            // else if (waiting) {
+            //     clearJeu()
+            //     const boxes = document.querySelectorAll('.waitingCard');
+
+            //     boxes.forEach(box => {
+            //         box.remove();
+            //     });
+            //     let Endcard = document.createElement("div")
+            //     Endcard.appendChild(document.createTextNode("Waiting for another player"))
+            //     Endcard.className = "waitingCard"
+            //     document.querySelector(".game").appendChild(Endcard)
+
+            // }else{
+            //     const boxes = document.querySelectorAll('.waitingCard');
+            //     boxes.forEach(box => {
+            //         box.style.display == "none"
+            //         box.remove();
+            //     });
+
+            // }
+        }
+        if (!data.heroPowerAlreadyUsed) {
+            document.getElementById("heroPower").onclick = () => {
+                console.log("hero")
+                let form = new FormData()
+                form.append('type', 'HERO_POWER')
+                fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
                         method: "POST", // l’API (games/state)
                         body: form
                     })
-                        .then(response => response.json())
-                        .then(data => { })
+                    .then(response => response.json())
+                    .then(data => {})
 
-                }
             }
-            setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+        }
+        setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
 
-        })
+    })
 
 }
 
+const afficher_Avatar = (data) => {
+    let mAvatar = document.getElementById("myAvatar")
+    let eAvatar = document.getElementById("enemyAvatar")
+
+    if (data.heroClass.includes("Rogue")) {
+        mAvatar.style.background = "url('img/Heros/mRogue.png')";
+
+    } else if (data.heroClass.includes("Mage")) {
+        mAvatar.style.background = "url('img/Heros/eMage.png')";
+
+    } else if (data.heroClass.includes("Shaman")) {
+        mAvatar.style.background = "url('img/Heros/mShaman.png')";
+
+    } else if (data.heroClass.includes("Warrior")) {
+        mAvatar.style.background = "url('img/Heros/mWarrior.png')";
+
+    } else if (data.heroClass.includes("Priest")) {
+        mAvatar.style.background = "url('img/Heros/mPriest.png')";
+
+    } else if (data.heroClass.includes("Hunter")) {
+        mAvatar.style.background = "url('img/Heros/mHunter.png')";
+
+    } else if (data.heroClass.includes("Paladin")) {
+        mAvatar.style.background = "url('img/Heros/mPaladin.png')";
+
+    } else if (data.heroClass.includes("Druid")) {
+        mAvatar.style.background = "url('img/Heros/mDruid.png')";
+
+    } else if (data.heroClass.includes("DemonHunter")) {
+        mAvatar.style.background = "url('img/Heros/mDemonHunter.png')";
+
+    } else if (data.heroClass.includes("Warlock")) {
+        mAvatar.style.background = "url('img/Heros/mWarlock.png')";
+
+    }
+    if (data.opponent.heroClass.includes("Rogue")) {
+        eAvatar.style.background = "url('img/Heros/mRogue.png')";
+
+    } else if (data.opponent.heroClass.includes("Mage")) {
+        eAvatar.style.background = "url('img/Heros/eMage.png')";
+
+    } else if (data.opponent.heroClass.includes("Shaman")) {
+        eAvatar.style.background = "url('img/Heros/mShaman.png')";
+
+    } else if (data.opponent.heroClass.includes("Warrior")) {
+        eAvatar.style.background = "url('img/Heros/mWarrior.png')";
+
+    } else if (data.opponent.heroClass.includes("Priest")) {
+        eAvatar.style.background = "url('img/Heros/mPriest.png')";
+
+    } else if (data.opponent.heroClass.includes("Hunter")) {
+        eAvatar.style.background = "url('img/Heros/mHunter.png')";
+
+    } else if (data.opponent.heroClass.includes("Paladin")) {
+        eAvatar.style.background = "url('img/Heros/mPaladin.png')";
+
+    } else if (data.opponent.heroClass.includes("Druid")) {
+        eAvatar.style.background = "url('img/Heros/mDruid.png')";
+
+    } else if (data.opponent.heroClass.includes("DemonHunter")) {
+        eAvatar.style.background = "url('img/Heros/mDemonHunter.png')";
+
+    } else if (data.opponent.heroClass.includes("Warlock")) {
+        eAvatar.style.background = "url('img/Heros/mWarlock.png')";
+
+    }
+
+    eAvatar.onmouseenter = () => {
+        eAvatar.style.boxShadow = "0 0 6px 6px #FF0000"
+    }
+    eAvatar.onmouseleave = () => {
+        eAvatar.style.boxShadow = "none";
+
+
+    }
+}
 
 const créer_hand = (data, area) => {
     data.forEach(e => {
@@ -190,10 +267,7 @@ const créer_hand = (data, area) => {
             if (e.cost <= mp) {
                 card.style.border = "thick inset #FFFFF0"
                 card.style.boxShadow = "0 0 6px 6px #FFFF00"
-    
             }
-           
-
         }
         card.onmouseleave = () => {
             card.style.border = "none";
@@ -213,18 +287,13 @@ const créer_hand = (data, area) => {
                 form.append("id", card_id)
 
             }
-
-
-
             form.append("type", "PLAY")
             form.append("uid", card_uid)
 
-
-
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                method: "POST", // l’API (games/state)
-                body: form
-            })
+                    method: "POST", // l’API (games/state)
+                    body: form
+                })
                 .then(response => response.json())
                 .then(data => {
                     if (typeof data == "object") {
@@ -232,9 +301,6 @@ const créer_hand = (data, area) => {
                     }
                 })
             cardPlayed = false
-
-
-
         }
         if (e.mechanics.includes("Charge")) {
             card.style.backgroundImage = "url('img/pichuCard.png')";
@@ -299,13 +365,7 @@ const créer_board = (data, area) => {
 
             card.style.backgroundImage = "url('img/Dittocart.png')"
         }
-        if (e.mechanics.includes("charge")) {
-            card.style.backgroundImage = "url(img/pichuCard.png)";
-        } else if (e.mechanics.includes("taunt")) {
-            card.style.backgroundImage = "url(img/snorlaxCard.png)";
-        } else if (e.mechanics.includes("Stealth")) {
-            card.style.backgroundImage = "url('img/greninjaCard.png')";
-        }
+
         card.onmouseenter = () => {
             card.style.boxShadow = "0 0 6px 6px #FFFF00"
             card.style.border = "thick inset #FFFFF0"
@@ -317,6 +377,20 @@ const créer_board = (data, area) => {
             if (e.state != "SLEEP") {
                 card.style.border = "thick inset #FFFF00"
             }
+            if (e.mechanics.includes("Stealth")) {
+                card.style.backgroundImage = "url('img/greninjaCard.png')";
+                card.style.boxShadow = "0 0 6px 6px #b1b9c7"
+
+                card.style.opacity = 1;
+
+                if (e.state == "SLEEP") {
+                    card.style.opacity = 0.5;
+
+                } else {
+                    card.style.border = "thick inset #FFFF00"
+                }
+            }
+
         }
         card.onclick = () => {
             console.log("clicked")
@@ -356,6 +430,8 @@ const créer_board = (data, area) => {
 
         } else if (e.mechanics.includes("Stealth")) {
             card.style.backgroundImage = "url('img/greninjaCard.png')";
+            card.style.boxShadow = "0 0 6px 6px #b1b9c7"
+
             card.style.opacity = 1;
 
             if (e.state == "SLEEP") {
@@ -418,17 +494,32 @@ const créer_enemy_board = (data, area) => {
             card.style.border = "none";
             card.style.boxShadow = "none";
             card.style.height = "70%"
+            if (e.mechanics.includes("Stealth")) {
+                card.style.backgroundImage = "url('img/greninjaCard.png')";
+                card.style.boxShadow = "0 0 6px 6px #b1b9c7"
+                card.style.border = "none"
+                card.style.opacity = 1;
+
+                if (e.state == "SLEEP") {
+                    card.style.backgroundImage = "url('img/greninjaSleep.png')";
+                    card.style.opacity = 0.5;
+
+                } else {
+                    card.style.border = "thick inset #FFFF00"
+                }
+            }
+
         }
         card.onclick = () => {
             console.log("clicked")
             attackform.delete('targetuid')
             attackform.append("targetuid", card_uid)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                method: "POST", // l’API (games/state)
-                body: attackform
-            })
+                    method: "POST", // l’API (games/state)
+                    body: attackform
+                })
                 .then(response => response.json())
-                .then(data => { })
+                .then(data => {})
         }
         if (e.mechanics.includes("Charge")) {
             card.style.backgroundImage = "url('img/pichuCard.png')";
@@ -454,6 +545,8 @@ const créer_enemy_board = (data, area) => {
 
         } else if (e.mechanics.includes("Stealth")) {
             card.style.backgroundImage = "url('img/greninjaCard.png')";
+            card.style.boxShadow = "0 0 6px 6px #b1b9c7"
+
             card.style.opacity = 1;
 
             if (e.state == "SLEEP") {
@@ -491,16 +584,17 @@ const créer_enemy_stats = (data, area) => {
     stat.appendChild(document.createTextNode(" Mp : " + data.mp))
     stat.appendChild(document.createElement("br"))
     document.getElementById(area).appendChild(stat)
-    stat.onclick = () => {
+    let avatar = document.getElementById("enemyAvatar")
+    avatar.onclick = () => {
         console.log("clicked")
         attackform.delete('targetuid')
         attackform.append("targetuid", 0)
         fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-            method: "POST", // l’API (games/state)
-            body: attackform
-        })
+                method: "POST", // l’API (games/state)
+                body: attackform
+            })
             .then(response => response.json())
-            .then(data => { })
+            .then(data => {})
     }
 }
 
@@ -527,10 +621,10 @@ const add_stat = (data) => {
 
 const timer = (data) => {
     let time = data.remainingTurnTime
-    if(data.yourTurn){
-        document.getElementById("timer").innerHTML = "<br>your turn <br> "+time
-    }else{
-        document.getElementById("timer").innerHTML = "<br>opponent's turn<br> "+time
+    if (data.yourTurn) {
+        document.getElementById("timer").innerHTML = "<br>your turn <br> " + time
+    } else {
+        document.getElementById("timer").innerHTML = "<br>opponent's turn<br> " + time
 
     }
 }
@@ -556,49 +650,49 @@ const clearJeu = () => {
 
 
 
-document.getElementById('surrender').onclick = function () {
+document.getElementById('surrender').onclick = function() {
     surrender();
 }
-document.getElementById('endturn').onclick = function () {
+document.getElementById('endturn').onclick = function() {
     endturn();
 }
-document.getElementById('heroPower').onclick = function () {
+document.getElementById('heroPower').onclick = function() {
     heroPower();
 }
 const surrender = () => {
     let form = new FormData()
     form.append("type", "SURRENDER")
     fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-        method: "POST", // l’API (games/state)
-        body: form
-    })
+            method: "POST", // l’API (games/state)
+            body: form
+        })
         .then(response => response.json())
         .then(data => {
-            if (typeof data == "object") { }
+            if (typeof data == "object") {}
         })
 }
 const endturn = () => {
     let form = new FormData()
     form.append("type", "END_TURN")
     fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-        method: "POST", // l’API (games/state)
-        body: form
-    })
+            method: "POST", // l’API (games/state)
+            body: form
+        })
         .then(response => response.json())
         .then(data => {
-            if (typeof data == "object") { }
+            if (typeof data == "object") {}
         })
 }
 const heroPower = () => {
     let form = new FormData()
     form.append("type", "HERO_POWER")
     fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-        method: "POST", // l’API (games/state)
-        body: form
-    })
+            method: "POST", // l’API (games/state)
+            body: form
+        })
         .then(response => response.json())
         .then(data => {
-            if (typeof data == "object") { }
+            if (typeof data == "object") {}
         })
 }
 
