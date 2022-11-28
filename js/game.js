@@ -64,6 +64,14 @@ const state = () => {
 
                     Endcard.className = "EndcardWon"
                     document.querySelector(".game").appendChild(Endcard)
+                    
+                    document.getElementById("backLobby").style.right = "40vw"
+                    document.getElementById("backLobby").style.width = "20vw"
+                    document.getElementById("backLobby").style.height = "5vh"
+                    document.getElementById("backLobby").style.fontSize = "36px"
+                    document.getElementById("heroPower").style.display = "none"
+                    document.getElementById("endturn").style.display = "none"
+                    document.getElementById("surrender").style.display = "none"
 
                 } else if (gamelost) {
                     clearJeu()
@@ -82,7 +90,19 @@ const state = () => {
 
                     Endcard.className = "EndcardLost"
                     document.querySelector(".game").appendChild(Endcard)
+                    document.getElementById("backLobby").style.display = "block"
+                    document.getElementById("backLobby").style.right = "40vw"
+                    document.getElementById("backLobby").style.width = "20vw"
+                    document.getElementById("backLobby").style.height = "5vh"
+                    document.getElementById("backLobby").style.fontSize = "36px"
+                    document.getElementById("heroPower").style.display = "none"
+                    document.getElementById("endturn").style.display = "none"
+                    document.getElementById("surrender").style.display = "none"
 
+
+                }else{
+                    document.getElementById("backLobby").style.display = "none"
+               
                 }
                 // else if (waiting) {
                 //     clearJeu()
