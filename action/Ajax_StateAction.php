@@ -22,11 +22,9 @@ class Ajax_StateAction extends CommonAction
                 $data["type"] = $_POST["type"];
                 $data["uid"] = $_POST["uid"];
                 $result = CommonAction::callAPI("games/action", $data);
-
-                if ($result != "INVALID_ACTION" || "ACTION_IS_NOT_AN_OBJECT" || "NOT_ENOUGH_ENERGY" || "BOARD_IS_FULL " || "CARD_NOT_IN_HAND" || "INVALID_ACTION" || "CARD_NOT_FOUND") {
-                    $data["id"] = $_POST["id"];
-                    AnswerDAO::addCard($data["id"]);
-                }
+                $data["id"] = $_POST["id"];
+                AnswerDAO::addCard($data["id"]);
+                
             } elseif ($_POST["type"] == "ATTACK") {
                 $data["key"] = $_SESSION["key"];
                 $data["type"] = $_POST["type"];

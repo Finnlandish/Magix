@@ -32,7 +32,7 @@
             # code...
             $connection = Connection::getConnection();
 
-            $statement = $connection->prepare("DELETE * FROM stats");
+            $statement = $connection->prepare("DELETE FROM stats");
 
             $statement->execute();
 

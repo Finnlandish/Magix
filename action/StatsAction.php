@@ -13,6 +13,7 @@ class StatsAction extends CommonAction
 
     protected function executeAction()
     {
+        
         if (isset($_POST["clearBD"])) {
             AnswerDAO::clearBD();
             echo("awa");

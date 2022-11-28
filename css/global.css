@@ -209,6 +209,7 @@
         font-family: 'Yanone Kaffeesatz', sans-serif;
         z-index: 10;
     }
+
     #rightStair {
         background-image: url('../img/rightbg.png');
         position: absolute;
@@ -226,7 +227,7 @@
     .lobby {
         background-image: url('../img/LImage.png');
         background-repeat: no-repeat;
-        background-size: fill;
+        background-size: cover;
         height: 100vh;
         width: 100vw;
         font-size: 20px;
@@ -383,14 +384,19 @@
     /* game */
 
     .timer {
-        width: 30px;
-        height: 30px;
+        width: 10vh;
+        height: 6vw;
         position: absolute;
         top: 40vh;
         right: 0.5vh;
-        color: white;
-        background-color: blue;
+        color: rgb(4, 40, 30);
+        background-image: url("../img/timer.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
         text-align: center;
+        font-size: 30px;
+
     }
 
     .game {
@@ -414,6 +420,7 @@
         top: 50vh;
         right: 0.5vh;
         background-color: white;
+        text-align: center;
     }
 
     #endturn {
@@ -422,6 +429,8 @@
         top: 55vh;
         right: 0.5vh;
         background-color: orange;
+        text-align: center;
+
     }
 
     #backLobby {
@@ -430,6 +439,8 @@
         top: 60vh;
         right: 0.5vh;
         background-color: red;
+        text-align: center;
+
     }
 
     #enemydeck {
@@ -438,7 +449,7 @@
         width: 35vw;
         height: 11vh;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
     }
 
     .flipedCard {
@@ -452,10 +463,10 @@
     .hoverCard {
         background-color: aquamarine;
         opacity: 40%;
-        max-width: 182.25px;
-        max-height: 258.525px;
-        min-width: 182.25px;
-        min-height: 258.525px;
+        max-width: 140.20px;
+        max-height: 198.86px;
+        min-width: 140.20px;
+        min-height: 198.86px;
         padding-top: 10px;
         padding-left: 10px;
     }
@@ -469,7 +480,7 @@
         left: 10vw;
         align-content: center;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
     }
 
     #enemycardBox>* {
@@ -477,22 +488,23 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        max-width: 182.25px;
-        max-height: 258.525px;
-        min-width: 182.25px;
-        min-height: 258.525px;
-        padding-top: 10px;
-        padding-left: 10px;
+        max-width: 140.20px;
+        max-height: 198.86px;
+        min-width: 140.20px;
+        min-height: 198.86px;
+
+        margin-left: 20px;
+        font-size: medium;
     }
 
     #mycardBox {
         position: absolute;
         width: 80vw;
-        height: 20vh;
+        height: fit-content;
         left: 10vw;
         bottom: 35vh;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
     }
 
     #mycardBox>* {
@@ -500,12 +512,13 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        max-width: 182.25px;
-        max-height: 258.525px;
-        min-width: 182.25px;
-        min-height: 258.525px;
-        padding-top: 10px;
-        padding-left: 10px;
+        max-width: 140.20px;
+        max-height: 198.86px;
+        min-width: 140.20px;
+        min-height: 198.86px;
+        margin-left: 20px;
+        font-size: medium;
+
     }
 
     #mydeck {
@@ -515,7 +528,7 @@
         left: 10vw;
         bottom: 11vh;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         left: 10vw;
     }
 
@@ -524,12 +537,14 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        max-width: 182.25px;
-        max-height: 258.525px;
-        min-width: 182.25px;
-        min-height: 258.525px;
-        padding-top: 10px;
-        padding-left: 10px;
+        max-width: 140.20px;
+        max-height: 198.86px;
+        min-width: 140.20px;
+        min-height: 198.86px;
+
+        margin-left: 20px;
+        font-size: medium;
+
     }
 
     #mystats {
@@ -539,6 +554,18 @@
         bottom: 0;
         left: 0;
         background-image: url(../img/Lucas_Back.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #myAvatar{
+        background-image: url(../img/Lucas_Back.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #enemyAvatar{
+        background-image: url(../img/Lucas_Back.png);
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     #enemystats {
@@ -699,15 +726,34 @@
     /* stats */
 
     .stats {
+        background-image: url("../img/statsbg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(177, 235, 213, 0.521);
     }
 
-    #chartContainer{
-        height: 50vh;
-        width: 50vw;
+    .statsborder {
+        background-image: url("../img/statsborder.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 108vh;
+        width: 108vw;
+        top: -8vh;
+        left: 12.5vw;
         position: absolute;
-        left: 20vw;
-        top: 20vh;
+
+    }
+
+    #chartContainer {
+        height: 35vh;
+        width: 40vw;
+        position: absolute;
+        left: 25vw;
+        top: 31vh;
+    }
+
+    .canvasjs-chart-canvas {
+        background-color: transparent;
     }

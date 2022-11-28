@@ -27,11 +27,18 @@ require_once("partial/header.php");
         <div class="timer" id="timer"></div>
 
         <div class="enemystats" id="enemystats"></div>
+        <div class="enemyAvatar" id="enemyAvatar"></div>
+        <div class="area" id="enemydeck"></div>
         <div class="area" id="enemydeck"></div>
         <div class="area" id="enemycardBox"></div>
+        <div class="area" id="enemycardBox"></div>
+        <div class="area" id="mycardBox"></div>
         <div class="area" id="mycardBox"></div>
         <div class="area" id="mydeck"></div>
         <div class="area" id="mystats"></div>
+        <div class="area" id="mystats"></div>
+        <div class="area" id="mystats"></div>
+        <div class="myAvatar" id="myAvatar"></div>
 
 
     </div>
