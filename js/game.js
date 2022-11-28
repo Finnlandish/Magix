@@ -65,6 +65,8 @@ const state = () => {
                     Endcard.className = "EndcardWon"
                     document.querySelector(".game").appendChild(Endcard)
                     
+                    document.getElementById("backLobby").style.display = "block"
+                    document.getElementById("backLobby").style.backgroundColor = "#00FFFF"
                     document.getElementById("backLobby").style.right = "40vw"
                     document.getElementById("backLobby").style.width = "20vw"
                     document.getElementById("backLobby").style.height = "5vh"

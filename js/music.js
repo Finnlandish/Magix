@@ -40,8 +40,7 @@ function playMusic() {
         b6.volume = 0.05;
         musicPlaying = true
     }
-    else if(musicPlaying){
-
+    else{
         b1.pause();
         b2.pause();
         b3.pause();
@@ -75,7 +74,7 @@ function playBattleMusic() {
         ba3.volume = 0.05;
         BattleMusicPlaying = true
     }
-    else if(BattleMusicPlaying){
+    else{
         ba1.pause();
         ba2.pause();
         ba3.pause();
