@@ -58,12 +58,9 @@ function move() {
 
                 if (y1 > 1072) {
                     move()
-
                 }
             }
         }
-
-
     }
 }
 move()
