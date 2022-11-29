@@ -2,9 +2,9 @@
 const applyStyles = iframe => {
 	let styles = {
 		fontColor : "#333",
-		backgroundColor : "rgba(126, 142, 185, 0.48)",
+		backgroundColor : "rgba(164, 215, 219, 0.88)",
 		fontGoogleName : "Teko",
-		fontSize : "24px",
+		fontSize : "25px",
 		hideIcons : false,
 		inputFontColor : "black",
 		memberListFontColor : "#ff00dd",

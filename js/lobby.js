@@ -14,6 +14,7 @@ let scale = 1.0;
 
 let node = document.createElement("div");
 document.getElementById("container").append(node);
+let doc=document.getElementById("container");
 
 let tiledImageDOM = new TiledImage("img/pokemon/chansey.png", 4, 1, 300, true, 1, node);
 node.id = "chansey";
@@ -38,15 +39,20 @@ const tickDOM = () => {
 
 
     }
-    if (x <= -60) {
+    if (y >= 672) {
         // playChansey()
+        doc.style.zIndex="10"
 
-        x = 340;
-        y = 250;
+        depx=0.5
+        depy=0.01
         x += depx
         y += depy
         // playChansey()
+        if(x >= 370){
+            depx -=1
+            depy =0
 
+        }
     }
 
 

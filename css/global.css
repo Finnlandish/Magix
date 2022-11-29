@@ -2,6 +2,7 @@
     * {
         margin: 0;
         padding: 0;
+        background-repeat: no-repeat;
     }
     
      :root {
@@ -348,6 +349,13 @@
     
     #container {
         position: absolute;
+        width: 20vw;
+        height: 100vw;
+        z-index: 4;
+    }
+    
+    #containerSarters {
+        position: absolute;
         width: 100vw;
         height: 100vw;
         z-index: 4;
@@ -395,6 +403,12 @@
         width: 100vw;
         height: 100vw;
         z-index: 4;
+    }
+    .containerSarters {
+        position: absolute;
+        width: 100vw;
+        height: 100vw;
+        z-index: 2;
     }
     /* game */
     
@@ -584,7 +598,15 @@
     
     #enemyAvatar {
         position: absolute;
-        background-image: url(../img/Heros/eDefault.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        min-width: 15vw;
+        min-height: 13vw;
+        left: 60vw;
+        top: -4vh;
+    }
+    #enemyAvatar>* {
+        position: absolute;
         background-size: contain;
         background-repeat: no-repeat;
         min-width: 15vw;

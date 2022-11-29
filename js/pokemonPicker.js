@@ -1,11 +1,11 @@
 let squirtle = document.createElement("div");
-document.getElementById("container").append(squirtle);
+document.getElementById("containerSarters").append(squirtle);
 squirtle.id = 'squirtle'
 let bulbasaur = document.createElement("div");
-document.getElementById("container").append(bulbasaur);
+document.getElementById("containerSarters").append(bulbasaur);
 bulbasaur.id = 'bulbasaur'
 let charmander = document.createElement("div");
-document.getElementById("container").append(charmander);
+document.getElementById("containerSarters").append(charmander);
 charmander.id = 'charmander'
 
 var id = null;
