@@ -13,7 +13,7 @@ let scale = 1.0;
 // -------------------------------------------------------
 
 let node = document.createElement("div");
-document.getElementById("container").append(node);
+document.getElementById("containerSarters").append(node);
 
 let tiledImageDOM = new TiledImage("img/pokeSprites/Wooper.png", 4, 1, 300, true, 1, node);
 
