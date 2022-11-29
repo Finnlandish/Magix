@@ -35,7 +35,7 @@ require_once("partial/header.php");
     }
     ?>
     <div class="box">
-        <form action="" method="POST">
+        <form action="" method="POST" onsubmit="setnom()">
             <div>
                 <input type="text" name="username" class="champ" placeholder="Username">
             </div>
@@ -43,7 +43,7 @@ require_once("partial/header.php");
             <div>
                 <input type="password" name="password" class="champ" placeholder="Password">
             </div>
-            <Button type="submit" name="connexion" id="connect" class="custom-btn btn-3"><span>Connect</span></Button>
+            <Button type="submit" name="connexion" id="connect" class="custom-btn btn-3" ><span>Connect</span></Button>
 
         </form>
 

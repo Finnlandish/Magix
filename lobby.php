@@ -27,7 +27,7 @@ require_once("partial/header.php");
 
 
 <div class="welcomLobby">
-    <h2>Welcome to Magix <?= $_SESSION["username"] ?></h2>
+    <h2>Welcome to Magix </h2><h2 id="name"></h2>
 </div>
 <div class="lobby">
     <div class="lobbybutton">

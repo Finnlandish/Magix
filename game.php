@@ -13,7 +13,7 @@ require_once("partial/header.php");
 
 
 <div class="game">
-    <div class="">
+    <div id="error">
         <?php
         if (!empty($data["messageErr"])) {
         ?>

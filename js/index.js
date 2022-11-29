@@ -87,3 +87,8 @@ function playAudio() {
 function playWooper() {
     b.play();
 }
+document.getElementById()
+
+function setnom() {
+    window.localStorage.setItem("username", document.getElementById("username"));
+}

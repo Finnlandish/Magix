@@ -404,6 +404,7 @@
         height: 100vw;
         z-index: 4;
     }
+    
     .containerSarters {
         position: absolute;
         width: 100vw;
@@ -600,11 +601,12 @@
         position: absolute;
         background-size: contain;
         background-repeat: no-repeat;
-        min-width: 15vw;
+        min-width: 10vw;
         min-height: 13vw;
         left: 60vw;
-        top: -4vh;
+        top: 0;
     }
+    
     #enemyAvatar>* {
         position: absolute;
         background-size: contain;
@@ -813,4 +815,15 @@
         right: 0.5vh;
         background-color: white;
         text-align: center;
+    }
+    
+    #error {
+        width: 16vh;
+        height: fit-content;
+        position: absolute;
+        top: 50vh;
+        left: 0.5vh;
+        background-color: rgb(228, 84, 84);
+        text-align: center;
+        z-index: 51235;
     }
