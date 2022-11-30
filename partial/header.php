@@ -8,10 +8,19 @@
         <title>Magix!</title>
         <link rel="stylesheet" href="css/global.css">
         <script src="https://notes-de-cours.com/dev/toggle-lab-info.js"></script>
-        
+
 </head>
 
 <body>
+        <audio id="statmp3">
+                <source src="Sounds/stats.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="pvpmp3">
+                <source src="Sounds/pvp.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="pvemp3">
+                <source src="Sounds/pve.mp3" type="audio/mpeg">
+        </audio>
         <audio id="musiclob1">
                 <source src="Sounds/music/14 - Icirrus City.mp3" type="audio/mpeg">
         </audio>
@@ -40,3 +49,7 @@
         <audio id="musicbat3">
                 <source src="Sounds/game/battle3.mp3" type="audio/mpeg">
         </audio>
+        <audio id="lostmp3">
+                <source src="Sounds/game/gamelost.mp3" type="audio/mpeg">
+        </audio>
+      

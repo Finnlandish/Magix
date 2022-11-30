@@ -69,9 +69,48 @@ chansey.onclick = () => {
 function playChansey() {
     a.play();
 }
+
+
 document.onload = () => {
     getusername()
 }
 function getusername() {
     document.getElementById("name").innerHTML = JSON.stringify(window.localStorage.getItem("username"));
+}
+
+
+
+var stat =document.getElementById("statmp3")
+var pvp =document.getElementById("pvpmp3")
+var pve =document.getElementById("pvemp3")
+
+
+let statb = document.getElementById("stats")
+let pvpb = document.getElementById("jouer")
+let pveb = document.getElementById("practice")
+
+
+
+statb.onmouseenter = () => {
+    stat.play();
+}
+statb.onmouseleave = () => {
+    stat.pause();
+}
+pvpb.onmouseenter = () => {
+    pvp.play();
+}
+pvpb.onmouseleave = () => {
+    console.log("pvp")
+
+    pvp.pause();
+}
+
+
+pveb.onmouseenter = () => {
+    pve.play();
+}
+pveb.onmouseleave = () => {
+    console.log("pve")
+    pve.pause();
 }

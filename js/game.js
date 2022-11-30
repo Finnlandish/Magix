@@ -110,26 +110,7 @@ const state = () => {
                     document.getElementById("error").innerHTML = data
 
                 }
-                // else if (waiting) {
-                //     clearJeu()
-                //     const boxes = document.querySelectorAll('.waitingCard');
-
-                //     boxes.forEach(box => {
-                //         box.remove();
-                //     });
-                //     let Endcard = document.createElement("div")
-                //     Endcard.appendChild(document.createTextNode("Waiting for another player"))
-                //     Endcard.className = "waitingCard"
-                //     document.querySelector(".game").appendChild(Endcard)
-
-                // }else{
-                //     const boxes = document.querySelectorAll('.waitingCard');
-                //     boxes.forEach(box => {
-                //         box.style.display == "none"
-                //         box.remove();
-                //     });
-
-                // }
+                
             }
             if (!data.heroPowerAlreadyUsed) {
                 document.getElementById("heroPower").onclick = () => {
@@ -334,9 +315,6 @@ const créer_hand = (data, area) => {
         } else if (e.mechanics.includes("Stealth")) {
             card.style.backgroundImage = "url('img/greninjaCard.png')";
         }
-        // else if (e.mechanics.includes("battlecry")) {
-        //     card.style.backgroundImage = "url('img/snorlaxCard.png')";
-        // }
 
     });
 
@@ -678,9 +656,15 @@ const clearJeu = () => {
 }
 
 
+var surrenderMp3 =document.getElementById("lostmp3")
+
+
+
 
 document.getElementById('surrender').onclick = function () {
     surrender();
+    surrenderMp3.play();
+
 }
 document.getElementById('endturn').onclick = function () {
     endturn();
@@ -732,36 +716,3 @@ window.addEventListener("load", () => {
 
 });
 
-// {
-//     "remainingTurnTime": 24,
-//     "yourTurn": true,
-//     "heroPowerAlreadyUsed": false,
-//     "hp": 30,
-//     "mp": 0,
-//     "maxMp": 1,
-//     "hand": [
-//         { "id": 4, "cost": 2, "hp": 3, "atk": 2, "mechanics": [], "uid": 3, "baseHP": 3 },
-//         { "id": 22, "cost": 7, "hp": 7, "atk": 7, "mechanics": [], "uid": 5, "baseHP": 7 },
-//         { "id": 10, "cost": 3, "hp": 3, "atk": 3, "mechanics": ["taunt", "charge"], "uid": 6, "baseHP": 3 }
-//     ],
-//     "board": [
-//         { "id": 2, "cost": 1, "hp": 1, "atk": 2, "mechanics": [], "uid": 7, "baseHP": 1, "state": "SLEEP" }
-//     ],
-//     "welcomeText": "My life for Aiur!",
-//     "heroClass": “Warrior ",
-//     "remainingCardsCount": 24,
-//     "opponent": {
-//         "username": "Dummy-AI",
-//         "heroClass": "Hunter",
-//         "hp": 30,
-//         "mp": 0,
-//         "board": [],
-//         welcomeText: "Die, maggot!",
-//         "remainingCardsCount": 24,
-//         "handSize": 3
-//     },
-//     latestActions: [] // une liste des dernières actions jouées dans la partie.
-// }   },
-//     latestActions: [] // une liste des dernières actions jouées dans la partie.
-// }   latestActions: [] // une liste des dernières actions jouées dans la partie.
-// }

@@ -131,6 +131,8 @@
     #music {
         position: absolute;
         text-align: center;
+        width: 16vh;
+
         bottom: 10px;
         right: 10px;
         z-index: 10;
@@ -141,6 +143,9 @@
     #battlemusic {
         position: absolute;
         text-align: center;
+        width: 16vh;
+
+
         bottom: 10px;
         right: 10px;
         z-index: 10;
@@ -655,7 +660,7 @@
         width: 80vw;
         height: 20vh;
         left: 10vw;
-        bottom: 11vh;
+        bottom: 3vh;
         display: flex;
         justify-content: center;
         left: 10vw;
@@ -745,21 +750,12 @@
         position: absolute;
         background-size: contain;
         background-repeat: no-repeat;
-        min-width: 7vw;
-        min-height: 7vw;
+        min-width: 9vw;
+        min-height: 8vw;
         left: 60vw;
         top: 0;
     }
 
-    #enemyAvatar>* {
-        position: absolute;
-        background-size: contain;
-        background-repeat: no-repeat;
-        min-width: 15vw;
-        min-height: 13vw;
-        left: 60vw;
-        top: -4vh;
-    }
 
 
 
@@ -768,10 +764,10 @@
         border: gray;
         border-style: double;
         border-radius: 10px;
-        left: 35vw;
+        left: 37vw;
         top: 0vh;
         position: absolute;
-        width: 20vw;
+        width: 16vw;
         height: 5vh;
         text-align: justify;
         font-size: 25px;
@@ -786,11 +782,11 @@
         border: gray;
         border-style: double;
         border-radius: 10px;
-        left: 67vw;
+        left: 70vw;
         top: 0vh;
         position: absolute;
         width: 10vw;
-        height: 9vh;
+        height: 8vh;
         text-align: justify;
         font-size: 25px;
         text-align: center;
@@ -811,6 +807,7 @@
         position: absolute;
         bottom: 13vh;
         right: 0.5vh;
+        text-align: center;
         background-color: #e73cd9;
     }
 
