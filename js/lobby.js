@@ -19,7 +19,7 @@ let doc = document.getElementById("container");
 let tiledImageDOM = new TiledImage("img/pokemon/chansey.png", 4, 1, 300, true, 1, node);
 node.id = "chansey";
 tiledImageDOM.changeRow(0);
-tiledImageDOM.setMinMaxDimensions(0, 50, 150, 150);
+tiledImageDOM.setMinMaxDimensions(0, 50, 159, 159);
 
 // Logic where the sprite changes row after animating through its columns
 tiledImageDOM.changeMinMaxInterval(0, 4, () => {
@@ -28,7 +28,7 @@ tiledImageDOM.changeMinMaxInterval(0, 4, () => {
 });
 
 let x = 340;
-let y = 250;
+let y = 280;
 let depx = -0.5;
 let depy = 0.4;
 const tickDOM = () => {
@@ -38,12 +38,13 @@ const tickDOM = () => {
 
     if (y >= 685) {
         doc.style.zIndex = "10"
+        tiledImageDOM.setMinMaxDimensions(0, 50, 160, 160);
 
         depx = 0.5
         depy = 0.08
-        if (x >= 360) {
+        if (x >= 340) {
             depx = 0
-            depy =0
+            depy = 0
         }
     }
 
@@ -74,15 +75,16 @@ function playChansey() {
 document.onload = () => {
     getusername()
 }
+
 function getusername() {
     document.getElementById("name").innerHTML = JSON.stringify(window.localStorage.getItem("username"));
 }
 
 
 
-var stat =document.getElementById("statmp3")
-var pvp =document.getElementById("pvpmp3")
-var pve =document.getElementById("pvemp3")
+var stat = document.getElementById("statmp3")
+var pvp = document.getElementById("pvpmp3")
+var pve = document.getElementById("pvemp3")
 
 
 let statb = document.getElementById("stats")
@@ -114,3 +116,6 @@ pveb.onmouseleave = () => {
     console.log("pve")
     pve.pause();
 }
+stat.volume = 0.05;
+pvp.volume = 0.05;
+pve.volume = 0.05;

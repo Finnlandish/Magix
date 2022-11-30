@@ -24,7 +24,6 @@ class Ajax_StateAction extends CommonAction
                 $result = CommonAction::callAPI("games/action", $data);
                 $data["id"] = $_POST["id"];
                 AnswerDAO::addCard($data["id"]);
-                
             } elseif ($_POST["type"] == "ATTACK") {
                 $data["key"] = $_SESSION["key"];
                 $data["type"] = $_POST["type"];
@@ -51,15 +50,25 @@ class Ajax_StateAction extends CommonAction
             if ($result == "INVALID_KEY") {
                 echo ("INVALID_KEY");
             } else if ($result == "INVALID_ACTION") {
+                $_SESSION["error"] = $result;
             } else if ($result == "ACTION_IS_NOT_AN_OBJECT") {
+                $_SESSION["error"] = $result;
             } else if ($result == "NOT_ENOUGH_ENERGY") {
+                $_SESSION["error"] = $result;
             } else if ($result == "BOARD_IS_FULL ") {
+                $_SESSION["error"] = $result;
             } else if ($result == "CARD_NOT_IN_HAND") {
+                $_SESSION["error"] = $result;
             } else if ($result == "CARD_IS_SLEEPING") {
+                $_SESSION["error"] = $result;
             } else if ($result == "MUST_ATTACK_TAUNT_FIRST") {
+                $_SESSION["error"] = $result;
             } else if ($result == "OPPONENT_CARD_NOT_FOUND") {
+                $_SESSION["error"] = $result;
             } else if ($result == "OPPONENT_CARD_HAS_STEALTH") {
+                $_SESSION["error"] = $result;
             } else if ($result == "CARD_NOT_FOUND") {
+                $_SESSION["error"] = $result;
             }
         } else {
             $data["key"] = $_SESSION["key"];

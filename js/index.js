@@ -32,8 +32,8 @@ tiledImageDOM.changeMinMaxInterval(0, 4, () => {
     tiledImageDOM.changeMinMaxInterval(0, 4);
 });
 
-let x = 2000;
-let y = 930;
+let x = 1800;
+let y = 750;
 let depx = -0.5;
 let depy = 0.01;
 
@@ -41,23 +41,19 @@ const tickDOM = () => {
 
     x += depx
     y += depy
-    if (x <= 1000) {
-        depx = -0.8
-        depy = 0.5
+    if (x <= 720) {
+        depx = -0.9
+        depy = 0.4
         tiledImageDOM.updateDimensions()
 
         if (y >= 1500) {
-            x = 2000;
-            y = 935;
+            x = 1800;
+            y = 750;
             depx = -0.5;
             depy = 0.01;
 
         }
-
-
     }
-
-
 
     tiledImageDOM.tick(x, y);
 
@@ -78,7 +74,8 @@ doc.onclick = () => {
 wooper.onclick = () => {
     playWooper()
 }
-
+a.volume = 0.05;
+b.volume = 0.05;
 
 function playAudio() {
     a.play();
@@ -88,13 +85,11 @@ function playWooper() {
     b.play();
 }
 
-document.getElementById("connect").onclick= () => {
-    setnom() 
+document.getElementById("connect").onclick = () => {
+    setnom()
 }
+
 function setnom() {
     var username = document.getElementById('username').value;
-    window.localStorage.setItem("username",username);
+    window.localStorage.setItem("username", username);
 }
-
-
-

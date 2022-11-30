@@ -53,7 +53,7 @@ require_once("partial/header.php");
     <?php
     if (!empty($data["messageErr"])) {
     ?>
-        <div style="color:red;text-align:center">
+        <div id="error">
             <?= $data["messageErr"] ?>
         </div>
     <?php
