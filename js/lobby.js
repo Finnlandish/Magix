@@ -35,20 +35,17 @@ const tickDOM = () => {
 
     x += depx
     y += depy
-    if (x <= 0) {
 
-
-    }
-    if (y >= 672) {
+    if (y >= 685) {
         // playChansey()
         doc.style.zIndex = "10"
 
         depx = 0.5
-        depy = 0.01
+        depy = 0.08
         x += depx
         y += depy
-            // playChansey()
-        if (x >= 370) {
+        // playChansey()
+        if (x >= 360) {
             depx -= 1
             depy = 0
 
@@ -77,5 +74,9 @@ chansey.onclick = () => {
 function playChansey() {
     a.play();
 }
-
-document.getElementById("name").innerHTML = window.localStorage.getItem("username");
+document.onload = () => {
+    getusername()
+}
+function getusername() {
+    document.getElementById("name").innerHTML = JSON.stringify(window.localStorage.getItem("username"));
+}
