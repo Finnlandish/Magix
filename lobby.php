@@ -9,25 +9,27 @@ require_once("partial/header.php");
 ?>
 <script src="./js/chat.js"></script>
 <script src="./js/music.js"></script>
+
 <script defer src="./js/lobby.js" type="module"></script>
 <script defer src="./js/pokemonPicker.js" type="module"></script>
 <!-- Audio -->
 <audio id="chanseyAudio">
-        <source src="Sounds/PokeSound/Chansey.mp3" type="audio/mpeg">
+    <source src="Sounds/PokeSound/Chansey.mp3" type="audio/mpeg">
 </audio>
 <audio id="squirtleAudio">
-        <source src="Sounds/PokeSound/squirtleSound.mp3" type="audio/mpeg">
+    <source src="Sounds/PokeSound/squirtleSound.mp3" type="audio/mpeg">
 </audio>
 <audio id="bulbasaurAudio">
-        <source src="Sounds/PokeSound/bulbasaurSound.mp3" type="audio/mpeg">
+    <source src="Sounds/PokeSound/bulbasaurSound.mp3" type="audio/mpeg">
 </audio>
 <audio id="charmanderAudio">
-        <source src="Sounds/PokeSound/charmanderSound.mp3" type="audio/mpeg">
+    <source src="Sounds/PokeSound/charmanderSound.mp3" type="audio/mpeg">
 </audio>
 
 
 <div class="welcomLobby">
-    <h2>Welcome to Magix </h2><h2 id="name"></h2>
+    <h2>Welcome to Magix  <?php  $_SESSION['username']?></h2>
+  
 </div>
 <div class="lobby">
     <div class="lobbybutton">
@@ -62,10 +64,11 @@ require_once("partial/header.php");
         <iframe style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
         </iframe>
     </div>
+    <div id="layer2"></div>
     <div id="container"></div>
     <div id="containerSarters"></div>
-    <div id="pokesound" ></div>
+    <div id="pokesound"></div>
+
 </div>
-</body>
 <?php
 require_once("partial/footer.php");

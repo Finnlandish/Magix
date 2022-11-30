@@ -13,7 +13,7 @@ let scale = 1.0;
 // -------------------------------------------------------
 
 let node = document.createElement("div");
-document.getElementById("containerSarters").append(node);
+document.getElementById("foo").append(node);
 
 let tiledImageDOM = new TiledImage("img/pokeSprites/Wooper.png", 4, 1, 300, true, 1, node);
 
@@ -163,6 +163,3 @@ function setnom() {
 // }
 // move()
 
-$("#foo").mousemove(function(event) {
-    $("#bee1").stop().animate({left: event.pageX, top: event.pageY}, 5000)
-});

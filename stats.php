@@ -11,7 +11,8 @@ require_once("partial/header.php");
 ?>
 
 <script src="./js/music.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script defer src="./js/hunter.js"></script>
 
 <body class="stats">
     <div class="statsborder"></div>
@@ -52,7 +53,9 @@ require_once("partial/header.php");
 
         }
     </script>
-
+    <script>
+        document.getElementById("foo").style.zIndex = "1"
+    </script>
 
 
     <div id="chartContainer"></div>
@@ -67,6 +70,8 @@ require_once("partial/header.php");
     <button class="custom-btn btn-3" id="backLobby" name="backLobby" onclick="window.location='lobby.php';"><span>Return to lobby</span></button>
     <div id="music" class="custom-btn btn-3" onclick="playMusic()"> <span>Music</span></div>
 
-
+    <div id="foo">
+        <div id="bee1"></div>
+    </div>
     <?php
     require_once("partial/footer.php");

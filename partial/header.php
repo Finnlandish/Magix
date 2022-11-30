@@ -8,6 +8,7 @@
         <title>Magix!</title>
         <link rel="stylesheet" href="css/global.css">
         <script src="https://notes-de-cours.com/dev/toggle-lab-info.js"></script>
+        
 </head>
 
 <body>

@@ -55,6 +55,7 @@ function move() {
                 squirtle.style.top = y1 + 'px';
                 bulbasaur.style.top = y2 + 'px';
                 charmander.style.top = y3 + 'px';
+               
 
                 if (y1 > 1072) {
                     move()

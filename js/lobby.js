@@ -37,18 +37,13 @@ const tickDOM = () => {
     y += depy
 
     if (y >= 685) {
-        // playChansey()
         doc.style.zIndex = "10"
 
         depx = 0.5
         depy = 0.08
-        x += depx
-        y += depy
-        // playChansey()
         if (x >= 360) {
-            depx -= 1
-            depy = 0
-
+            depx = 0
+            depy =0
         }
     }
 

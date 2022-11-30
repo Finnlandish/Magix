@@ -4,6 +4,11 @@
         margin: 0;
         padding: 0;
         background-repeat: no-repeat;
+
+    }
+
+    button {
+        z-index: 100;
     }
 
     :root {
@@ -119,7 +124,7 @@
         text-align: center;
         top: 10px;
         right: 10px;
-        z-index: 10;
+        z-index: 160;
         background-color: white;
     }
 
@@ -130,7 +135,7 @@
         right: 10px;
         z-index: 10;
         background-color: white;
-        z-index: 50;
+        z-index: 500;
     }
 
     #battlemusic {
@@ -210,6 +215,10 @@
         z-index: 2;
     }
 
+    #wooperNode {
+        z-index: 101;
+    }
+
     /* drone */
 
     #foo {
@@ -218,6 +227,7 @@
         width: 100vw;
         z-index: 99;
     }
+
 
     #bee1 {
         background-image: url("../img/pokeSprites/hunter.gif");
@@ -454,11 +464,21 @@
 
     }
 
+    #layer2 {
+        background-image: url("../img/pokemon/Lborder.png");
+        width: 100vw;
+        height: 16vh;
+        z-index: 100;
+        position: absolute;
+        bottom: -1vh;
+
+    }
+
     /* game */
 
     .timer {
-        width: 15vh;
-        height: 7vw;
+        width: 17vh;
+        height: 5vw;
         position: absolute;
         top: 30vh;
         right: 0.5vh;
@@ -468,7 +488,7 @@
         background-size: contain;
         background-position: right;
         text-align: center;
-        font-size: 30px;
+        font-size: 24px;
     }
 
     .game {
@@ -493,6 +513,8 @@
         right: 0.5vh;
         background-color: white;
         text-align: center;
+        z-index: 100;
+
     }
 
     #endturn {
@@ -502,6 +524,8 @@
         right: 0.5vh;
         background-color: orange;
         text-align: center;
+        z-index: 100;
+
     }
 
     #backLobby {
@@ -511,6 +535,8 @@
         width: 16vh;
         background-color: red;
         text-align: center;
+        z-index: 100;
+
     }
 
     #enemydeck {
@@ -520,6 +546,7 @@
         height: 11vh;
         display: flex;
         justify-content: center;
+        
     }
 
     .flipedCard {
@@ -551,6 +578,14 @@
         align-content: center;
         display: flex;
         justify-content: center;
+        color: white;
+        font-size: 20px;
+        text-shadow:
+            0.07em 0 black,
+            0 0.07em black,
+            -0.07em 0 black,
+            0 -0.07em black;
+        background-size: auto 100%;
     }
 
     #enemycardBox>* {
@@ -565,6 +600,14 @@
         min-height: 198.86px;
         margin-left: 20px;
         font-size: medium;
+        color: white;
+        font-size: 20px;
+        text-shadow:
+            0.07em 0 black,
+            0 0.07em black,
+            -0.07em 0 black,
+            0 -0.07em black;
+        background-size: auto 100%;
     }
 
     #mycardBox {
@@ -575,6 +618,14 @@
         bottom: 35vh;
         display: flex;
         justify-content: center;
+        color: white;
+        font-size: 20px;
+        text-shadow:
+            0.07em 0 black,
+            0 0.07em black,
+            -0.07em 0 black,
+            0 -0.07em black;
+        background-size: auto 100%;
     }
 
     #mycardBox>* {
@@ -589,6 +640,14 @@
         margin-left: 20px;
         font-size: medium;
         background-size: auto 100%;
+        color: white;
+        font-size: 20px;
+        text-shadow:
+            0.07em 0 black,
+            0 0.07em black,
+            -0.07em 0 black,
+            0 -0.07em black;
+        background-size: auto 100%;
     }
 
     #mydeck {
@@ -600,6 +659,14 @@
         display: flex;
         justify-content: center;
         left: 10vw;
+        color: white;
+        font-size: 20px;
+        text-shadow:
+            0.07em 0 black,
+            0 0.07em black,
+            -0.07em 0 black,
+            0 -0.07em black;
+        background-size: auto 100%;
     }
 
     #mydeck>* {
@@ -613,27 +680,61 @@
         min-height: 198.86px;
         font-size: 25px;
         margin-left: 20px;
-        font-size: medium;
+        color: white;
+        font-size: 20px;
+        text-shadow:
+            0.07em 0 black,
+            0 0.07em black,
+            -0.07em 0 black,
+            0 -0.07em black;
         background-size: auto 100%;
     }
 
     #mystats>* {
-        background-color: #e3a4dd;
-        bottom: 0;
-        left: 10vw;
+        bottom: 25vh;
+        left: 0vw;
+        background-color: #ffecea;
+        border: gray;
+        border-style: double;
+        border-radius: 10px;
         position: absolute;
         width: fit-content;
         height: fit-content;
         text-align: justify;
         font-size: 25px;
         padding: 1vw;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 20px;
+        text-shadow:
+            0.07em 0 black,
+            0 0.07em black,
+            -0.07em 0 black,
+            0 -0.07em black;
     }
+
+    #hp {
+        background-image: url("../img/Heros/HP.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 4vw;
+        height: 4vw;
+    }
+
+    #mp {
+        background-image: url("../img/Heros/MP.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 4vw;
+        height: 4vw;
+    }
+
 
     #myAvatar {
         position: absolute;
-        background-image: url(../img/Lucas_Back.png);
-        background-size: contain;
-        background-repeat: no-repeat;
         min-width: 10vw;
         min-height: 10vw;
         bottom: -1vh;
@@ -644,8 +745,8 @@
         position: absolute;
         background-size: contain;
         background-repeat: no-repeat;
-        min-width: 10vw;
-        min-height: 13vw;
+        min-width: 7vw;
+        min-height: 7vw;
         left: 60vw;
         top: 0;
     }
@@ -660,16 +761,49 @@
         top: -4vh;
     }
 
+
+
     #enemystats>* {
-        background-color: #e74c3c;
-        left: 50vw;
+        background-color: #ffecea;
+        border: gray;
+        border-style: double;
+        border-radius: 10px;
+        left: 35vw;
         top: 0vh;
         position: absolute;
-        width: fit-content;
-        height: fit-content;
+        width: 20vw;
+        height: 5vh;
         text-align: justify;
         font-size: 25px;
         padding: 1vw;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    #enemyInfo>* {
+        background-color: #ffecea;
+        border: gray;
+        border-style: double;
+        border-radius: 10px;
+        left: 67vw;
+        top: 0vh;
+        position: absolute;
+        width: 10vw;
+        height: 9vh;
+        text-align: justify;
+        font-size: 25px;
+        text-align: center;
+        padding: 1vw;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        font-size: 25px;
+        text-shadow:
+            0.07em 0 black,
+            0 0.07em black,
+            -0.07em 0 black,
+            0 -0.07em black;
     }
 
     #heroPower {
@@ -827,6 +961,8 @@
         background-position: center;
         width: 100vw;
         height: 100vh;
+        z-index: 100;
+
     }
 
     .statsborder {
@@ -838,6 +974,8 @@
         top: -8vh;
         left: 12.5vw;
         position: absolute;
+        z-index: 99;
+
     }
 
     #chartContainer {
@@ -846,10 +984,14 @@
         position: absolute;
         left: 34vw;
         top: 31vh;
+        z-index: 100;
+
     }
 
     .canvasjs-chart-canvas {
         background-color: transparent;
+        z-index: 100;
+
     }
 
     #clearBD {
@@ -859,13 +1001,14 @@
         right: 0.5vh;
         background-color: white;
         text-align: center;
+        z-index: 100;
     }
 
     #error {
         width: 16vh;
         height: fit-content;
         position: absolute;
-        top: 50vh;
+        top: 35vh;
         left: 0.5vh;
         background-color: rgb(228, 84, 84);
         text-align: center;

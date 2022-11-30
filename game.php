@@ -27,6 +27,7 @@ require_once("partial/header.php");
     
     <div class="board" id="board">
         <div class="timer" id="timer"></div>
+        <div class="enemyInfo" id="enemyInfo"></div>
         <div class="enemyAvatar" id="enemystats"></div>
         <div class="enemyAvatar" id="enemyAvatar"></div>
 
