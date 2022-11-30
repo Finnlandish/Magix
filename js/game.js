@@ -144,6 +144,10 @@ const afficher_Avatar = (data) => {
         mAvatar.style.background = "url('img/Heros/mRogue.png')";
         mAvatar.style.backgroundSize = "contain";
         mAvatar.style.backgroundRepeat = "no-repeat";
+    } else if (data.heroClass.includes("DemonHunter")) {
+        mAvatar.style.background = "url('img/Heros/mDemonHunter.png')";
+        mAvatar.style.backgroundSize = "contain";
+        mAvatar.style.backgroundRepeat = "no-repeat";
     } else if (data.heroClass.includes("Mage")) {
         mAvatar.style.background = "url('img/Heros/mMage.png')";
         mAvatar.style.backgroundSize = "contain";
@@ -170,10 +174,6 @@ const afficher_Avatar = (data) => {
         mAvatar.style.backgroundRepeat = "no-repeat";
     } else if (data.heroClass.includes("Druid")) {
         mAvatar.style.background = "url('img/Heros/mDruid.png')";
-        mAvatar.style.backgroundSize = "contain";
-        mAvatar.style.backgroundRepeat = "no-repeat";
-    } else if (data.heroClass.includes("DemonHunter")) {
-        mAvatar.style.background = "url('img/Heros/mDemonHunter.png')";
         mAvatar.style.backgroundSize = "contain";
         mAvatar.style.backgroundRepeat = "no-repeat";
     } else if (data.heroClass.includes("Warlock")) {
