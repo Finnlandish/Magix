@@ -631,6 +631,7 @@ const timer = (data) => {
     let time = data.remainingTurnTime
     if (data.yourTurn) {
         document.getElementById("timer").innerHTML = "<br>your turn <br> " + time
+        document.getElementById
     } else {
         document.getElementById("timer").innerHTML = "<br>opponent's turn<br> " + time
 

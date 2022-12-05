@@ -364,6 +364,24 @@
         background-color: wheat;
         z-index: 50;
     }
+    #infoClass {
+        position: absolute;
+        top: 13vh;
+        left: 0;
+        background-color: wheat;
+        z-index: 50;
+        opacity: 80%;
+        font-size: 24px;
+    }
+    #toggleinfo {
+        position: absolute;
+        top: 0vh;
+        left: 0px;
+        width: 3vw;
+        height: 3vw;
+        background-color: wheat;
+        z-index: 50;
+    }
     /* lobby animations */
     
     #container {

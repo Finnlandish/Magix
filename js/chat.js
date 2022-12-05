@@ -23,3 +23,12 @@ function togglechat() {
         x.style.display = "none";
     }
 }
+function toggleinfo() {
+    var x = document.getElementById("infoClass");
+	
+    if (x.style.display == "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
