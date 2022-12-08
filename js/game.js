@@ -12,127 +12,127 @@ const state = () => {
 
     })
 
-    .then(response => response.json())
+        .then(response => response.json())
 
-    .then(data => {
+        .then(data => {
 
-        console.log(data); // contient les cartes/état du jeu.
-        if (typeof data == "object") {
-            //supposed to reduces flickerring
-            if (JSON.stringify(curdata["hand"]) != JSON.stringify(data["hand"]) ||
-                JSON.stringify(curdata["board"]) !== JSON.stringify(data["board"]) ||
-                JSON.stringify(curdata["opponent"]["board"]) !== JSON.stringify(data["opponent"]["board"])) {
-                mp = data.mp
+            console.log(data); // contient les cartes/état du jeu.
+            if (typeof data == "object") {
+                //supposed to reduces flickerring
+                if (JSON.stringify(curdata["hand"]) != JSON.stringify(data["hand"]) ||
+                    JSON.stringify(curdata["board"]) !== JSON.stringify(data["board"]) ||
+                    JSON.stringify(curdata["opponent"]["board"]) !== JSON.stringify(data["opponent"]["board"])) {
+                    mp = data.mp
+                    curdata = data
+                    clearJeu()
+                    add_stat(data)
+                    add_hand(data)
+                    add_board(data)
+                    add_enemy_board(data)
+                    creer_enemy_hand(data)
+                    afficher_Avatar(data)
+                    document.getElementById("error").innerHTML = ""
+                }
+                document.getElementById("backLobby").style.display = "none"
+
+                timer(data)
+
                 curdata = data
-                clearJeu()
-                add_stat(data)
-                add_hand(data)
-                add_board(data)
-                add_enemy_board(data)
-                creer_enemy_hand(data)
-                afficher_Avatar(data)
-                document.getElementById("error").innerHTML = ""
-            }
-            document.getElementById("backLobby").style.display = "none"
-
-            timer(data)
-
-            curdata = data
-
-        } else {
-            if (data == "LAST_GAME_WON") {
-                gamewon = true
-
-            } else
-            if (data == "LAST_GAME_LOST") {
-                gamelost = true
-
-
-            } else if (data == "WAITING") {
-                waiting = true
-
-
-            }
-
-            if (gamewon) {
-                clearJeu()
-                const boxes = document.querySelectorAll('.EndcardWon');
-
-                boxes.forEach(box => {
-                    box.remove();
-                });
-                let Endcard = document.createElement("div")
-                Endcard.appendChild(document.createTextNode("GAME WON!!!"))
-                Endcard.appendChild(document.createElement("br"))
-                Endcard.appendChild(document.createElement("br"))
-                Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
-
-                Endcard.className = "EndcardWon"
-                document.querySelector(".game").appendChild(Endcard)
-
-                document.getElementById("backLobby").style.display = "block"
-                document.getElementById("backLobby").style.backgroundColor = "#00FFFF"
-                document.getElementById("backLobby").style.right = "40vw"
-                document.getElementById("backLobby").style.width = "20vw"
-                document.getElementById("backLobby").style.height = "5vh"
-                document.getElementById("backLobby").style.fontSize = "36px"
-                document.getElementById("heroPower").style.display = "none"
-                document.getElementById("endturn").style.display = "none"
-                document.getElementById("surrender").style.display = "none"
-
-            } else if (gamelost) {
-                clearJeu()
-                const boxes = document.querySelectorAll('.EndcardLost');
-
-                boxes.forEach(box => {
-                    box.remove();
-                });
-                let Endcard = document.createElement("div")
-                Endcard.appendChild(document.createTextNode("GAME LOST"))
-                Endcard.appendChild(document.createElement("br"))
-                Endcard.appendChild(document.createTextNode("better luck next time!"))
-                Endcard.appendChild(document.createElement("br"))
-                Endcard.appendChild(document.createElement("br"))
-                Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
-
-                Endcard.className = "EndcardLost"
-                document.querySelector(".game").appendChild(Endcard)
-                document.getElementById("backLobby").style.display = "block"
-                document.getElementById("backLobby").style.right = "40vw"
-                document.getElementById("backLobby").style.width = "20vw"
-                document.getElementById("backLobby").style.height = "5vh"
-                document.getElementById("backLobby").style.fontSize = "36px"
-                document.getElementById("heroPower").style.display = "none"
-                document.getElementById("endturn").style.display = "none"
-                document.getElementById("surrender").style.display = "none"
-
 
             } else {
-                document.getElementById("error").innerHTML = JSON.stringify(data)
+                if (data == "LAST_GAME_WON") {
+                    gamewon = true
+
+                } else
+                    if (data == "LAST_GAME_LOST") {
+                        gamelost = true
+
+
+                    } else if (data == "WAITING") {
+                        waiting = true
+
+
+                    }
+
+                if (gamewon) {
+                    clearJeu()
+                    const boxes = document.querySelectorAll('.EndcardWon');
+
+                    boxes.forEach(box => {
+                        box.remove();
+                    });
+                    let Endcard = document.createElement("div")
+                    Endcard.appendChild(document.createTextNode("GAME WON!!!"))
+                    Endcard.appendChild(document.createElement("br"))
+                    Endcard.appendChild(document.createElement("br"))
+                    Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
+
+                    Endcard.className = "EndcardWon"
+                    document.querySelector(".game").appendChild(Endcard)
+
+                    document.getElementById("backLobby").style.display = "block"
+                    document.getElementById("backLobby").style.backgroundColor = "#00FFFF"
+                    document.getElementById("backLobby").style.right = "40vw"
+                    document.getElementById("backLobby").style.width = "20vw"
+                    document.getElementById("backLobby").style.height = "5vh"
+                    document.getElementById("backLobby").style.fontSize = "36px"
+                    document.getElementById("heroPower").style.display = "none"
+                    document.getElementById("endturn").style.display = "none"
+                    document.getElementById("surrender").style.display = "none"
+
+                } else if (gamelost) {
+                    clearJeu()
+                    const boxes = document.querySelectorAll('.EndcardLost');
+
+                    boxes.forEach(box => {
+                        box.remove();
+                    });
+                    let Endcard = document.createElement("div")
+                    Endcard.appendChild(document.createTextNode("GAME LOST"))
+                    Endcard.appendChild(document.createElement("br"))
+                    Endcard.appendChild(document.createTextNode("better luck next time!"))
+                    Endcard.appendChild(document.createElement("br"))
+                    Endcard.appendChild(document.createElement("br"))
+                    Endcard.appendChild(document.createTextNode("Return to lobby to play again!"))
+
+                    Endcard.className = "EndcardLost"
+                    document.querySelector(".game").appendChild(Endcard)
+                    document.getElementById("backLobby").style.display = "block"
+                    document.getElementById("backLobby").style.right = "40vw"
+                    document.getElementById("backLobby").style.width = "20vw"
+                    document.getElementById("backLobby").style.height = "5vh"
+                    document.getElementById("backLobby").style.fontSize = "36px"
+                    document.getElementById("heroPower").style.display = "none"
+                    document.getElementById("endturn").style.display = "none"
+                    document.getElementById("surrender").style.display = "none"
+
+
+                } else {
+                    document.getElementById("error").innerHTML = JSON.stringify(data)
+
+                }
 
             }
-
-        }
-        if (typeof data != "object") {
-            document.getElementById("error").innerHTML = "Warning : " + data
-        }
-        if (!data.heroPowerAlreadyUsed) {
-            document.getElementById("heroPower").onclick = () => {
-                console.log("hero")
-                let form = new FormData()
-                form.append('type', 'HERO_POWER')
-                fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
+            if (typeof data != "object") {
+                document.getElementById("error").innerHTML = "Warning : " + data
+            }
+            if (!data.heroPowerAlreadyUsed) {
+                document.getElementById("heroPower").onclick = () => {
+                    console.log("hero")
+                    let form = new FormData()
+                    form.append('type', 'HERO_POWER')
+                    fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
                         method: "POST", // l’API (games/state)
                         body: form
                     })
-                    .then(response => response.json())
-                    .then(data => {})
+                        .then(response => response.json())
+                        .then(data => { })
 
+                }
             }
-        }
-        setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+            setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
 
-    })
+        })
 
 }
 
@@ -201,10 +201,6 @@ const afficher_Avatar = (data) => {
         eAvatar.style.background = "url('img/Heros/ePriest.png')";
         eAvatar.style.backgroundSize = "contain";
         eAvatar.style.backgroundRepeat = "no-repeat";
-    } else if (data.opponent.heroClass.includes("Hunter")) {
-        eAvatar.style.background = "url('img/Heros/eHunter.png')";
-        eAvatar.style.backgroundSize = "contain";
-        eAvatar.style.backgroundRepeat = "no-repeat";
     } else if (data.opponent.heroClass.includes("Paladin")) {
         eAvatar.style.background = "url('img/Heros/ePaladin.png')";
         eAvatar.style.backgroundSize = "contain";
@@ -215,6 +211,10 @@ const afficher_Avatar = (data) => {
         eAvatar.style.backgroundRepeat = "no-repeat";
     } else if (data.opponent.heroClass.includes("DemonHunter")) {
         eAvatar.style.background = "url('img/Heros/eDemonHunter.png')";
+        eAvatar.style.backgroundSize = "contain";
+        eAvatar.style.backgroundRepeat = "no-repeat";
+    } else if (data.opponent.heroClass.includes("Hunter")) {
+        eAvatar.style.background = "url('img/Heros/eHunter.png')";
         eAvatar.style.backgroundSize = "contain";
         eAvatar.style.backgroundRepeat = "no-repeat";
     } else if (data.opponent.heroClass.includes("Warlock")) {
@@ -298,14 +298,14 @@ const créer_hand = (data, area) => {
             form.append("uid", card_uid)
 
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                    method: "POST", // l’API (games/state)
-                    body: form
-                })
+                method: "POST", // l’API (games/state)
+                body: form
+            })
                 .then(response => response.json())
                 .then(data => {
                     if (typeof data == "object") {
 
-                    } else {}
+                    } else { }
                 })
             cardPlayed = false
         }
@@ -514,11 +514,11 @@ const créer_enemy_board = (data, area) => {
             attackform.delete('targetuid')
             attackform.append("targetuid", card_uid)
             fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                    method: "POST", // l’API (games/state)
-                    body: attackform
-                })
+                method: "POST", // l’API (games/state)
+                body: attackform
+            })
                 .then(response => response.json())
-                .then(data => {})
+                .then(data => { })
         }
         if (e.mechanics.includes("Charge")) {
             card.style.backgroundImage = "url('img/pichuCard.png')";
@@ -598,11 +598,11 @@ const créer_enemy_stats = (data, area) => {
         attackform.delete('targetuid')
         attackform.append("targetuid", 0)
         fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-                method: "POST", // l’API (games/state)
-                body: attackform
-            })
+            method: "POST", // l’API (games/state)
+            body: attackform
+        })
             .then(response => response.json())
-            .then(data => {})
+            .then(data => { })
     }
 }
 
@@ -663,51 +663,51 @@ var surrenderMp3 = document.getElementById("lostmp3")
 
 
 
-document.getElementById('surrender').onclick = function() {
+document.getElementById('surrender').onclick = function () {
     surrender();
     surrenderMp3.play();
 
 }
-document.getElementById('endturn').onclick = function() {
+document.getElementById('endturn').onclick = function () {
     endturn();
 }
-document.getElementById('heroPower').onclick = function() {
+document.getElementById('heroPower').onclick = function () {
     heroPower();
 }
 const surrender = () => {
     let form = new FormData()
     form.append("type", "SURRENDER")
     fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-            method: "POST", // l’API (games/state)
-            body: form
-        })
+        method: "POST", // l’API (games/state)
+        body: form
+    })
         .then(response => response.json())
         .then(data => {
-            if (typeof data == "object") {}
+            if (typeof data == "object") { }
         })
 }
 const endturn = () => {
     let form = new FormData()
     form.append("type", "END_TURN")
     fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-            method: "POST", // l’API (games/state)
-            body: form
-        })
+        method: "POST", // l’API (games/state)
+        body: form
+    })
         .then(response => response.json())
         .then(data => {
-            if (typeof data == "object") {}
+            if (typeof data == "object") { }
         })
 }
 const heroPower = () => {
     let form = new FormData()
     form.append("type", "HERO_POWER")
     fetch("ajax-state.php", { // Il faut créer cette page et son contrôleur appelle
-            method: "POST", // l’API (games/state)
-            body: form
-        })
+        method: "POST", // l’API (games/state)
+        body: form
+    })
         .then(response => response.json())
         .then(data => {
-            if (typeof data == "object") {}
+            if (typeof data == "object") { }
         })
 }
 
