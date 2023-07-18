@@ -1,7 +1,7 @@
 # Magix
 projet final web III game_type: hearthstone
 
-
+## About The Project
 This is a web game created for my web class, the theme that i chose for this game is Pokémon. It serves as a demonstration of my skills and growth as the final project for web III. The game is built with a PHP backend and a Javascript frontend. It utilizes ajax to interact with the database and handle data.
 
 
@@ -11,7 +11,7 @@ First, log into your account. Then, create a deck using the teacher's API. Play 
 
 ![Lobby][lobby]
 
-After logging in, enter the lobby to play against players or AI. Access chat, player list, stats/deck tab, choose a hero, or quit.
+After logging in, enter the lobby to play against players or AI. Access chat, player list, stats/deck tab, change class, or quit.
 
 ![Game][game]
 
