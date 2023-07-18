@@ -29,8 +29,8 @@ First, log into your account. Then, create a deck using the teacher's API. Play 
 
 ![Lobby][lobby]
 
-After logging in, enter the lobby to play against players or AI. Access chat, player list, stats/deck tab, change class, or quit.
-
+After logging in, enter the lobby to play against players or AI. Access chat, player list, stats/deck tab in which you can change class, or logout.
+The buttons in the game, when hovered triggers a text to speach that explains its usage.
 ![Game][game]
 
 In-game, take turns placing cards or attacking on the board. Use your hero power with enough mana. Hand cards are at the bottom, board cards in the middle. Toggle hero powers' effects. Chat toggle available. Playable cards stand out. View player stats and turn countdown.
@@ -42,10 +42,10 @@ Additionally, you can also toggle music throughout the whole game.
 
 ### Built With
 
+* [![Php][PHP]][php-url]
+* [![Javascript][Javascript]][js-url]
 * [![HTML][HTML5]][html-url]
 * [![CSS][CSS3]][css-url]
-* [![Javascript][Javascript]][js-url]
-* [![Php][PHP]][php-url]
 * [![Chart.js][Chart.js]][Chart.js-url]
 * [![Postgres][Postgres]][Postgres-url]
 
