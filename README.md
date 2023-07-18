@@ -11,7 +11,7 @@ First, log into your account. Then, create a deck using the teacher's API. Play 
 
 ![Lobby][lobby]
 
-After logging in, enter the lobby to play against players or AI. Access chat, player list, stats/deck tab, change class, or quit.
+After logging in, enter the lobby to play against players or AI. Access chat, player list, stats/deck tab in which you can change class, or logout.
 The buttons in the game, when hovered triggers a text to speach that explains its usage.
 ![Game][game]
 
