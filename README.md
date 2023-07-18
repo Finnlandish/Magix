@@ -24,10 +24,10 @@ Additionally, you can also toggle music throughout the whole game.
 
 ### Built With
 
+* [![Php][PHP]][php-url]
 * [![HTML][HTML5]][html-url]
 * [![CSS][CSS3]][css-url]
 * [![Javascript][Javascript]][js-url]
-* [![Php][PHP]][php-url]
 * [![Chart.js][Chart.js]][Chart.js-url]
 * [![Postgres][Postgres]][Postgres-url]
 
