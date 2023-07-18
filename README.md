@@ -4,6 +4,24 @@ projet final web III game_type: hearthstone
 ## About The Project
 This is a web game created for my web class, the theme that i chose for this game is Pokémon. It serves as a demonstration of my skills and growth as the final project for web III. The game is built with a PHP backend and a Javascript frontend. It utilizes ajax to interact with the database and handle data.
 
+### Prerequisites
+
+* [Install wamp server](https://www.wampserver.com/en/download-wampserver-64bits/#)
+  
+
+### Installation
+
+1. Clone the repo into the www folder of wamp
+   ```sh
+   git clone https://github.com/finnlandish/Magix.git
+   ```
+2. Start the wamp server
+3. Open the project in your browser
+   ```sh
+   http://localhost/Magix
+   ```
+  
+
 
 ## Usage
 ![Homepage][homepage]
@@ -32,7 +50,9 @@ Additionally, you can also toggle music throughout the whole game.
 * [![Postgres][Postgres]][Postgres-url]
 
 
-
+## Contact
+Finnegan Simpson : [Github](https://github.com/Finnlandish)
+Email :[Gmail](simpson.finnegan@gmail.com)
 
 [HTML5]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
 [html-url]: https://html.com
