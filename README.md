@@ -6,7 +6,7 @@ This is a web game created for my web class, the theme that i chose for this gam
 
 
 ## Usage
-
+![Homepage][homepage]
 The first thing to do is to log into your account. Once you have an account you can create a deck with the teacher's api. You can then play against the AI or another player. You can also see your stats liste= your most played card in the stats and deck tab.In this tab, you can also change your deck or see the stats of other players .
 
 ![Lobby][lobby]
