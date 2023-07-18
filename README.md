@@ -7,15 +7,16 @@ This is a web game created for my web class, the theme that i chose for this gam
 
 ## Usage
 ![Homepage][homepage]
-The first thing to do is to log into your account. Once you have an account you can create a deck with the teacher's api. You can then play against the AI or another player. You can also see your stats liste= your most played card in the stats and deck tab.In this tab, you can also change your deck or see the stats of other players .
+First, log into your account. Then, create a deck using the teacher's API. Play against AI or other players, and view stats and decks in the respective tab.
 
 ![Lobby][lobby]
 
-When you're logged you enter the lobby where you can go into a game against an other player or AI. You can see the chat on the right and the list of players on the left, go to the stats/deck tab , chose a hero on the bottom tu use in game or quit the application.
+After logging in, enter the lobby to play against players or AI. Access chat, player list, stats/deck tab, choose a hero, or quit.
 
-![InGame][game]
-In game, turn by turn you can chose to place a card on the board or attack a card on the board. You can also use your hero power if you have enough mana.  You can see the cards in your hand on the bottom and the cards on the board in the middle. There is a toggle for the hero powers with a legend of their effects depending on the hero class. There is another toggle to see the chat in game. Every card you can play in your hand will be higher than the rest of the cards. You can see the stats of all the players and a countdown of every turn.
+![Game][game]
 
+In-game, take turns placing cards or attacking on the board. Use your hero power with enough mana. Hand cards are at the bottom, board cards in the middle. Toggle hero powers' effects. Chat toggle available. Playable cards stand out. View player stats and turn countdown.
+Additionally, you can also toggle music throughout the whole game.
 
 
 
