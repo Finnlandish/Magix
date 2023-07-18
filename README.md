@@ -52,7 +52,9 @@ Additionally, you can also toggle music throughout the whole game.
 
 ## Contact
 Finnegan Simpson : [Github](https://github.com/Finnlandish)
-Email :[Gmail](simpson.finnegan@gmail.com)
+Email : simpson.finnegan@gmail.com
+
+
 
 [HTML5]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
 [html-url]: https://html.com
