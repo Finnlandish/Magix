@@ -52,6 +52,7 @@ Additionally, you can also toggle music throughout the whole game.
 
 ## Contact
 Finnegan Simpson : [Github](https://github.com/Finnlandish)
+</br>
 Email : simpson.finnegan@gmail.com
 
 
